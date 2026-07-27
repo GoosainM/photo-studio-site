@@ -4,10 +4,11 @@ import Hero from '../components/Hero.astro';
 import Portfolio from '../components/Portfolio.astro';
 import Reviews from '../components/Reviews.astro';
 import Contact from '../components/Contact.astro';
+import '../styles/global.css';
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth bg-neutral-950 text-white">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -16,7 +17,7 @@ import Contact from '../components/Contact.astro';
   </head>
   <body class="bg-neutral-950 font-sans antialiased selection:bg-white selection:text-black min-h-screen overflow-x-hidden">
     <Navbar />
-    <main>
+    <main class="w-full overflow-hidden">
       <Hero />
       <Portfolio />
       <Reviews />
