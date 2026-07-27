@@ -7,23 +7,13 @@ import Portfolio from '../components/Portfolio.astro';
 import Contact from '../components/Contact.astro';
 ---
 
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth overflow-x-hidden">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <title>Corporate & Studio Photography</title>
   </head>
-  <body class="bg-neutral-950 font-sans antialiased selection:bg-white selection:text-black overflow-x-hidden w-full">
-    <Navbar />
-    <main>
-      <Hero />
-      <Portfolio />
-	  <Reviews />
-      <Contact />
-    </main>
-    <footer class="py-8 text-center text-xs text-neutral-600 border-t border-neutral-900">
-  &copy; {new Date().getFullYear()} Matthews Studio. ALL RIGHTS RESERVED.
-</footer>
+  <body class="bg-neutral-950 font-sans antialiased selection:bg-white selection:text-black overflow-x-hidden w-full max-w-full">
+    <slot />
   </body>
 </html>
