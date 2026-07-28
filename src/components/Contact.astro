@@ -1,25 +1,95 @@
 ---
 ---
-<section id="contact" class="py-20 bg-neutral-950 text-white px-4 md:px-6 border-t border-neutral-900 w-full overflow-hidden">
-  <div class="max-w-4xl mx-auto w-full">
-    <div class="text-center mb-8">
+<section id="contact" class="py-20 bg-neutral-950 text-white px-6 border-t border-neutral-900">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-12">
       <p class="text-xs font-mono uppercase tracking-widest text-neutral-400 mb-2">ENQUIRE</p>
       <h2 class="font-serif text-3xl md:text-4xl font-bold tracking-tight">Request a Shoot Quote</h2>
     </div>
 
-    <!-- EMBEDDED GOOGLE FORM WRAPPER -->
-    <div class="w-full flex justify-center items-center overflow-hidden rounded bg-neutral-900/30 border border-neutral-800 p-2 sm:p-4">
-      <iframe 
-        src="https://docs.google.com/forms/d/e/1FAIpQLScGuFAvHRfpVJV4buzgvFZqXQ_1N8l9yhHFbBsQ2yB6CVQZwQ/viewform?embedded=true" 
-        width="100%" 
-        height="850" 
-        frameborder="0" 
-        marginheight="0" 
-        marginwidth="0"
-        class="max-w-full w-full"
+    <form class="space-y-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- FULL NAME -->
+        <div>
+          <label class="block text-[10px] font-mono uppercase tracking-widest text-neutral-400 mb-2" for="name">
+            FULL NAME *
+          </label>
+          <input 
+            type="text" 
+            id="name" 
+            name="name" 
+            required 
+            class="w-full bg-neutral-900 border border-neutral-800 rounded-none px-4 py-3 text-sm text-white focus:outline-none focus:border-neutral-500 transition-colors"
+          />
+        </div>
+
+        <!-- COMPANY / ORGANIZATION -->
+        <div>
+          <label class="block text-[10px] font-mono uppercase tracking-widest text-neutral-400 mb-2" for="company">
+            COMPANY / ORGANIZATION
+          </label>
+          <input 
+            type="text" 
+            id="company" 
+            name="company" 
+            class="w-full bg-neutral-900 border border-neutral-800 rounded-none px-4 py-3 text-sm text-white focus:outline-none focus:border-neutral-500 transition-colors"
+          />
+        </div>
+
+        <!-- EMAIL -->
+        <div>
+          <label class="block text-[10px] font-mono uppercase tracking-widest text-neutral-400 mb-2" for="email">
+            EMAIL *
+          </label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            required 
+            class="w-full bg-neutral-900 border border-neutral-800 rounded-none px-4 py-3 text-sm text-white focus:outline-none focus:border-neutral-500 transition-colors"
+          />
+        </div>
+
+        <!-- PRIMARY SHOOTING TYPE -->
+        <div>
+          <label class="block text-[10px] font-mono uppercase tracking-widest text-neutral-400 mb-2" for="shoot_type">
+            PRIMARY SHOOTING TYPE
+          </label>
+          <select 
+            id="shoot_type" 
+            name="shoot_type" 
+            class="w-full bg-neutral-900 border border-neutral-800 rounded-none px-4 py-3 text-sm text-white focus:outline-none focus:border-neutral-500 transition-colors"
+          >
+            <option value="Executive Headshots (On-site)">Executive Headshots (On-site)</option>
+            <option value="Corporate Culture & Campaign">Corporate Culture & Campaign</option>
+            <option value="Commercial & Brand Photography">Commercial & Brand Photography</option>
+            <option value="Studio Portraiture">Studio Portraiture</option>
+            <option value="Other / Event Photography">Other / Event Photography</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- PROJECT DETAILS & DATES -->
+      <div>
+        <label class="block text-[10px] font-mono uppercase tracking-widest text-neutral-400 mb-2" for="message">
+          PROJECT DETAILS & DATES
+        </label>
+        <textarea 
+          id="message" 
+          name="message" 
+          rows="4" 
+          placeholder="Tell us about the scope, team size, location preference, or turnaround deadlines..." 
+          class="w-full bg-neutral-900 border border-neutral-800 rounded-none px-4 py-3 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-neutral-500 transition-colors"
+        ></textarea>
+      </div>
+
+      <!-- SUBMIT BUTTON -->
+      <button 
+        type="submit" 
+        class="w-full bg-white text-black text-xs font-semibold uppercase tracking-wider py-4 hover:bg-neutral-200 transition-colors cursor-pointer"
       >
-        Loading…
-      </iframe>
-    </div>
+        SUBMIT BOOKING ENQUIRY
+      </button>
+    </form>
   </div>
 </section>
