@@ -7,7 +7,16 @@
       <h2 class="font-serif text-3xl md:text-4xl font-bold tracking-tight">Request a Shoot Quote</h2>
     </div>
 
-    <form class="space-y-6">
+    <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+      <!-- Web3Forms Access Key -->
+      <input type="hidden" name="access_key" value="7ccd0b54-a506-45ef-85ab-4a13b570d3a3" />
+      
+      <!-- Customized Subject Line for Incoming Emails -->
+      <input type="hidden" name="subject" value="New Photography Shoot Enquiry" />
+
+      <!-- Website Source Tag -->
+      <input type="hidden" name="from_name" value="Matthews Studio Website" />
+
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- FULL NAME -->
         <div>
@@ -17,7 +26,7 @@
           <input 
             type="text" 
             id="name" 
-            name="name" 
+            name="Full Name" 
             required 
             class="w-full bg-neutral-900 border border-neutral-800 rounded-none px-4 py-3 text-sm text-white focus:outline-none focus:border-neutral-500 transition-colors"
           />
@@ -31,7 +40,7 @@
           <input 
             type="text" 
             id="company" 
-            name="company" 
+            name="Company / Organization" 
             class="w-full bg-neutral-900 border border-neutral-800 rounded-none px-4 py-3 text-sm text-white focus:outline-none focus:border-neutral-500 transition-colors"
           />
         </div>
@@ -44,7 +53,7 @@
           <input 
             type="email" 
             id="email" 
-            name="email" 
+            name="Email Address" 
             required 
             class="w-full bg-neutral-900 border border-neutral-800 rounded-none px-4 py-3 text-sm text-white focus:outline-none focus:border-neutral-500 transition-colors"
           />
@@ -57,7 +66,7 @@
           </label>
           <select 
             id="shoot_type" 
-            name="shoot_type" 
+            name="Primary Shooting Type" 
             class="w-full bg-neutral-900 border border-neutral-800 rounded-none px-4 py-3 text-sm text-white focus:outline-none focus:border-neutral-500 transition-colors"
           >
             <option value="Executive Headshots (On-site)">Executive Headshots (On-site)</option>
@@ -76,7 +85,7 @@
         </label>
         <textarea 
           id="message" 
-          name="message" 
+          name="Project Details & Dates" 
           rows="4" 
           placeholder="Tell us about the scope, team size, location preference, or turnaround deadlines..." 
           class="w-full bg-neutral-900 border border-neutral-800 rounded-none px-4 py-3 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-neutral-500 transition-colors"
