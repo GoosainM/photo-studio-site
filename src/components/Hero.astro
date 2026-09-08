@@ -2,17 +2,17 @@
 // Hero.astro for Minnaar-Matthews Creative House
 ---
 
-<section id="corporate" class="relative pt-28 pb-16 md:pt-48 md:pb-32 text-[#1C1B1A] px-4 md:px-6 overflow-hidden w-full min-h-[85vh] flex items-center">
+<section id="corporate" class="relative pt-28 pb-16 md:pt-48 md:pb-32 text-[#1C1B1A] px-4 md:px-6 overflow-hidden w-full min-h-[85vh] flex items-center bg-[#DCD7CD]">
   
-  {/* Full-Bleed Background Image and Overlay */}
+  {/* Full-Bleed Background Image Layer */}
   <div class="absolute inset-0 z-0">
     <img 
       src="/hero-bg.png" 
       alt="Minnaar-Matthews Creative House Background" 
-      class="w-full h-full object-cover object-center"
+      class="w-full h-full object-cover object-center opacity-75"
     />
-    {/* Soft gradient overlay to blend the background and ensure text readability */}
-    <div class="absolute inset-0 bg-[#F4F1EA]/85 backdrop-blur-[2px]"></div>
+    {/* Soft overlay to ensure text readability */}
+    <div class="absolute inset-0 bg-[#F4F1EA]/75 backdrop-blur-[1px]"></div>
   </div>
 
   {/* Content Layer */}
