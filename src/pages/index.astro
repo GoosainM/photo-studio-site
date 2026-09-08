@@ -10,12 +10,31 @@
     <title>Minnaar-Matthews | Creative House</title>
   </head>
   <body class="bg-[#1C1B1A] m-0 p-0 w-screen h-screen overflow-hidden">
-    <main class="w-full h-full relative">
+    <main class="w-full h-full relative flex items-center justify-center">
       <img 
         src="/bg.jpeg" 
         alt="" 
-        class="absolute inset-0 w-full h-full object-cover object-center"
+        class="responsive-bg"
       />
     </main>
   </body>
 </html>
+
+<style>
+  .responsive-bg {
+    position: absolute;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* Tablet and Mobile device specific adjustments */
+  @media (max-width: 1024px) {
+    .responsive-bg {
+      object-fit: cover;
+      object-position: 50% 50%;
+    }
+  }
+</style>
