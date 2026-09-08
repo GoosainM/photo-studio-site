@@ -1,76 +1,144 @@
 ---
-// Reviews.astro for Minnaar-Matthews Creative House
-const reviews = [
-  {
-    quote: "Melissa captured our family flawlessly. The lighting and turnaround time were unmatched.",
-    author: "Carla M.",
-    platform: "Instagram"
-  },
-  {
-    quote: "An absolute professional on set. The headshots completely transformed my image.",
-    author: "Ashleigh.",
-    platform: "Instagram"
-  },
-  {
-    quote: "Fast, efficient, and exceptionally talented. The mobile studio setup made our shoot effortless.",
-    author: "Jason L.",
-    platform: "Facebook"
-  }
-];
+// Client Reviews Page - Minnaar-Matthews Creative House
 ---
-
-<section id="reviews" class="py-16 bg-[#F4F1EA] text-[#1C1B1A] px-4 md:px-8 border-t border-[#C5BCAB]/40 w-full max-w-full overflow-hidden">
-  <div class="max-w-6xl mx-auto w-full overflow-hidden">
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reviews & Testimonials | Minnaar-Matthews</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Scroll Pop-Up Animation Styles */
+      .review-card {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .review-card.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body style="background-color: #F5F2EB; color: #2C2A29; font-family: 'Jost', sans-serif; margin: 0; min-height: 100vh; display: flex; flex-direction: column;">
     
-    <!-- Header -->
-    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 md:mb-10 gap-4">
-      <div>
-        <p class="text-[10px] font-mono uppercase tracking-widest text-[#6B6354] mb-1">Testimonials & Social</p>
-        <h2 class="font-serif text-2xl md:text-3xl font-light tracking-tight text-[#1C1B1A]">Client Endorsements & Feed</h2>
-      </div>
+    <!-- Fixed Atmospheric Background Visual -->
+    <div style="position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: 0.15; background-image: url('/hero-bg.png'); background-size: cover; background-position: center; filter: grayscale(100%) contrast(125%);"></div>
 
-      <a 
-        href="https://www.instagram.com/" 
-        target="_blank" 
-        rel="noopener noreferrer" 
-        class="text-[10px] font-mono uppercase tracking-widest text-[#6B6354] hover:text-[#1C1B1A] transition underline"
-      >
-        Follow on Instagram →
-      </a>
-    </div>
+    <!-- Header Navigation -->
+    <header style="position: relative; z-index: 10; padding: 2rem 3rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(227, 222, 212, 0.8); background-color: rgba(245, 242, 235, 0.9);">
+      <a href="/" style="font-family: 'Playfair Display', serif; letter-spacing: 0.2em; font-size: 1.125rem; text-transform: uppercase; color: #2C2A29; text-decoration: none; font-weight: bold;">Minnaar-Matthews</a>
+      <a href="/" style="font-size: 0.75rem; letter-spacing: 0.35em; text-transform: uppercase; color: #2C2A29; text-decoration: none;">&larr; Back to Home</a>
+    </header>
 
-    <!-- Grid Layout: Reviews + Live Instagram Feed -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full max-w-full overflow-hidden items-start">
+    <!-- Main Content Area -->
+    <main style="position: relative; z-index: 10; flex-grow: 1; width: 100%; max-width: 65rem; margin: 0 auto; padding: 5rem 2rem 8rem 2rem;">
       
-      <!-- Left Column: Reviews -->
-      <div class="space-y-4 w-full">
-        {reviews.map((item) => (
-          <div class="bg-[#E8E4DC] border border-[#C5BCAB]/60 rounded-sm p-5 flex flex-col justify-between w-full shadow-sm">
-            <div>
-              <div class="text-[#8C7A5B] text-xs mb-2">★★★★★</div>
-              <p class="text-[#1C1B1A] text-xs md:text-sm leading-relaxed mb-3 italic">
-                "{item.quote}"
-              </p>
-            </div>
-            <div class="border-t border-[#C5BCAB]/40 pt-2.5">
-              <p class="font-semibold text-xs text-[#1C1B1A]">{item.author}</p>
-              <p class="text-[#6B6354] text-[10px]">{item.platform}</p>
-            </div>
-          </div>
-        ))}
+      <!-- Page Title Section -->
+      <div style="text-align: center; margin-bottom: 5rem;">
+        <span style="font-size: 0.75rem; letter-spacing: 0.4em; text-transform: uppercase; color: #7A756D; display: block; margin-bottom: 0.75rem;">Client Reflections</span>
+        <h1 style="font-family: 'Playfair Display', serif; font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 400; letter-spacing: 0.05em; text-transform: uppercase; color: #2C2A29; margin: 0;">Testimonials</h1>
+        <div style="width: 3rem; height: 1px; background-color: #C5BEB0; margin: 1.5rem auto 0 auto;"></div>
       </div>
 
-      <!-- Right Column: Elfsight Instagram Widget Container -->
-      <div class="lg:col-span-2 bg-[#E8E4DC] border border-[#C5BCAB]/60 rounded-sm p-4 md:p-6 w-full max-w-full overflow-hidden shadow-sm">
-        <p class="text-[10px] font-mono uppercase tracking-widest text-[#6B6354] mb-4">Latest Instagram Posts</p>
+      <!-- Reviews Stack (Pop up on scroll) -->
+      <div style="display: flex; flex-direction: column; gap: 3rem;">
         
-        <!-- RESPONSIVE ELFSIGHT WRAPPER -->
-        <div class="w-full max-w-full overflow-x-hidden [&_*]:!max-w-full">
-          <script src="https://elfsightcdn.com/platform.js" async></script>
-          <div class="elfsight-app-928f87a2-ef93-4136-8057-343cc9a2efbe" data-elfsight-app-lazy></div>
+        <!-- Review 1 -->
+        <div class="review-card" style="background-color: rgba(235, 230, 218, 0.85); backdrop-filter: blur(12px); border: 1px solid #DDD6C8; padding: 3rem 2.5rem; position: relative;">
+          <span style="position: absolute; top: 1.5rem; right: 2rem; font-family: 'Playfair Display', serif; font-size: 4rem; color: #C5BEB0; line-height: 1; pointer-events: none;">&ldquo;</span>
+          <p style="font-family: 'Playfair Display', serif; font-size: 1.25rem; font-style: italic; line-height: 1.8; color: #2C2A29; margin-bottom: 2rem; font-weight: 400;">
+            &ldquo;Minnaar-Matthews brought an incredible level of spatial elegance and precision to our project. The visual curation and digital architecture exceeded every expectation we had.&rdquo;
+          </p>
+          <div style="display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid #DDD6C8; padding-top: 1.5rem;">
+            <div>
+              <h3 style="font-family: 'Playfair Display', serif; font-size: 1.125rem; font-weight: 500; margin: 0 0 0.25rem 0; color: #2C2A29;">Aiden & Claire Visser</h3>
+              <span style="font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase; color: #7A756D;">Architectural & Spatial Series</span>
+            </div>
+            <span style="font-size: 0.75rem; letter-spacing: 0.3em; color: #7A756D;">2026</span>
+          </div>
         </div>
+
+        <!-- Review 2 -->
+        <div class="review-card" style="background-color: rgba(235, 230, 218, 0.85); backdrop-filter: blur(12px); border: 1px solid #DDD6C8; padding: 3rem 2.5rem; position: relative;">
+          <span style="position: absolute; top: 1.5rem; right: 2rem; font-family: 'Playfair Display', serif; font-size: 4rem; color: #C5BEB0; line-height: 1; pointer-events: none;">&ldquo;</span>
+          <p style="font-family: 'Playfair Display', serif; font-size: 1.25rem; font-style: italic; line-height: 1.8; color: #2C2A29; margin-bottom: 2rem; font-weight: 400;">
+            &ldquo;The editorial direction and mood captured in our brand showcase are breathtaking. Working with such a refined eye for texture and lighting made all the difference.&rdquo;
+          </p>
+          <div style="display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid #DDD6C8; padding-top: 1.5rem;">
+            <div>
+              <h3 style="font-family: 'Playfair Display', serif; font-size: 1.125rem; font-weight: 500; margin: 0 0 0.25rem 0; color: #2C2A29;">Liam Du Plessis</h3>
+              <span style="font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase; color: #7A756D;">Editorial Direction</span>
+            </div>
+            <span style="font-size: 0.75rem; letter-spacing: 0.3em; color: #7A756D;">2026</span>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="review-card" style="background-color: rgba(235, 230, 218, 0.85); backdrop-filter: blur(12px); border: 1px solid #DDD6C8; padding: 3rem 2.5rem; position: relative;">
+          <span style="position: absolute; top: 1.5rem; right: 2rem; font-family: 'Playfair Display', serif; font-size: 4rem; color: #C5BEB0; line-height: 1; pointer-events: none;">&ldquo;</span>
+          <p style="font-family: 'Playfair Display', serif; font-size: 1.25rem; font-style: italic; line-height: 1.8; color: #2C2A29; margin-bottom: 2rem; font-weight: 400;">
+            &ldquo;Absolute masters of their craft. From the full-stack web performance to the bespoke visual presentation, the entire experience was seamless and sophisticated.&rdquo;
+          </p>
+          <div style="display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid #DDD6C8; padding-top: 1.5rem;">
+            <div>
+              <h3 style="font-family: 'Playfair Display', serif; font-size: 1.125rem; font-weight: 500; margin: 0 0 0.25rem 0; color: #2C2A29;">Nadia Jacobs</h3>
+              <span style="font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase; color: #7A756D;">Digital Architecture & Brand Craft</span>
+            </div>
+            <span style="font-size: 0.75rem; letter-spacing: 0.3em; color: #7A756D;">2026</span>
+          </div>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="review-card" style="background-color: rgba(235, 230, 218, 0.85); backdrop-filter: blur(12px); border: 1px solid #DDD6C8; padding: 3rem 2.5rem; position: relative;">
+          <span style="position: absolute; top: 1.5rem; right: 2rem; font-family: 'Playfair Display', serif; font-size: 4rem; color: #C5BEB0; line-height: 1; pointer-events: none;">&ldquo;</span>
+          <p style="font-family: 'Playfair Display', serif; font-size: 1.25rem; font-style: italic; line-height: 1.8; color: #2C2A29; margin-bottom: 2rem; font-weight: 400;">
+            &ldquo;Their attention to natural shadow play and minimalist composition transformed how our portfolio is experienced by high-end clients. Truly exceptional work.&rdquo;
+          </p>
+          <div style="display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid #DDD6C8; padding-top: 1.5rem;">
+            <div>
+              <h3 style="font-family: 'Playfair Display', serif; font-size: 1.125rem; font-weight: 500; margin: 0 0 0.25rem 0; color: #2C2A29;">Marcus & Elena Sterling</h3>
+              <span style="font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase; color: #7A756D;">Cinematic Series</span>
+            </div>
+            <span style="font-size: 0.75rem; letter-spacing: 0.3em; color: #7A756D;">2026</span>
+          </div>
+        </div>
+
       </div>
 
-    </div>
-  </div>
-</section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="position: relative; z-index: 10; padding: 2rem 3rem; text-align: center; font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; border-top: 1px solid #E3DED4; color: #7A756D; background-color: rgba(245, 242, 235, 0.9);">
+      &copy; 2026 Minnaar-Matthews Creative House. All Rights Reserved.
+    </footer>
+
+    <!-- Scroll Pop-Up Intersection Observer Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const observerOptions = {
+          root: null,
+          rootMargin: '0px',
+          threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observerInstance) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observerInstance.unobserve(entry.target); // Animate only once when scrolled into view
+            }
+          });
+        }, observerOptions);
+
+        document.querySelectorAll('.review-card').forEach(card => {
+          observer.observe(card);
+        });
+      });
+    </script>
+
+  </body>
+</html>
