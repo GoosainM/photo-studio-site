@@ -41,29 +41,29 @@ const categories = [
 ---
 
 <section id="portfolio" class="py-20 bg-[#F4F1EA] text-[#1C1B1A] px-4 md:px-12 border-t border-[#C5BCAB]/40">
-  <div class="max-w-7xl mx-auto">
+  <div class="max-w-7xl mx-auto w-full">
     
     <!-- Header -->
     <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
       <div>
         <p class="text-xs font-mono uppercase tracking-widest text-[#6B6354] mb-2">Portfolio</p>
-        <h2 class="font-serif text-3xl md:text-5xl font-light tracking-tight text-[#1C1B1A]">Featured Categories</h2>
+        <h2 class="font-serif text-3xl md:text-4xl font-light tracking-tight text-[#1C1B1A]">Featured Categories</h2>
       </div>
       <p class="text-xs text-[#6B6354] font-mono uppercase tracking-wider">
         Click card or drag to advance →
       </p>
     </div>
 
-    <!-- 3 Category Cards Grid -->
-    <div class="grid md:grid-cols-3 gap-8">
+    <!-- 3 Category Cards Grid with strict max-w constraints -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       {categories.map((cat, index) => (
         <div class="bg-[#E8E4DC] border border-[#C5BCAB]/60 rounded-sm overflow-hidden flex flex-col shadow-sm">
           
-          <!-- Swiper Container for this Category -->
+          <!-- Swiper Container with fixed aspect ratio -->
           <div class={`swiper category-swiper-${index} w-full aspect-[4/5] relative group cursor-pointer select-none`}>
-            <div class="swiper-wrapper">
+            <div class="swiper-wrapper w-full h-full">
               {cat.images.map((imgUrl) => (
-                <div class="swiper-slide h-full w-full">
+                <div class="swiper-slide h-full w-full flex items-center justify-center overflow-hidden">
                   <img 
                     src={imgUrl} 
                     alt={cat.title} 
@@ -93,7 +93,7 @@ const categories = [
   </div>
 </section>
 
-<!-- Client Script: Manual Click & Drag Only -->
+<!-- Client Script -->
 <script>
   import Swiper from 'swiper';
 
@@ -102,10 +102,9 @@ const categories = [
       const swiperInstance = new Swiper(`.category-swiper-${idx}`, {
         loop: true,
         grabCursor: true,
-        allowTouchMove: true, // Allows dragging / swiping manually
+        allowTouchMove: true,
       });
 
-      // Advance to next image when clicking anywhere on the card
       const element = document.querySelector(`.category-swiper-${idx}`);
       if (element) {
         element.addEventListener('click', () => {
