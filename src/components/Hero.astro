@@ -2,10 +2,21 @@
 // Hero.astro for Minnaar-Matthews Creative House
 ---
 
-<section id="corporate" class="relative pt-28 pb-16 md:pt-40 md:pb-28 bg-[#F4F1EA] text-[#1C1B1A] px-4 md:px-6 overflow-hidden w-full">
+<section id="corporate" class="relative pt-28 pb-16 md:pt-48 md:pb-32 text-[#1C1B1A] px-4 md:px-6 overflow-hidden w-full min-h-[85vh] flex items-center">
+  
+  {/* Full-Bleed Background Image and Overlay */}
+  <div class="absolute inset-0 z-0">
+    <img 
+      src="/hero-bg.png" 
+      alt="Minnaar-Matthews Creative House Background" 
+      class="w-full h-full object-cover object-center"
+    />
+    {/* Soft gradient overlay to blend the background and ensure text readability */}
+    <div class="absolute inset-0 bg-[#F4F1EA]/85 backdrop-blur-[2px]"></div>
+  </div>
+
+  {/* Content Layer */}
   <div class="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center w-full">
-    
-    <!-- Left Column: Text Content -->
     <div class="w-full space-y-6">
       <div class="mb-2">
         <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl font-bold tracking-widest text-[#1C1B1A] uppercase leading-tight">
@@ -27,29 +38,17 @@
       <p class="text-[#5A5348] text-sm md:text-lg max-w-lg leading-relaxed">
         Specializing in executive headshots, corporate culture campaigns, and high-end studio portraiture with seamless mobile on-site capabilities.
       </p>
-      
-      <div class="grid grid-cols-2 gap-3 sm:gap-4 pt-4 w-full">
-        <div class="bg-[#E8E4DC] border border-[#C5BCAB]/60 p-4 rounded-sm shadow-sm">
-          <p class="text-2xl sm:text-3xl font-light text-[#1C1B1A] mb-1">100%</p>
-          <p class="text-[10px] sm:text-xs text-[#5A5348] uppercase tracking-wider">On-Site Mobile Studio</p>
-        </div>
-        <div class="bg-[#E8E4DC] border border-[#C5BCAB]/60 p-4 rounded-sm shadow-sm">
-          <p class="text-2xl sm:text-3xl font-light text-[#1C1B1A] mb-1">7 days</p>
-          <p class="text-[10px] sm:text-xs text-[#5A5348] uppercase tracking-wider">Fast Turnaround</p>
-        </div>
+    </div>
+    
+    <div class="grid grid-cols-2 gap-3 sm:gap-4 w-full">
+      <div class="bg-[#F4F1EA]/90 backdrop-blur-sm border border-[#C5BCAB]/60 p-4 sm:p-6 rounded-sm shadow-sm">
+        <p class="text-2xl sm:text-3xl font-light text-[#1C1B1A] mb-1">100%</p>
+        <p class="text-[10px] sm:text-xs text-[#5A5348] uppercase tracking-wider">On-Site Mobile Studio</p>
+      </div>
+      <div class="bg-[#F4F1EA]/90 backdrop-blur-sm border border-[#C5BCAB]/60 p-4 sm:p-6 rounded-sm shadow-sm">
+        <p class="text-2xl sm:text-3xl font-light text-[#1C1B1A] mb-1">7 days</p>
+        <p class="text-[10px] sm:text-xs text-[#5A5348] uppercase tracking-wider">Fast Turnaround</p>
       </div>
     </div>
-
-    <!-- Right Column: Your Brand Graphic Image Display -->
-    <div class="w-full flex justify-center">
-      <div class="relative w-full h-[350px] md:h-[450px] rounded-sm overflow-hidden shadow-md border border-[#C5BCAB]/50 bg-[#E8E4DC]">
-        <img 
-          src="/hero-bg.png" 
-          alt="Minnaar-Matthews Creative House Branding" 
-          class="w-full h-full object-cover"
-        />
-      </div>
-    </div>
-
   </div>
 </section>
