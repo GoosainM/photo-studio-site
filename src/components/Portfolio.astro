@@ -54,13 +54,13 @@ const categories = [
       </p>
     </div>
 
-    <!-- 3 Category Cards Grid with controlled height -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- Side-by-Side 3-Column Row Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
       {categories.map((cat, index) => (
         <div class="bg-[#E8E4DC] border border-[#C5BCAB]/60 rounded-sm overflow-hidden flex flex-col shadow-sm">
           
-          <!-- Swiper Container with strict max height -->
-          <div class={`swiper category-swiper-${index} w-full h-[350px] md:h-[400px] relative group cursor-pointer select-none`}>
+          <!-- Swiper Container -->
+          <div class={`swiper category-swiper-${index} w-full h-[360px] relative group cursor-pointer select-none`}>
             <div class="swiper-wrapper w-full h-full">
               {cat.images.map((imgUrl) => (
                 <div class="swiper-slide h-full w-full flex items-center justify-center overflow-hidden">
