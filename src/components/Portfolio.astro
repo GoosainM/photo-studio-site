@@ -7,7 +7,7 @@ const categories = [
   {
     id: "corporate",
     title: "Birthday Photoshoots",
-    tagline: "Capturing milestone moments and celebrations",
+    tagline: "Milestone moments and celebrations",
     cover: "/IMG_4392.jpg",
     images: [
       "/IMG_4392.jpg",
@@ -18,7 +18,7 @@ const categories = [
   {
     id: "editorial",
     title: "Family Photoshoots",
-    tagline: "Timeless portraits of connection and warmth",
+    tagline: "Timeless portraits of connection",
     cover: "/IMG_0661.jpg",
     images: [
       "/IMG_0784.jpg",
@@ -40,27 +40,27 @@ const categories = [
 ];
 ---
 
-<section id="portfolio" class="py-16 bg-[#F4F1EA] text-[#1C1B1A] px-4 md:px-12 border-t border-[#C5BCAB]/40">
-  <div class="max-w-7xl mx-auto w-full">
+<section id="portfolio" class="py-16 bg-[#F4F1EA] text-[#1C1B1A] px-4 md:px-8 border-t border-[#C5BCAB]/40">
+  <div class="max-w-6xl mx-auto w-full">
     
-    <!-- Header -->
-    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
+    <!-- Section Header -->
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 gap-3">
       <div>
         <p class="text-[10px] font-mono uppercase tracking-widest text-[#6B6354] mb-1">Portfolio</p>
-        <h2 class="font-serif text-2xl md:text-4xl font-light tracking-tight text-[#1C1B1A]">Featured Categories</h2>
+        <h2 class="font-serif text-2xl md:text-3xl font-light tracking-tight text-[#1C1B1A]">Featured Categories</h2>
       </div>
       <p class="text-[10px] text-[#6B6354] font-mono uppercase tracking-wider">
         Click card or drag to advance →
       </p>
     </div>
 
-    <!-- Forced Side-by-Side Flex Layout -->
-    <div class="flex flex-col md:flex-row gap-6 w-full">
+    <!-- Scaled Side-by-Side 3-Column Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       {categories.map((cat, index) => (
-        <div class="flex-1 bg-[#E8E4DC] border border-[#C5BCAB]/60 rounded-sm overflow-hidden flex flex-col shadow-sm min-w-0">
+        <div class="bg-[#E8E4DC] border border-[#C5BCAB]/60 rounded-sm overflow-hidden flex flex-col shadow-sm">
           
-          <!-- Swiper Container -->
-          <div class={`swiper category-swiper-${index} w-full h-[360px] relative group cursor-pointer select-none`}>
+          <!-- Controlled Swiper Height Container -->
+          <div class={`swiper category-swiper-${index} w-full h-[320px] md:h-[350px] relative group cursor-pointer select-none`}>
             <div class="swiper-wrapper w-full h-full">
               {cat.images.map((imgUrl) => (
                 <div class="swiper-slide h-full w-full flex items-center justify-center overflow-hidden">
@@ -75,14 +75,14 @@ const categories = [
             </div>
 
             <!-- Slide Overlay info -->
-            <div class="absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-[#1C1B1A]/90 via-[#1C1B1A]/40 to-transparent p-5 pointer-events-none">
-              <span class="text-[9px] font-mono uppercase tracking-widest text-[#C5BCAB] block mb-1">
+            <div class="absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-[#1C1B1A]/90 via-[#1C1B1A]/40 to-transparent p-4 pointer-events-none">
+              <span class="text-[9px] font-mono uppercase tracking-widest text-[#C5BCAB] block mb-0.5">
                 {cat.images.length} Photos
               </span>
-              <h3 class="font-serif text-lg font-bold text-[#F4F1EA] tracking-wide">
+              <h3 class="font-serif text-base font-bold text-[#F4F1EA] tracking-wide">
                 {cat.title}
               </h3>
-              <p class="text-xs text-[#E8E4DC]/80 mt-0.5">{cat.tagline}</p>
+              <p class="text-[11px] text-[#E8E4DC]/80 mt-0.5">{cat.tagline}</p>
             </div>
           </div>
 
