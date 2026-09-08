@@ -1,25 +1,28 @@
 ---
 // Hero.astro for Minnaar-Matthews Creative House
+import { Image } from 'astro:assets';
+import heroBg from '../assets/hero-bg.png';
 ---
 
-<section id="corporate" class="relative pt-28 pb-16 md:pt-48 md:pb-32 text-[#1C1B1A] px-4 md:px-6 overflow-hidden w-full min-h-[85vh] flex items-center bg-[#DCD7CD]">
+<section id="corporate" class="relative pt-28 pb-16 md:pt-48 md:pb-32 text-[#1C1B1A] px-4 md:px-6 overflow-hidden w-full min-h-[85vh] flex items-center">
   
-  {/* Full-Bleed Background Image Layer */}
+  <!-- Full-Bleed Background Image Layer -->
   <div class="absolute inset-0 z-0">
-    <img 
-      src="/hero.png" 
+    <Image 
+      src={heroBg} 
       alt="Minnaar-Matthews Creative House Background" 
-      class="w-full h-full object-cover object-center opacity-75"
+      class="w-full h-full object-cover object-center"
+      quality={85}
     />
-    {/* Soft overlay to ensure text readability */}
-    <div class="absolute inset-0 bg-[#F4F1EA]/75 backdrop-blur-[1px]"></div>
+    <!-- Much lighter tint overlay so the photography background is clearly visible -->
+    <div class="absolute inset-0 bg-[#F4F1EA]/45 backdrop-blur-[0.5px]"></div>
   </div>
 
-  {/* Content Layer */}
+  <!-- Content Layer -->
   <div class="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center w-full">
     <div class="w-full space-y-6">
       <div class="mb-2">
-        <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl font-bold tracking-widest text-[#1C1B1A] uppercase leading-tight">
+        <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl font-bold tracking-widest text-[#1C1B1A] uppercase leading-tight drop-shadow-sm">
           MINNAAR-MATTHEWS
         </h2>
         <span class="font-serif text-lg md:text-2xl italic text-[#6B6354] lowercase block mt-1 pl-1">
@@ -27,7 +30,7 @@
         </span>
       </div>
 
-      <p class="text-[10px] sm:text-xs font-mono uppercase tracking-widest text-[#6B6354]">
+      <p class="text-[10px] sm:text-xs font-mono uppercase tracking-widest text-[#6B6354] font-medium">
         Editorial, Commercial & Executive Photography
       </p>
       
@@ -35,19 +38,19 @@
         Refined lighting for <span class="font-bold underline decoration-[#C5BCAB]">corporates & brands.</span>
       </h1>
       
-      <p class="text-[#5A5348] text-sm md:text-lg max-w-lg leading-relaxed">
+      <p class="text-[#3A352E] text-sm md:text-lg max-w-lg leading-relaxed font-normal">
         Specializing in executive headshots, corporate culture campaigns, and high-end studio portraiture with seamless mobile on-site capabilities.
       </p>
     </div>
     
     <div class="grid grid-cols-2 gap-3 sm:gap-4 w-full">
-      <div class="bg-[#F4F1EA]/90 backdrop-blur-sm border border-[#C5BCAB]/60 p-4 sm:p-6 rounded-sm shadow-sm">
+      <div class="bg-[#F4F1EA]/85 backdrop-blur-md border border-[#C5BCAB]/60 p-4 sm:p-6 rounded-sm shadow-sm">
         <p class="text-2xl sm:text-3xl font-light text-[#1C1B1A] mb-1">100%</p>
-        <p class="text-[10px] sm:text-xs text-[#5A5348] uppercase tracking-wider">On-Site Mobile Studio</p>
+        <p class="text-[10px] sm:text-xs text-[#5A5348] uppercase tracking-wider font-medium">On-Site Mobile Studio</p>
       </div>
-      <div class="bg-[#F4F1EA]/90 backdrop-blur-sm border border-[#C5BCAB]/60 p-4 sm:p-6 rounded-sm shadow-sm">
+      <div class="bg-[#F4F1EA]/85 backdrop-blur-md border border-[#C5BCAB]/60 p-4 sm:p-6 rounded-sm shadow-sm">
         <p class="text-2xl sm:text-3xl font-light text-[#1C1B1A] mb-1">7 days</p>
-        <p class="text-[10px] sm:text-xs text-[#5A5348] uppercase tracking-wider">Fast Turnaround</p>
+        <p class="text-[10px] sm:text-xs text-[#5A5348] uppercase tracking-wider font-medium">Fast Turnaround</p>
       </div>
     </div>
   </div>
