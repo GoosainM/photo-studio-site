@@ -1,18 +1,81 @@
 ---
-// src/pages/index.astro
-import Hero from '../components/Hero.astro';
+// Landing Page - Minnaar-Matthews Creative House
 ---
-
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Jost:wght@400;500&display=swap" rel="stylesheet">
     <title>Minnaar-Matthews | Creative House</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+      /* Responsive Media Adjustments */
+      @media (max-width: 768px) {
+        .site-header {
+          padding: 1.25rem 1.5rem !important;
+          flex-direction: column;
+          gap: 1rem;
+          text-align: center;
+        }
+        .hero-content {
+          padding: 2rem 1.25rem !important;
+        }
+        .nav-links {
+          gap: 1.25rem !important;
+        }
+      }
+    </style>
   </head>
-  <body class="bg-[#1C1B1A] text-[#F4F1EA] m-0 p-0 overflow-hidden">
-    <Hero />
+  <body style="margin: 0; padding: 0; background-color: #F5F2EB; color: #2C2A29; font-family: 'Jost', sans-serif; min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden; box-sizing: border-box;">
+    
+    <!-- Fixed Atmospheric Background Visual with Absolute Edge-to-Edge Coverage -->
+    <div style="position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: 0.15; background-image: url('/hero-bg.png'); background-size: cover; background-position: center; filter: grayscale(100%) contrast(125%);"></div>
+
+    <!-- Header Navigation -->
+    <header class="site-header" style="position: relative; z-index: 10; padding: 2rem 3rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(227, 222, 212, 0.8); background-color: rgba(245, 242, 235, 0.9); box-sizing: border-box; width: 100%;">
+      <a href="/" style="font-family: 'Playfair Display', serif; letter-spacing: 0.2em; font-size: clamp(1rem, 2vw, 1.125rem); text-transform: uppercase; color: #2C2A29; text-decoration: none; font-weight: bold;">Minnaar-Matthews</a>
+      <nav class="nav-links" style="display: flex; gap: 2rem; align-items: center;">
+        <a href="/portfolio" style="font-size: 0.7rem; letter-spacing: 0.35em; text-transform: uppercase; color: #2C2A29; text-decoration: none;">Portfolio</a>
+        <a href="/contact" style="font-size: 0.7rem; letter-spacing: 0.35em; text-transform: uppercase; color: #2C2A29; text-decoration: none;">Inquiries</a>
+      </nav>
+    </header>
+
+    <!-- Main Hero Centerpiece -->
+    <main class="hero-content" style="position: relative; z-index: 10; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 4rem 2rem; box-sizing: border-box; width: 100%; max-width: 75rem; margin: 0 auto;">
+      
+      <!-- Brand Subtitle Tag -->
+      <span style="font-size: clamp(0.65rem, 1.5vw, 0.75rem); letter-spacing: 0.4em; text-transform: uppercase; color: #7A756D; display: block; margin-bottom: 1rem;">Creative House</span>
+
+      <!-- Main Title with Responsive Clamping -->
+      <h1 style="font-family: 'Playfair Display', serif; font-size: clamp(2.25rem, 6vw, 4.75rem); font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: #2C2A29; margin: 0 0 1.5rem 0; line-height: 1.15;">
+        Minnaar-Matthews
+      </h1>
+
+      <!-- Decorative Divider Rule -->
+      <div style="width: 3.5rem; height: 1px; background-color: #C5BEB0; margin: 0 auto 2rem auto;"></div>
+
+      <!-- Tagline Description -->
+      <p style="font-size: clamp(0.875rem, 2vw, 1.05rem); font-weight: 300; color: #5C5750; letter-spacing: 0.08em; max-width: 34rem; line-height: 1.7; margin: 0 auto 3rem auto;">
+        Bespoke visual architecture, spatial compositions, and digital experiences crafted with uncompromising precision.
+      </p>
+
+      <!-- Action Buttons -->
+      <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; justify-content: center;">
+        <a href="/portfolio" style="background-color: #2C2A29; color: #F5F2EB; padding: 1rem 2.25rem; font-size: 0.7rem; letter-spacing: 0.35em; text-transform: uppercase; text-decoration: none; transition: background-color 0.2s;">
+          Explore Works
+        </a>
+        <a href="/contact" style="background-color: transparent; color: #2C2A29; border: 1px solid #C5BEB0; padding: 1rem 2.25rem; font-size: 0.7rem; letter-spacing: 0.35em; text-transform: uppercase; text-decoration: none; transition: all 0.2s;">
+          Get in Touch
+        </a>
+      </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer style="position: relative; z-index: 10; padding: 1.75rem 3rem; text-align: center; font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; border-top: 1px solid #E3DED4; color: #7A756D; background-color: rgba(245, 242, 235, 0.9); box-sizing: border-box; width: 100%;">
+      &copy; 2026 Minnaar-Matthews Creative House. All Rights Reserved.
+    </footer>
+
   </body>
 </html>
