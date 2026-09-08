@@ -1,8 +1,7 @@
-@import "tailwindcss";
-
-@theme {
-  --color-cotton: #F4F1EA;
-  --color-beige-soft: #E8E4DC;
-  --color-beige-deep: #C5BCAB;
-  --color-charcoal-dark: #1C1B1A;
+body {
+  background-color: #F4F1EA;
+  color: #1C1B1A;
+  font-family: serif; /* Adjust to your brand typography */
+  margin: 0;
+  padding: 0;
 }
