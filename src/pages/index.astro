@@ -1,9 +1,6 @@
 ---
+// Import your components here
 import Hero from '../components/Hero.astro';
-import Portfolio from '../components/Portfolio.astro';
-import Reviews from '../components/Reviews.astro';
-import Contact from '../components/Contact.astro';
-import '../styles/global.css';
 ---
 
 <html lang="en">
@@ -11,16 +8,13 @@ import '../styles/global.css';
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Jost:wght@400;500&display=swap" rel="stylesheet">
     <title>Minnaar-Matthews | Creative House</title>
   </head>
-  <body class="bg-[#F4F1EA] text-[#1C1B1A] antialiased">
-    
-    <main class="w-full overflow-hidden">
+  <body class="bg-[#0d0d0c] text-[#f6f4ef] m-0 p-0 overflow-x-hidden">
+    <main>
       <Hero />
-      <Portfolio />
-      <Reviews />
-      <Contact />
     </main>
-
   </body>
 </html>
