@@ -2,7 +2,7 @@
 // Interactive Feature Showcase Component - Minnaar-Matthews
 ---
 
-<section style="width: 100%; max-width: 80rem; margin: 0 auto; padding: 4rem 2rem;">
+<section style="width: 100%; max-width: 85rem; margin: 0 auto; padding: 4rem 2rem;">
   <div style="text-align: center; margin-bottom: 4rem;">
     <span style="font-size: 0.75rem; letter-spacing: 0.4em; text-transform: uppercase; color: #7A756D; display: block; margin-bottom: 0.75rem;">Interactive Exploration</span>
     <h2 style="font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 4vw, 4rem); font-weight: 400; letter-spacing: 0.05em; text-transform: uppercase; color: #2C2A29; margin: 0;">Take a closer look.</h2>
@@ -10,90 +10,149 @@
   </div>
 
   <!-- Main Showcase Container -->
-  <div style="background-color: rgba(235, 230, 218, 0.85); backdrop-filter: blur(12px); border: 1px solid #DDD6C8; padding: 2.5rem; display: flex; flex-direction: column; gap: 3rem;" class="showcase-container">
+  <div style="background-color: rgba(235, 230, 218, 0.85); backdrop-filter: blur(12px); border: 1px solid #DDD6C8; padding: 2.5rem; display: flex; flex-direction: column; gap: 3rem;">
     
-    <!-- Navigation Buttons Grid -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;" class="nav-grid">
+    <!-- Navigation Buttons Grid (9 Items) -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;">
       
-      <!-- Feature 1 -->
-      <button class="feature-btn active-tab" data-index="0" style="text-align: left; padding: 1.25rem; transition: all 0.3s ease; border: 1px solid #C5BEB0; background-color: #DFD9CC; cursor: pointer;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-          <span style="font-family: 'Playfair Display', serif; font-size: 1.125rem; font-weight: 500; color: #2C2A29;">Architectural Study</span>
-          <span style="font-size: 0.75rem; letter-spacing: 0.2em; color: #7A756D;">&rarr;</span>
+      <!-- 1 -->
+      <button class="feature-btn active-tab" data-index="0" style="text-align: left; padding: 1.1rem; transition: all 0.3s ease; border: 1px solid #C5BEB0; background-color: #DFD9CC; cursor: pointer;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+          <span style="font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 500; color: #2C2A29;">Architectural Study</span>
+          <span style="font-size: 0.7rem; letter-spacing: 0.2em; color: #7A756D;">&rarr;</span>
         </div>
-        <p class="feature-desc" style="font-size: 0.875rem; color: #5C5750; line-height: 1.6; margin: 0; font-weight: 300;">
-          Precision lighting and modern structural composition capturing high-end architectural design lines and spatial elegance.
-        </p>
+        <p class="feature-desc" style="font-size: 0.8rem; color: #5C5750; line-height: 1.5; margin: 0; font-weight: 300;">Precision lighting and modern structural composition capturing high-end design lines.</p>
       </button>
 
-      <!-- Feature 2 -->
-      <button class="feature-btn" data-index="1" style="text-align: left; padding: 1.25rem; transition: all 0.3s ease; border: 1px solid #DDD6C8; background-color: rgba(235, 230, 218, 0.5); cursor: pointer;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-          <span style="font-family: 'Playfair Display', serif; font-size: 1.125rem; font-weight: 500; color: #2C2A29;">Editorial Direction</span>
-          <span style="font-size: 0.75rem; letter-spacing: 0.2em; color: #7A756D;">&rarr;</span>
+      <!-- 2 -->
+      <button class="feature-btn" data-index="1" style="text-align: left; padding: 1.1rem; transition: all 0.3s ease; border: 1px solid #DDD6C8; background-color: rgba(235, 230, 218, 0.5); cursor: pointer;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+          <span style="font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 500; color: #2C2A29;">Editorial Portraiture</span>
+          <span style="font-size: 0.7rem; letter-spacing: 0.2em; color: #7A756D;">&rarr;</span>
         </div>
-        <p class="feature-desc" style="font-size: 0.875rem; color: #5C5750; line-height: 1.6; margin: 0; font-weight: 300; display: none;">
-          Curated studio visual narratives centered around mood, organic texture, and refined aesthetic storytelling.
-        </p>
+        <p class="feature-desc" style="font-size: 0.8rem; color: #5C5750; line-height: 1.5; margin: 0; font-weight: 300; display: none;">Curated studio visual narratives centered around mood and organic texture.</p>
       </button>
 
-      <!-- Feature 3 -->
-      <button class="feature-btn" data-index="2" style="text-align: left; padding: 1.25rem; transition: all 0.3s ease; border: 1px solid #DDD6C8; background-color: rgba(235, 230, 218, 0.5); cursor: pointer;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-          <span style="font-family: 'Playfair Display', serif; font-size: 1.125rem; font-weight: 500; color: #2C2A29;">Digital Architecture</span>
-          <span style="font-size: 0.75rem; letter-spacing: 0.2em; color: #7A756D;">&rarr;</span>
+      <!-- 3 -->
+      <button class="feature-btn" data-index="2" style="text-align: left; padding: 1.1rem; transition: all 0.3s ease; border: 1px solid #DDD6C8; background-color: rgba(235, 230, 218, 0.5); cursor: pointer;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+          <span style="font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 500; color: #2C2A29;">Spatial Composition</span>
+          <span style="font-size: 0.7rem; letter-spacing: 0.2em; color: #7A756D;">&rarr;</span>
         </div>
-        <p class="feature-desc" style="font-size: 0.875rem; color: #5C5750; line-height: 1.6; margin: 0; font-weight: 300; display: none;">
-          Full-stack web applications, custom e-commerce architecture, and lightning-fast digital performance.
-        </p>
+        <p class="feature-desc" style="font-size: 0.8rem; color: #5C5750; line-height: 1.5; margin: 0; font-weight: 300; display: none;">Balanced interior frames emphasizing depth, balance, and spatial elegance.</p>
       </button>
 
-      <!-- Feature 4 -->
-      <button class="feature-btn" data-index="3" style="text-align: left; padding: 1.25rem; transition: all 0.3s ease; border: 1px solid #DDD6C8; background-color: rgba(235, 230, 218, 0.5); cursor: pointer;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-          <span style="font-family: 'Playfair Display', serif; font-size: 1.125rem; font-weight: 500; color: #2C2A29;">Bespoke Craft</span>
-          <span style="font-size: 0.75rem; letter-spacing: 0.2em; color: #7A756D;">&rarr;</span>
+      <!-- 4 -->
+      <button class="feature-btn" data-index="3" style="text-align: left; padding: 1.1rem; transition: all 0.3s ease; border: 1px solid #DDD6C8; background-color: rgba(235, 230, 218, 0.5); cursor: pointer;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+          <span style="font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 500; color: #2C2A29;">Studio Narrative</span>
+          <span style="font-size: 0.7rem; letter-spacing: 0.2em; color: #7A756D;">&rarr;</span>
         </div>
-        <p class="feature-desc" style="font-size: 0.875rem; color: #5C5750; line-height: 1.6; margin: 0; font-weight: 300; display: none;">
-          Tailored branding, high-end client showcases, and interactive visual presentations crafted with precision.
-        </p>
+        <p class="feature-desc" style="font-size: 0.8rem; color: #5C5750; line-height: 1.5; margin: 0; font-weight: 300; display: none;">Evocative framing designed to elevate brand identity and visual storytelling.</p>
+      </button>
+
+      <!-- 5 -->
+      <button class="feature-btn" data-index="4" style="text-align: left; padding: 1.1rem; transition: all 0.3s ease; border: 1px solid #DDD6C8; background-color: rgba(235, 230, 218, 0.5); cursor: pointer;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+          <span style="font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 500; color: #2C2A29;">Light & Texture</span>
+          <span style="font-size: 0.7rem; letter-spacing: 0.2em; color: #7A756D;">&rarr;</span>
+        </div>
+        <p class="feature-desc" style="font-size: 0.8rem; color: #5C5750; line-height: 1.5; margin: 0; font-weight: 300; display: none;">Exploring natural shadow play and tactile surfaces through refined lens work.</p>
+      </button>
+
+      <!-- 6 -->
+      <button class="feature-btn" data-index="5" style="text-align: left; padding: 1.1rem; transition: all 0.3s ease; border: 1px solid #DDD6C8; background-color: rgba(235, 230, 218, 0.5); cursor: pointer;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+          <span style="font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 500; color: #2C2A29;">Cinematic Series</span>
+          <span style="font-size: 0.7rem; letter-spacing: 0.2em; color: #7A756D;">&rarr;</span>
+        </div>
+        <p class="feature-desc" style="font-size: 0.8rem; color: #5C5750; line-height: 1.5; margin: 0; font-weight: 300; display: none;">Atmospheric captures delivering high-contrast cinematic depth and presence.</p>
+      </button>
+
+      <!-- 7 -->
+      <button class="feature-btn" data-index="6" style="text-align: left; padding: 1.1rem; transition: all 0.3s ease; border: 1px solid #DDD6C8; background-color: rgba(235, 230, 218, 0.5); cursor: pointer;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+          <span style="font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 500; color: #2C2A29;">High-End Commercial</span>
+          <span style="font-size: 0.7rem; letter-spacing: 0.2em; color: #7A756D;">&rarr;</span>
+        </div>
+        <p class="feature-desc" style="font-size: 0.8rem; color: #5C5750; line-height: 1.5; margin: 0; font-weight: 300; display: none;">Commercial-grade detail and crisp aesthetics tailored for luxury showcases.</p>
+      </button>
+
+      <!-- 8 -->
+      <button class="feature-btn" data-index="7" style="text-align: left; padding: 1.1rem; transition: all 0.3s ease; border: 1px solid #DDD6C8; background-color: rgba(235, 230, 218, 0.5); cursor: pointer;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+          <span style="font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 500; color: #2C2A29;">Curated Visuals</span>
+          <span style="font-size: 0.7rem; letter-spacing: 0.2em; color: #7A756D;">&rarr;</span>
+        </div>
+        <p class="feature-desc" style="font-size: 0.8rem; color: #5C5750; line-height: 1.5; margin: 0; font-weight: 300; display: none;">Hand-selected focal points highlighting precision craftsmanship and style.</p>
+      </button>
+
+      <!-- 9 -->
+      <button class="feature-btn" data-index="8" style="text-align: left; padding: 1.1rem; transition: all 0.3s ease; border: 1px solid #DDD6C8; background-color: rgba(235, 230, 218, 0.5); cursor: pointer;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+          <span style="font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 500; color: #2C2A29;">Master Archive</span>
+          <span style="font-size: 0.7rem; letter-spacing: 0.2em; color: #7A756D;">&rarr;</span>
+        </div>
+        <p class="feature-desc" style="font-size: 0.8rem; color: #5C5750; line-height: 1.5; margin: 0; font-weight: 300; display: none;">The pinnacle of creative output embodying timeless form and clarity.</p>
       </button>
 
     </div>
 
-    <!-- Visual Display Area -->
-    <div style="width: 100%; height: 450px; position: relative; overflow: hidden; background-color: #DFD9CC; border: 1px solid #DDD6C8;">
+    <!-- Uniform Scaled Visual Display Area -->
+    <div style="width: 100%; height: 500px; position: relative; overflow: hidden; background-color: #DFD9CC; border: 1px solid #DDD6C8;">
       
-      <!-- Image 1 -->
+      <!-- 1: IMG_0661.jpg -->
       <div class="showcase-img" data-img-index="0" style="position: absolute; inset: 0; transition: opacity 0.7s ease-in-out; opacity: 1;">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop" alt="Architectural Study" style="width: 100%; height: 100%; object-fit: cover;" />
-        <div style="position: absolute; bottom: 1.5rem; left: 1.5rem; background-color: rgba(245, 242, 235, 0.9); padding: 0.5rem 1rem; border: 1px solid #DDD6C8; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: #2C2A29;">
-          Series 01 // Spatial Elegance
-        </div>
+        <img src="/IMG_0661.jpg" alt="Architectural Study" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" />
+        <div style="position: absolute; bottom: 1.5rem; left: 1.5rem; background-color: rgba(245, 242, 235, 0.9); padding: 0.5rem 1rem; border: 1px solid #DDD6C8; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: #2C2A29;">Series 01 // Spatial Elegance</div>
       </div>
 
-      <!-- Image 2 -->
+      <!-- 2: IMG_0713.jpg -->
       <div class="showcase-img" data-img-index="1" style="position: absolute; inset: 0; transition: opacity 0.7s ease-in-out; opacity: 0; pointer-events: none;">
-        <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=1200&auto=format&fit=crop" alt="Editorial Direction" style="width: 100%; height: 100%; object-fit: cover;" />
-        <div style="position: absolute; bottom: 1.5rem; left: 1.5rem; background-color: rgba(245, 242, 235, 0.9); padding: 0.5rem 1rem; border: 1px solid #DDD6C8; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: #2C2A29;">
-          Series 02 // Atmospheric Portraiture
-        </div>
+        <img src="/IMG_0713.jpg" alt="Editorial Portraiture" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" />
+        <div style="position: absolute; bottom: 1.5rem; left: 1.5rem; background-color: rgba(245, 242, 235, 0.9); padding: 0.5rem 1rem; border: 1px solid #DDD6C8; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: #2C2A29;">Series 02 // Atmospheric Portraiture</div>
       </div>
 
-      <!-- Image 3 -->
+      <!-- 3: IMG_0784.jpg -->
       <div class="showcase-img" data-img-index="2" style="position: absolute; inset: 0; transition: opacity 0.7s ease-in-out; opacity: 0; pointer-events: none;">
-        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop" alt="Digital Architecture" style="width: 100%; height: 100%; object-fit: cover;" />
-        <div style="position: absolute; bottom: 1.5rem; left: 1.5rem; background-color: rgba(245, 242, 235, 0.9); padding: 0.5rem 1rem; border: 1px solid #DDD6C8; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: #2C2A29;">
-          Series 03 // Full-Stack Code & Scale
-        </div>
+        <img src="/IMG_0784.jpg" alt="Spatial Composition" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" />
+        <div style="position: absolute; bottom: 1.5rem; left: 1.5rem; background-color: rgba(245, 242, 235, 0.9); padding: 0.5rem 1rem; border: 1px solid #DDD6C8; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: #2C2A29;">Series 03 // Interior Composition</div>
       </div>
 
-      <!-- Image 4 -->
+      <!-- 4: IMG_4157.jpg -->
       <div class="showcase-img" data-img-index="3" style="position: absolute; inset: 0; transition: opacity 0.7s ease-in-out; opacity: 0; pointer-events: none;">
-        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200&auto=format&fit=crop" alt="Bespoke Craft" style="width: 100%; height: 100%; object-fit: cover;" />
-        <div style="position: absolute; bottom: 1.5rem; left: 1.5rem; background-color: rgba(245, 242, 235, 0.9); padding: 0.5rem 1rem; border: 1px solid #DDD6C8; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: #2C2A29;">
-          Series 04 // Bespoke Brand Craft
-        </div>
+        <img src="/IMG_4157.jpg" alt="Studio Narrative" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" />
+        <div style="position: absolute; bottom: 1.5rem; left: 1.5rem; background-color: rgba(245, 242, 235, 0.9); padding: 0.5rem 1rem; border: 1px solid #DDD6C8; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: #2C2A29;">Series 04 // Brand Narrative</div>
+      </div>
+
+      <!-- 5: IMG_4187.jpg -->
+      <div class="showcase-img" data-img-index="4" style="position: absolute; inset: 0; transition: opacity 0.7s ease-in-out; opacity: 0; pointer-events: none;">
+        <img src="/IMG_4187.jpg" alt="Light & Texture" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" />
+        <div style="position: absolute; bottom: 1.5rem; left: 1.5rem; background-color: rgba(245, 242, 235, 0.9); padding: 0.5rem 1rem; border: 1px solid #DDD6C8; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: #2C2A29;">Series 05 // Light & Shadow</div>
+      </div>
+
+      <!-- 6: IMG_4392.jpg -->
+      <div class="showcase-img" data-img-index="5" style="position: absolute; inset: 0; transition: opacity 0.7s ease-in-out; opacity: 0; pointer-events: none;">
+        <img src="/IMG_4392.jpg" alt="Cinematic Series" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" />
+        <div style="position: absolute; bottom: 1.5rem; left: 1.5rem; background-color: rgba(245, 242, 235, 0.9); padding: 0.5rem 1rem; border: 1px solid #DDD6C8; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: #2C2A29;">Series 06 // Cinematic Depth</div>
+      </div>
+
+      <!-- 7: IMG_9104.JPG -->
+      <div class="showcase-img" data-img-index="6" style="position: absolute; inset: 0; transition: opacity 0.7s ease-in-out; opacity: 0; pointer-events: none;">
+        <img src="/IMG_9104.JPG" alt="High-End Commercial" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" />
+        <div style="position: absolute; bottom: 1.5rem; left: 1.5rem; background-color: rgba(245, 242, 235, 0.9); padding: 0.5rem 1rem; border: 1px solid #DDD6C8; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: #2C2A29;">Series 07 // Luxury Commercial</div>
+      </div>
+
+      <!-- 8: IMG_9119.JPG -->
+      <div class="showcase-img" data-img-index="7" style="position: absolute; inset: 0; transition: opacity 0.7s ease-in-out; opacity: 0; pointer-events: none;">
+        <img src="/IMG_9119.JPG" alt="Curated Visuals" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" />
+        <div style="position: absolute; bottom: 1.5rem; left: 1.5rem; background-color: rgba(245, 242, 235, 0.9); padding: 0.5rem 1rem; border: 1px solid #DDD6C8; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: #2C2A29;">Series 08 // Curated Focus</div>
+      </div>
+
+      <!-- 9: IMG_9131.JPG -->
+      <div class="showcase-img" data-img-index="8" style="position: absolute; inset: 0; transition: opacity 0.7s ease-in-out; opacity: 0; pointer-events: none;">
+        <img src="/IMG_9131.JPG" alt="Master Archive" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" />
+        <div style="position: absolute; bottom: 1.5rem; left: 1.5rem; background-color: rgba(245, 242, 235, 0.9); padding: 0.5rem 1rem; border: 1px solid #DDD6C8; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: #2C2A29;">Series 09 // Master Archive</div>
       </div>
 
     </div>
