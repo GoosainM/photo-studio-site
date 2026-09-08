@@ -13,6 +13,7 @@
   <div class="menu-overlay" id="menuOverlay">
     <button class="close-btn" id="closeBtn">&times;</button>
     <ul class="menu-links">
+      <li><a href="#" class="nav-link" data-section="Home">Home</a></li>
       <li><a href="#about" class="nav-link" data-section="About Us">About Us</a></li>
       <li><a href="#portfolio" class="nav-link" data-section="Portfolio">Portfolio</a></li>
       <li><a href="#review" class="nav-link" data-section="Review">Review</a></li>
@@ -59,8 +60,13 @@
     link.addEventListener('click', (e) => {
       e.stopPropagation();
       const section = link.getAttribute('data-section');
-      alert('Navigating to: ' + section);
-      menuOverlay?.classList.remove('active');
+      if (section === 'Home') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        menuOverlay?.classList.remove('active');
+      } else {
+        alert('Navigating to: ' + section);
+        menuOverlay?.classList.remove('active');
+      }
     });
   });
 </script>
@@ -158,7 +164,7 @@
   }
 
   .menu-links li {
-    margin: 20px 0;
+    margin: 18px 0;
     transform: translateY(20px);
     opacity: 0;
     transition: transform 0.4s ease, opacity 0.4s ease;
@@ -169,14 +175,15 @@
     opacity: 1;
   }
 
-  .menu-overlay.active .menu-links li:nth-child(1) { transition-delay: 0.1s; }
-  .menu-overlay.active .menu-links li:nth-child(2) { transition-delay: 0.2s; }
-  .menu-overlay.active .menu-links li:nth-child(3) { transition-delay: 0.3s; }
-  .menu-overlay.active .menu-links li:nth-child(4) { transition-delay: 0.4s; }
+  .menu-overlay.active .menu-links li:nth-child(1) { transition-delay: 0.05s; }
+  .menu-overlay.active .menu-links li:nth-child(2) { transition-delay: 0.1s; }
+  .menu-overlay.active .menu-links li:nth-child(3) { transition-delay: 0.15s; }
+  .menu-overlay.active .menu-links li:nth-child(4) { transition-delay: 0.2s; }
+  .menu-overlay.active .menu-links li:nth-child(5) { transition-delay: 0.25s; }
 
   .menu-links a {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(1.8rem, 3.5vw, 3rem);
+    font-size: clamp(1.6rem, 3vw, 2.6rem);
     color: var(--cream);
     text-decoration: none;
     letter-spacing: 0.1em;
