@@ -1,7 +1,5 @@
 ---
 // index.astro for Minnaar-Matthews | Creative House
-import bgImage from '../assets/bg.jpeg';
-import { Image } from 'astro:assets';
 ---
 
 <html lang="en">
@@ -9,15 +7,25 @@ import { Image } from 'astro:assets';
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Jost:wght@400;500&display=swap" rel="stylesheet">
     <title>Minnaar-Matthews | Creative House</title>
   </head>
-  <body style="margin: 0; padding: 0; width: 100vw; height: 100vh; overflow: hidden; background-color: #1C1B1A;">
-    <div style="position: relative; width: 100%; height: 100%;">
-      <Image 
-        src={bgImage} 
-        alt="Background" 
-        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" 
-      />
-    </div>
+  <body class="bg-[#1C1B1A] text-[#F4F1EA] m-0 p-0 overflow-hidden">
+    <main class="w-screen h-screen">
+      <section id="hero" class="relative w-full h-full flex flex-col items-center justify-center overflow-hidden m-0 p-0 bg-image">
+        <!-- Optional dark overlay -->
+        <div class="absolute inset-0 bg-black/30 pointer-events-none"></div>
+      </section>
+    </main>
   </body>
 </html>
+
+<style>
+  .bg-image {
+    background-image: url('/bg.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+</style>
