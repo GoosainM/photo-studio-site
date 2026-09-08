@@ -1,11 +1,11 @@
 ---
-// Portfolio Page - Minnaar-Matthews Creative House
+// Portfolio / Interactive Exploration Page - Minnaar-Matthews Creative House
 ---
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio & Works | Minnaar-Matthews</title>
+    <title>Portfolio & Interactive Exploration | Minnaar-Matthews</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
@@ -25,62 +25,102 @@
     </header>
 
     <!-- Main Content Area -->
-    <main style="position: relative; z-index: 10; flex-grow: 1; width: 100%; max-width: 75rem; margin: 0 auto; padding: 5rem 2rem 8rem 2rem; box-sizing: border-box;">
+    <main style="position: relative; z-index: 10; flex-grow: 1; width: 100%; max-width: 80rem; margin: 0 auto; padding: 4rem 2rem 8rem 2rem; box-sizing: border-box;">
       
-      <!-- Page Title Section -->
-      <div style="text-align: center; margin-bottom: 5rem;">
-        <span style="font-size: 0.75rem; letter-spacing: 0.4em; text-transform: uppercase; color: #7A756D; display: block; margin-bottom: 0.75rem;">Selected Works</span>
-        <h1 style="font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 400; letter-spacing: 0.05em; text-transform: uppercase; color: #2C2A29; margin: 0;">Portfolio & Series</h1>
-        <div style="width: 3rem; height: 1px; background-color: #C5BEB0; margin: 1.5rem auto 0 auto;"></div>
+      <!-- Section Header -->
+      <div style="text-align: center; margin-bottom: 3.5rem;">
+        <span style="font-size: 0.65rem; letter-spacing: 0.4em; text-transform: uppercase; color: #7A756D; display: block; margin-bottom: 0.75rem;">Interactive Exploration</span>
+        <h1 style="font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; color: #2C2A29; margin: 0;">Take a Closer Look.</h1>
+        <div style="width: 2.5rem; height: 1px; background-color: #C5BEB0; margin: 1.25rem auto 0 auto;"></div>
       </div>
 
-      <!-- Portfolio Grid (Apple Style Showcase Cards) -->
-      <div style="display: flex; flex-direction: column; gap: 4rem;">
+      <!-- Apple-Style Interactive Grid & Showcase Container -->
+      <div style="background-color: rgba(235, 230, 218, 0.85); backdrop-filter: blur(16px); border: 1px solid #DDD6C8; border-radius: 4px; padding: 2.5rem; box-shadow: 0 20px 40px rgba(0,0,0,0.03);">
         
-        <!-- Project Item 1 -->
-        <article style="background-color: rgba(235, 230, 218, 0.85); backdrop-filter: blur(16px); border: 1px solid #DDD6C8; border-radius: 4px; overflow: hidden; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); box-shadow: 0 20px 40px rgba(0,0,0,0.02);">
-          <div style="padding: 4rem 3rem; display: flex; flex-direction: column; justify-content: center;">
-            <span style="font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase; color: #7A756D; display: block; margin-bottom: 0.75rem;">Architectural Series</span>
-            <h2 style="font-family: 'Playfair Display', serif; font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 400; color: #2C2A29; margin: 0 0 1.25rem 0; line-height: 1.2;">Spatial Harmony & Structure</h2>
-            <p style="font-size: 0.95rem; font-weight: 300; color: #5C5750; line-height: 1.7; margin: 0 0 2.5rem 0;">Exploration of modern minimalist spatial layouts, timber pergolas, and structural integration designed for contemporary residential properties with absolute clarity.</p>
-            <div>
-              <a href="/contact" style="font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: #2C2A29; font-weight: 500; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid #2C2A29; padding-bottom: 2px;">
-                Inquire About Series &rarr;
-              </a>
+        <!-- Tab Grid -->
+        <div id="tab-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; margin-bottom: 2.5rem;">
+          
+          <!-- Tab 1: Architectural Study (Active) -->
+          <div class="portfolio-tab active" data-title="Architectural Study" data-desc="Precision lighting and modern structural composition capturing high-end design lines." data-img="/hero-bg.png" style="background-color: #E8E2D5; border: 1px solid #C5BEB0; padding: 1.25rem 1rem; cursor: pointer; transition: all 0.2s ease;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <span style="font-size: 0.75rem; font-weight: 500; letter-spacing: 0.05em; color: #2C2A29;">Architectural Study</span>
+              <span style="font-size: 0.85rem; color: #7A756D;">&rarr;</span>
             </div>
+            <p style="font-size: 0.7rem; color: #5C5750; line-height: 1.5; margin: 0.75rem 0 0 0;">Precision lighting and modern structural composition capturing high-end design lines.</p>
           </div>
-          <div style="min-height: 320px; background-image: url('/hero-bg.png'); background-size: cover; background-position: center; border-left: 1px solid #DDD6C8; filter: grayscale(80%) contrast(120%);"></div>
-        </article>
 
-        <!-- Project Item 2 -->
-        <article style="background-color: rgba(235, 230, 218, 0.85); backdrop-filter: blur(16px); border: 1px solid #DDD6C8; border-radius: 4px; overflow: hidden; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); box-shadow: 0 20px 40px rgba(0,0,0,0.02);">
-          <div style="min-height: 320px; background-image: url('/hero-bg.png'); background-size: cover; background-position: center; border-right: 1px solid #DDD6C8; filter: grayscale(80%) contrast(120%); order: 2; /* responsive flip on desktop */"></div>
-          <div style="padding: 4rem 3rem; display: flex; flex-direction: column; justify-content: center; order: 1;">
-            <span style="font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase; color: #7A756D; display: block; margin-bottom: 0.75rem;">Digital Architecture</span>
-            <h2 style="font-family: 'Playfair Display', serif; font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 400; color: #2C2A29; margin: 0 0 1.25rem 0; line-height: 1.2;">E-Guard Security Platform</h2>
-            <p style="font-size: 0.95rem; font-weight: 300; color: #5C5750; line-height: 1.7; margin: 0 0 2.5rem 0;">Full-stack web architecture and high-performance custom client portals engineered with precision, exceptional speed, and clean modern aesthetics.</p>
-            <div>
-              <a href="/contact" style="font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: #2C2A29; font-weight: 500; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid #2C2A29; padding-bottom: 2px;">
-                Inquire About Series &rarr;
-              </a>
+          <!-- Tab 2: Editorial Portraiture -->
+          <div class="portfolio-tab" data-title="Editorial Portraiture" data-desc="Intimate storytelling through refined framing, natural tonality, and timeless contrast." data-img="/hero-bg.png" style="background-color: rgba(255,255,255,0.4); border: 1px solid #DDD6C8; padding: 1.25rem 1rem; cursor: pointer; transition: all 0.2s ease;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <span style="font-size: 0.75rem; font-weight: 400; letter-spacing: 0.05em; color: #2C2A29;">Editorial Portraiture</span>
+              <span style="font-size: 0.85rem; color: #7A756D;">&ndash;</span>
             </div>
           </div>
-        </article>
 
-        <!-- Project Item 3 -->
-        <article style="background-color: rgba(235, 230, 218, 0.85); backdrop-filter: blur(16px); border: 1px solid #DDD6C8; border-radius: 4px; overflow: hidden; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); box-shadow: 0 20px 40px rgba(0,0,0,0.02);">
-          <div style="padding: 4rem 3rem; display: flex; flex-direction: column; justify-content: center;">
-            <span style="font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase; color: #7A756D; display: block; margin-bottom: 0.75rem;">Bespoke Visual Arts</span>
-            <h2 style="font-family: 'Playfair Display', serif; font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 400; color: #2C2A29; margin: 0 0 1.25rem 0; line-height: 1.2;">Minnaar-Matthews Photography</h2>
-            <p style="font-size: 0.95rem; font-weight: 300; color: #5C5750; line-height: 1.7; margin: 0 0 2.5rem 0;">Curated visual storytelling, fine-art editorial branding, and bespoke spatial showcases captured through timeless creative direction.</p>
-            <div>
-              <a href="/contact" style="font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: #2C2A29; font-weight: 500; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid #2C2A29; padding-bottom: 2px;">
-                Inquire About Series &rarr;
-              </a>
+          <!-- Tab 3: Spatial Composition -->
+          <div class="portfolio-tab" data-title="Spatial Composition" data-desc="Harmonizing interior architecture, ambient light, and organic textures into balanced frames." data-img="/hero-bg.png" style="background-color: rgba(255,255,255,0.4); border: 1px solid #DDD6C8; padding: 1.25rem 1rem; cursor: pointer; transition: all 0.2s ease;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <span style="font-size: 0.75rem; font-weight: 400; letter-spacing: 0.05em; color: #2C2A29;">Spatial Composition</span>
+              <span style="font-size: 0.85rem; color: #7A756D;">&ndash;</span>
             </div>
           </div>
-          <div style="min-height: 320px; background-image: url('/hero-bg.png'); background-size: cover; background-position: center; border-left: 1px solid #DDD6C8; filter: grayscale(80%) contrast(120%);"></div>
-        </article>
+
+          <!-- Tab 4: Studio Narrative -->
+          <div class="portfolio-tab" data-title="Studio Narrative" data-desc="Behind-the-lens creative processes and documentary visual studies." data-img="/hero-bg.png" style="background-color: rgba(255,255,255,0.4); border: 1px solid #DDD6C8; padding: 1.25rem 1rem; cursor: pointer; transition: all 0.2s ease;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <span style="font-size: 0.75rem; font-weight: 400; letter-spacing: 0.05em; color: #2C2A29;">Studio Narrative</span>
+              <span style="font-size: 0.85rem; color: #7A756D;">&ndash;</span>
+            </div>
+          </div>
+
+          <!-- Tab 5: Light & Texture -->
+          <div class="portfolio-tab" data-title="Light & Texture" data-desc="Deep exploration of shadow, grain, surface materials, and atmospheric interplay." data-img="/hero-bg.png" style="background-color: rgba(255,255,255,0.4); border: 1px solid #DDD6C8; padding: 1.25rem 1rem; cursor: pointer; transition: all 0.2s ease;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <span style="font-size: 0.75rem; font-weight: 400; letter-spacing: 0.05em; color: #2C2A29;">Light & Texture</span>
+              <span style="font-size: 0.85rem; color: #7A756D;">&ndash;</span>
+            </div>
+          </div>
+
+          <!-- Tab 6: Cinematic Series -->
+          <div class="portfolio-tab" data-title="Cinematic Series" data-desc="Large-scale visual storytelling curated for immersive brand experiences." data-img="/hero-bg.png" style="background-color: rgba(255,255,255,0.4); border: 1px solid #DDD6C8; padding: 1.25rem 1rem; cursor: pointer; transition: all 0.2s ease;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <span style="font-size: 0.75rem; font-weight: 400; letter-spacing: 0.05em; color: #2C2A29;">Cinematic Series</span>
+              <span style="font-size: 0.85rem; color: #7A756D;">&ndash;</span>
+            </div>
+          </div>
+
+          <!-- Tab 7: High-End Commercial -->
+          <div class="portfolio-tab" data-title="High-End Commercial" data-desc="Bespoke visual assets engineered for luxury client campaigns and portfolios." data-img="/hero-bg.png" style="background-color: rgba(255,255,255,0.4); border: 1px solid #DDD6C8; padding: 1.25rem 1rem; cursor: pointer; transition: all 0.2s ease;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <span style="font-size: 0.75rem; font-weight: 400; letter-spacing: 0.05em; color: #2C2A29;">High-End Commercial</span>
+              <span style="font-size: 0.85rem; color: #7A756D;">&ndash;</span>
+            </div>
+          </div>
+
+          <!-- Tab 8: Curated Visuals -->
+          <div class="portfolio-tab" data-title="Curated Visuals" data-desc="Handpicked selections celebrating aesthetic harmony and structural elegance." data-img="/hero-bg.png" style="background-color: rgba(255,255,255,0.4); border: 1px solid #DDD6C8; padding: 1.25rem 1rem; cursor: pointer; transition: all 0.2s ease;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <span style="font-size: 0.75rem; font-weight: 400; letter-spacing: 0.05em; color: #2C2A29;">Curated Visuals</span>
+              <span style="font-size: 0.85rem; color: #7A756D;">&ndash;</span>
+            </div>
+          </div>
+
+          <!-- Tab 9: Master Archive -->
+          <div class="portfolio-tab" data-title="Master Archive" data-desc="Comprehensive collection of historical works, studies, and foundational projects." data-img="/hero-bg.png" style="background-color: rgba(255,255,255,0.4); border: 1px solid #DDD6C8; padding: 1.25rem 1rem; cursor: pointer; transition: all 0.2s ease;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <span style="font-size: 0.75rem; font-weight: 400; letter-spacing: 0.05em; color: #2C2A29;">Master Archive</span>
+              <span style="font-size: 0.85rem; color: #7A756D;">&ndash;</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Featured Display Frame -->
+        <div style="border: 1px solid #DDD6C8; background-color: #FFFFFF; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.04);">
+          <div style="min-height: 420px; max-height: 550px; background-image: url('/hero-bg.png'); background-size: cover; background-position: center; display: flex; align-items: flex-end; padding: 3rem;">
+            <!-- Optional overlay description card if needed -->
+          </div>
+        </div>
 
       </div>
 
@@ -90,6 +130,36 @@
     <footer style="position: relative; z-index: 10; padding: 2rem 3rem; text-align: center; font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; border-top: 1px solid #E3DED4; color: #7A756D; background-color: rgba(245, 242, 235, 0.9);">
       &copy; 2026 Minnaar-Matthews Creative House. All Rights Reserved.
     </footer>
+
+    <!-- Interactive Tab Script -->
+    <script>
+      const tabs = document.querySelectorAll('.portfolio-tab');
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => {
+            t.style.backgroundColor = 'rgba(255,255,255,0.4)';
+            t.style.borderColor = '#DDD6C8';
+            const span = t.querySelector('span:nth-child(2)');
+            if(span) span.textContent = '–';
+            const p = t.querySelector('p');
+            if(p) p.remove();
+          });
+          tab.style.backgroundColor = '#E8E2D5';
+          tab.style.borderColor = '#C5BEB0';
+          const span = tab.querySelector('span:nth-child(2)');
+          if(span) span.textContent = '→';
+          
+          const title = tab.getAttribute('data-title');
+          const desc = tab.getAttribute('data-desc');
+          if(!tab.querySelector('p')) {
+            const p = document.createElement('p');
+            p.style.cssText = 'font-size: 0.7rem; color: #5C5750; line-height: 1.5; margin: 0.75rem 0 0 0;';
+            p.textContent = desc;
+            tab.appendChild(p);
+          }
+        });
+      });
+    </script>
 
   </body>
 </html>
