@@ -1,15 +1,89 @@
 ---
-// Contact Page
+// Contact Page - Minnaar-Matthews Creative House
 ---
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact | Minnaar-Matthews</title>
+    <title>Contact & Bookings | Minnaar-Matthews</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-[#1C1B1A] text-[#F4F1EA] p-10 font-sans">
-    <a href="/" class="text-sm underline mb-8 inline-block">&larr; Back to Home</a>
-    <h1 class="text-4xl font-serif font-bold">Contact Us</h1>
-    <p class="mt-4 text-gray-300">Get in touch with Minnaar-Matthews Creative House.</p>
+  <body style="background-color: #F5F2EB; color: #2C2A29; font-family: 'Jost', sans-serif; margin: 0; min-height: 100vh; display: flex; flex-direction: column;">
+    
+    <!-- Fixed Atmospheric Background Visual -->
+    <div style="position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: 0.15; background-image: url('/hero-bg.png'); background-size: cover; background-position: center; filter: grayscale(100%) contrast(125%);"></div>
+
+    <!-- Header Navigation -->
+    <header style="position: relative; z-index: 10; padding: 2rem 3rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(227, 222, 212, 0.8); background-color: rgba(245, 242, 235, 0.9);">
+      <a href="/" style="font-family: 'Playfair Display', serif; letter-spacing: 0.2em; font-size: 1.125rem; text-transform: uppercase; color: #2C2A29; text-decoration: none; font-weight: bold;">Minnaar-Matthews</a>
+      <a href="/" style="font-size: 0.75rem; letter-spacing: 0.35em; text-transform: uppercase; color: #2C2A29; text-decoration: none;">&larr; Back to Home</a>
+    </header>
+
+    <!-- Main Content Area -->
+    <main style="position: relative; z-index: 10; flex-grow: 1; width: 100%; max-width: 55rem; margin: 0 auto; padding: 5rem 2rem 8rem 2rem;">
+      
+      <!-- Page Title Section -->
+      <div style="text-align: center; margin-bottom: 4rem;">
+        <span style="font-size: 0.75rem; letter-spacing: 0.4em; text-transform: uppercase; color: #7A756D; display: block; margin-bottom: 0.75rem;">Get in Touch</span>
+        <h1 style="font-family: 'Playfair Display', serif; font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 400; letter-spacing: 0.05em; text-transform: uppercase; color: #2C2A29; margin: 0;">Inquiries & Bookings</h1>
+        <div style="width: 3rem; height: 1px; background-color: #C5BEB0; margin: 1.5rem auto 0 auto;"></div>
+      </div>
+
+      <!-- Quick WhatsApp Booking Banner -->
+      <div style="background-color: rgba(235, 230, 218, 0.85); backdrop-filter: blur(12px); border: 1px solid #DDD6C8; padding: 2.5rem; text-align: center; margin-bottom: 3rem;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 500; margin: 0 0 0.75rem 0; color: #2C2A29;">Prefer instant communication?</h2>
+        <p style="font-size: 0.9rem; color: #5C5750; font-weight: 300; margin-bottom: 1.5rem;">Connect with us directly via WhatsApp to discuss your project or schedule a session.</p>
+        <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" style="display: inline-block; background-color: #2C2A29; color: #F5F2EB; padding: 0.875rem 2.25rem; font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; text-decoration: none; transition: background-color 0.3s ease;">
+          Book Session via WhatsApp &rarr;
+        </a>
+      </div>
+
+      <!-- Contact Form Container -->
+      <div style="background-color: rgba(235, 230, 218, 0.85); backdrop-filter: blur(12px); border: 1px solid #DDD6C8; padding: 3rem 2.5rem;">
+        <form style="display: flex; flex-direction: column; gap: 2rem;">
+          
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem;">
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+              <label for="name" style="font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: #5C5750;">Full Name</label>
+              <input type="text" id="name" name="name" required style="background-color: rgba(245, 242, 235, 0.9); border: 1px solid #DDD6C8; padding: 0.875rem 1rem; color: #2C2A29; font-family: 'Jost', sans-serif; font-size: 0.95rem; outline: none;" />
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+              <label for="email" style="font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: #5C5750;">Email Address</label>
+              <input type="email" id="email" name="email" required style="background-color: rgba(245, 242, 235, 0.9); border: 1px solid #DDD6C8; padding: 0.875rem 1rem; color: #2C2A29; font-family: 'Jost', sans-serif; font-size: 0.95rem; outline: none;" />
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <label for="service" style="font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: #5C5750;">Service / Series Interest</label>
+            <select id="service" name="service" style="background-color: rgba(245, 242, 235, 0.9); border: 1px solid #DDD6C8; padding: 0.875rem 1rem; color: #2C2A29; font-family: 'Jost', sans-serif; font-size: 0.95rem; outline: none;">
+              <option value="architectural">Architectural & Spatial Series</option>
+              <option value="editorial">Editorial Direction</option>
+              <option value="digital">Digital Architecture & Web Development</option>
+              <option value="bespoke">Bespoke Craft & Brand Showcase</option>
+            </select>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <label for="message" style="font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: #5C5750;">Project Details / Message</label>
+            <textarea id="message" name="message" rows="5" required style="background-color: rgba(245, 242, 235, 0.9); border: 1px solid #DDD6C8; padding: 0.875rem 1rem; color: #2C2A29; font-family: 'Jost', sans-serif; font-size: 0.95rem; outline: none; resize: vertical;"></textarea>
+          </div>
+
+          <button type="submit" style="background-color: #2C2A29; color: #F5F2EB; border: none; padding: 1rem 2rem; font-size: 0.75rem; letter-spacing: 0.35em; text-transform: uppercase; cursor: pointer; transition: background-color 0.3s ease; align-self: flex-start; margin-top: 1rem;">
+            Send Inquiry
+          </button>
+
+        </form>
+      </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer style="position: relative; z-index: 10; padding: 2rem 3rem; text-align: center; font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; border-top: 1px solid #E3DED4; color: #7A756D; background-color: rgba(245, 242, 235, 0.9);">
+      &copy; 2026 Minnaar-Matthews Creative House. All Rights Reserved.
+    </footer>
+
   </body>
 </html>
