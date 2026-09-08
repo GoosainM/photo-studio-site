@@ -63,12 +63,8 @@
         e.preventDefault();
         window.scrollTo({ top: 0, behavior: 'smooth' });
         menuOverlay?.classList.remove('active');
-      } else if (section === 'Portfolio' || section === 'Review' || section === 'Contact') {
-        // Lets them naturally navigate to their respective pages (/portfolio, /review, /contact)
-        return;
       } else {
-        e.preventDefault();
-        alert('Navigating to: ' + section);
+        // Allows standard page navigation to /portfolio, /review, and /contact
         menuOverlay?.classList.remove('active');
       }
     });
