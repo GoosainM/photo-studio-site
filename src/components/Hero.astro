@@ -2,21 +2,15 @@
 // Hero.astro for Minnaar-Matthews Creative House
 ---
 
-<section id="hero" class="relative w-full mt-20 bg-[#F4F1EA] flex items-center justify-center overflow-hidden" style="height: 70vh;">
-  <div class="w-full h-full flex items-center justify-center p-4">
+<section id="hero" class="relative w-full h-[70vh] md:h-[88vh] mt-20 bg-[#F4F1EA] overflow-hidden">
+  <!-- Full-Width Background Image Layer -->
+  <div class="absolute inset-0 w-full h-full">
     <img 
       src="/hero-bg.png" 
       alt="Minnaar-Matthews Creative House Showcase" 
-      class="object-contain object-center shadow-sm"
-      style="width: auto; height: auto; max-width: 85%; max-height: 75vh;"
+      class="w-full h-full object-cover object-center"
     />
+    <!-- Subtle warm overlay to blend it perfectly with the Egyptian Cotton tone -->
+    <div class="absolute inset-0 bg-[#F4F1EA]/15"></div>
   </div>
 </section>
-
-<style>
-  @media (min-width: 768px) {
-    #hero {
-      height: 85vh;
-    }
-  }
-</style>
