@@ -13,19 +13,18 @@
   </head>
   <body class="bg-[#1C1B1A] text-[#F4F1EA] m-0 p-0 overflow-hidden">
     <main class="w-screen h-screen">
-      <section id="hero" class="relative w-full h-full flex flex-col items-center justify-center overflow-hidden m-0 p-0 bg-image">
-        <!-- Optional dark overlay -->
-        <div class="absolute inset-0 bg-black/30 pointer-events-none"></div>
+      <section id="hero" class="relative w-full h-full flex flex-col items-center justify-center overflow-hidden m-0 p-0">
+        
+        <!-- Fullscreen Background Image Layer -->
+        <div class="absolute inset-0 z-0">
+          <img 
+            src="/bg.jpeg" 
+            alt="" 
+            class="w-full h-full object-cover object-center"
+          />
+        </div>
+
       </section>
     </main>
   </body>
 </html>
-
-<style>
-  .bg-image {
-    background-image: url('/bg.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-</style>
