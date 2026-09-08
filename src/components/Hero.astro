@@ -17,7 +17,7 @@
       <li><a href="#about" class="nav-link" data-section="About Us">About Us</a></li>
       <li><a href="#portfolio" class="nav-link" data-section="Portfolio">Portfolio</a></li>
       <li><a href="#review" class="nav-link" data-section="Review">Review</a></li>
-      <li><a href="#contact" class="nav-link" data-section="Contact">Contact</a></li>
+      <li><a href="/contact" class="nav-link" data-section="Contact">Contact</a></li>
     </ul>
   </div>
 </div>
@@ -58,12 +58,16 @@
 
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
-      e.stopPropagation();
       const section = link.getAttribute('data-section');
       if (section === 'Home') {
+        e.preventDefault();
         window.scrollTo({ top: 0, behavior: 'smooth' });
         menuOverlay?.classList.remove('active');
+      } else if (section === 'Contact') {
+        // Lets it naturally navigate to /contact (contact.astro)
+        return;
       } else {
+        e.preventDefault();
         alert('Navigating to: ' + section);
         menuOverlay?.classList.remove('active');
       }
