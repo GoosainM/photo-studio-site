@@ -20,58 +20,69 @@
         pointer-events: none;
         width: 8px;
         height: 8px;
-        background-color: #D4AF37; /* Elegant gold accent */
+        background-color: #D4AF37;
         border-radius: 50%;
         box-shadow: 0 0 8px #D4AF37;
         animation: sparklePop 0.6s ease-out forwards;
         z-index: 9999;
       }
+      *, *::before, *::after { box-sizing: border-box; }
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #000000;
+        color: #FFFFFF;
+        font-family: 'Jost', sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+      }
     </style>
   </head>
-  <body style="margin: 0; padding: 0; background-color: #F5F2EB; color: #2C2A29; font-family: 'Jost', sans-serif; min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden;">
+  <body>
     
-    <!-- Background Audio (Chic Ambient Track) -->
+    <!-- Background Audio -->
     <audio id="bg-audio" loop>
       <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf756.mp3?filename=gentle-jazz-lofi-111181.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- Fixed Atmospheric Background Visual -->
-    <div style="position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: 0.15; background-image: url('/hero-bg.png'); background-size: cover; background-position: center; filter: grayscale(100%) contrast(125%);"></div>
+    <!-- Top Floating Minimal Nav & Audio Control -->
+    <header style="position: absolute; top: 0; left: 0; width: 100%; z-index: 50; display: flex; justify-content: space-between; align-items: center; padding: 2rem 3rem;">
+      <!-- Audio Toggle -->
+      <button id="audio-toggle" style="background: rgba(0,0,0,0.4); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.3); padding: 0.4rem 0.8rem; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; color: #FFFFFF; display: flex; align-items: center; gap: 0.4rem;">
+        <span id="audio-icon">&#9834;</span> <span id="audio-text">Sound</span>
+      </button>
 
-    <!-- Header Navigation -->
-    <header style="position: relative; z-index: 10; padding: 2rem 3rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(227, 222, 212, 0.8); background-color: rgba(245, 242, 235, 0.9);">
-      <a href="/" style="font-family: 'Playfair Display', serif; letter-spacing: 0.2em; font-size: 1.125rem; text-transform: uppercase; color: #2C2A29; text-decoration: none; font-weight: bold;">Minnaar-Matthews</a>
-      
-      <div style="display: flex; gap: 2rem; align-items: center;">
-        <!-- Audio Toggle Control -->
-        <button id="audio-toggle" style="background: none; border: 1px solid #C5BEB0; padding: 0.4rem 0.8rem; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; color: #5C5750; display: flex; align-items: center; gap: 0.4rem;">
-          <span id="audio-icon">&#9834;</span> <span id="audio-text">Play Audio</span>
-        </button>
-
-        <a href="/portfolio" style="font-size: 0.75rem; letter-spacing: 0.35em; text-transform: uppercase; color: #2C2A29; text-decoration: none;">Portfolio</a>
-        <a href="/contact" style="font-size: 0.75rem; letter-spacing: 0.35em; text-transform: uppercase; color: #2C2A29; text-decoration: none;">Inquiries</a>
+      <!-- Navigation Links -->
+      <div style="display: flex; gap: 2rem;">
+        <a href="/portfolio" style="color: #FFFFFF; text-decoration: none; font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Portfolio</a>
+        <a href="/contact" style="color: #FFFFFF; text-decoration: none; font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Inquiries</a>
       </div>
     </header>
 
-    <!-- Main Content Area -->
-    <main style="position: relative; z-index: 10; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 5rem 2rem;">
-      <span style="font-size: 0.75rem; letter-spacing: 0.4em; text-transform: uppercase; color: #7A756D; display: block; margin-bottom: 1rem;">Creative House</span>
-      <h1 style="font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: #2C2A29; margin: 0 0 1.5rem 0;">Minnaar-Matthews</h1>
-      <div style="width: 3rem; height: 1px; background-color: #C5BEB0; margin: 0 auto 2rem auto;"></div>
-      <p style="font-size: 1rem; font-weight: 300; color: #5C5750; letter-spacing: 0.05em; max-width: 32rem; line-height: 1.7; margin: 0 auto 3rem auto;">Bespoke visual architecture, spatial compositions, and digital experiences crafted with uncompromising precision.</p>
+    <!-- Full-Screen Immersive Hero Section matching reference image -->
+    <main style="position: relative; width: 100vw; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; overflow: hidden;">
       
-      <div style="display: flex; gap: 1.5rem; justify-content: center;">
-        <a href="/portfolio" style="background-color: #2C2A29; color: #F5F2EB; border: none; padding: 1rem 2.5rem; font-size: 0.75rem; letter-spacing: 0.35em; text-transform: uppercase; text-decoration: none;">Explore Works</a>
-        <a href="/contact" style="background-color: transparent; color: #2C2A29; border: 1px solid #C5BEB0; padding: 1rem 2.5rem; font-size: 0.75rem; letter-spacing: 0.35em; text-transform: uppercase; text-decoration: none;">Get in Touch</a>
+      <!-- Background Hero Image -->
+      <div style="position: absolute; inset: 0; z-index: 1; background-image: url('/hero-bg.png'); background-size: cover; background-position: center; filter: grayscale(100%) contrast(120%);"></div>
+      
+      <!-- Subtle Dark Overlay for contrast -->
+      <div style="position: absolute; inset: 0; z-index: 2; background-color: rgba(0,0,0,0.25);"></div>
+
+      <!-- Centered Branding Typography -->
+      <div style="position: relative; z-index: 10; display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+        <h1 style="font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 4rem); font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: #FFFFFF; margin: 0; text-shadow: 0 4px 12px rgba(0,0,0,0.4);">
+          Minnaar-Matthews
+        </h1>
+        <span style="font-size: 0.65rem; letter-spacing: 0.5em; text-transform: uppercase; color: rgba(255,255,255,0.85); text-shadow: 0 2px 6px rgba(0,0,0,0.5);">
+          Creative House
+        </span>
       </div>
+
     </main>
 
-    <!-- Footer -->
-    <footer style="position: relative; z-index: 10; padding: 2rem 3rem; text-align: center; font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; border-top: 1px solid #E3DED4; color: #7A756D; background-color: rgba(245, 242, 235, 0.9);">
-      &copy; 2026 Minnaar-Matthews Creative House. All Rights Reserved.
-    </footer>
-
-    <!-- Interactive Script for Audio & Sparkle Effect -->
+    <!-- Interactive Script for Audio & Sparkles -->
     <script>
       const audio = document.getElementById('bg-audio');
       const audioToggle = document.getElementById('audio-toggle');
@@ -83,18 +94,18 @@
         if (!isPlaying) {
           audio.play().then(() => {
             isPlaying = true;
-            audioText.textContent = 'Pause Audio';
+            audioText.textContent = 'Pause';
             audioIcon.innerHTML = '&#9612;&#9612;';
           }).catch(e => console.log("Audio play blocked:", e));
         } else {
           audio.pause();
           isPlaying = false;
-          audioText.textContent = 'Play Audio';
+          audioText.textContent = 'Sound';
           audioIcon.innerHTML = '&#9834;';
         }
       });
 
-      // Sparkle Effect on Click for Menu Buttons & Links
+      // Sparkle Effect on Click
       document.addEventListener('click', (e) => {
         const target = e.target.closest('a, button');
         if (target) {
