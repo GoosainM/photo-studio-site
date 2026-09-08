@@ -1,20 +1,17 @@
 ---
 // Hero.astro for Minnaar-Matthews Creative House
-import { Image } from 'astro:assets';
-import heroBg from '../assets/hero-bg.png';
 ---
 
-<section id="corporate" class="relative pt-28 pb-16 md:pt-48 md:pb-32 text-[#1C1B1A] px-4 md:px-6 overflow-hidden w-full min-h-[85vh] flex items-center">
+<section id="corporate" class="relative pt-28 pb-16 md:pt-48 md:pb-32 text-[#1C1B1A] px-4 md:px-6 overflow-hidden w-full min-h-[85vh] flex items-center bg-[#DCD7CD]">
   
   <!-- Full-Bleed Background Image Layer -->
   <div class="absolute inset-0 z-0">
-    <Image 
-      src={heroBg} 
+    <img 
+      src="/hero-bg.png" 
       alt="Minnaar-Matthews Creative House Background" 
       class="w-full h-full object-cover object-center"
-      quality={85}
     />
-    <!-- Much lighter tint overlay so the photography background is clearly visible -->
+    <!-- Light tint overlay so the photography background is clearly visible -->
     <div class="absolute inset-0 bg-[#F4F1EA]/45 backdrop-blur-[0.5px]"></div>
   </div>
 
