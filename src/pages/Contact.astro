@@ -1,104 +1,15 @@
 ---
+// Contact Page
 ---
-<section id="contact" class="py-20 bg-neutral-950 text-white px-6 border-t border-neutral-900">
-  <div class="max-w-4xl mx-auto">
-    <div class="text-center mb-12">
-      <p class="text-xs font-mono uppercase tracking-widest text-neutral-400 mb-2">ENQUIRE</p>
-      <h2 class="font-serif text-3xl md:text-4xl font-bold tracking-tight">Request a Shoot Quote</h2>
-    </div>
-
-    <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
-      <!-- Web3Forms Access Key -->
-      <input type="hidden" name="access_key" value="7ccd0b54-a506-45ef-85ab-4a13b570d3a3" />
-      
-      <!-- Customized Subject Line for Incoming Emails -->
-      <input type="hidden" name="subject" value="New Photography Shoot Enquiry" />
-
-      <!-- Website Source Tag -->
-      <input type="hidden" name="from_name" value="Matthews Studio Website" />
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- FULL NAME -->
-        <div>
-          <label class="block text-[10px] font-mono uppercase tracking-widest text-neutral-400 mb-2" for="name">
-            FULL NAME *
-          </label>
-          <input 
-            type="text" 
-            id="name" 
-            name="Full Name" 
-            required 
-            class="w-full bg-neutral-900 border border-neutral-800 rounded-none px-4 py-3 text-sm text-white focus:outline-none focus:border-neutral-500 transition-colors"
-          />
-        </div>
-
-        <!-- COMPANY / ORGANIZATION -->
-        <div>
-          <label class="block text-[10px] font-mono uppercase tracking-widest text-neutral-400 mb-2" for="company">
-            COMPANY / ORGANIZATION
-          </label>
-          <input 
-            type="text" 
-            id="company" 
-            name="Company / Organization" 
-            class="w-full bg-neutral-900 border border-neutral-800 rounded-none px-4 py-3 text-sm text-white focus:outline-none focus:border-neutral-500 transition-colors"
-          />
-        </div>
-
-        <!-- EMAIL -->
-        <div>
-          <label class="block text-[10px] font-mono uppercase tracking-widest text-neutral-400 mb-2" for="email">
-            EMAIL *
-          </label>
-          <input 
-            type="email" 
-            id="email" 
-            name="Email Address" 
-            required 
-            class="w-full bg-neutral-900 border border-neutral-800 rounded-none px-4 py-3 text-sm text-white focus:outline-none focus:border-neutral-500 transition-colors"
-          />
-        </div>
-
-        <!-- PRIMARY SHOOTING TYPE -->
-        <div>
-          <label class="block text-[10px] font-mono uppercase tracking-widest text-neutral-400 mb-2" for="shoot_type">
-            PRIMARY SHOOTING TYPE
-          </label>
-          <select 
-            id="shoot_type" 
-            name="Primary Shooting Type" 
-            class="w-full bg-neutral-900 border border-neutral-800 rounded-none px-4 py-3 text-sm text-white focus:outline-none focus:border-neutral-500 transition-colors"
-          >
-            <option value="Executive Headshots (On-site)">Executive Headshots (On-site)</option>
-            <option value="Corporate Culture & Campaign">Corporate Culture & Campaign</option>
-            <option value="Commercial & Brand Photography">Commercial & Brand Photography</option>
-            <option value="Studio Portraiture">Studio Portraiture</option>
-            <option value="Other / Event Photography">Other / Event Photography</option>
-          </select>
-        </div>
-      </div>
-
-      <!-- PROJECT DETAILS & DATES -->
-      <div>
-        <label class="block text-[10px] font-mono uppercase tracking-widest text-neutral-400 mb-2" for="message">
-          PROJECT DETAILS & DATES
-        </label>
-        <textarea 
-          id="message" 
-          name="Project Details & Dates" 
-          rows="4" 
-          placeholder="Tell us about the scope, team size, location preference, or turnaround deadlines..." 
-          class="w-full bg-neutral-900 border border-neutral-800 rounded-none px-4 py-3 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-neutral-500 transition-colors"
-        ></textarea>
-      </div>
-
-      <!-- SUBMIT BUTTON -->
-      <button 
-        type="submit" 
-        class="w-full bg-white text-black text-xs font-semibold uppercase tracking-wider py-4 hover:bg-neutral-200 transition-colors cursor-pointer"
-      >
-        SUBMIT BOOKING ENQUIRY
-      </button>
-    </form>
-  </div>
-</section>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Minnaar-Matthews</title>
+  </head>
+  <body class="bg-[#1C1B1A] text-[#F4F1EA] p-10 font-sans">
+    <a href="/" class="text-sm underline mb-8 inline-block">&larr; Back to Home</a>
+    <h1 class="text-4xl font-serif font-bold">Contact Us</h1>
+    <p class="mt-4 text-gray-300">Get in touch with Minnaar-Matthews Creative House.</p>
+  </body>
+</html>
