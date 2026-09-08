@@ -11,10 +11,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Jost:wght@400;500&display=swap" rel="stylesheet">
     <title>Minnaar-Matthews | Creative House</title>
   </head>
-  <body class="bg-[#0d0d0c] text-[#f6f4ef] m-0 p-0 overflow-x-hidden">
+  <body class="bg-[#F4F1EA] text-[#1C1B1A] m-0 p-0 overflow-x-hidden">
     <main>
-      <section id="hero" class="relative w-full h-screen bg-[#0d0d0c] flex items-center justify-center overflow-hidden m-0 p-0">
-        <div id="stage" class="stage">
+      <section id="hero" class="relative w-full h-screen bg-[#F4F1EA] flex items-center justify-center overflow-hidden m-0 p-0">
+        
+        <a 
+          href="https://wa.me/27817586537?text=Hi%20Melissa!%20I'd%20like%20to%20enquire%20about%20booking%20a%20photography%20session." 
+          target="_blank" 
+          rel="noopener noreferrer"
+          id="stage" 
+          class="stage group"
+          aria-label="Book Session on WhatsApp"
+        >
           <div class="bg"></div>
           <div class="plaque" id="plaque">
             <div class="glass"></div>
@@ -25,9 +33,11 @@
             </div>
             <div class="wordmark-bar"><span>MINNAAR&nbsp;-&nbsp;MATTHEWS</span></div>
             <div class="tagline">CREATIVE HOUSE</div>
+            <div class="cta-badge">Click to Book Session →</div>
           </div>
-        </div>
-        <div class="hint">Move your cursor to tilt the logo</div>
+        </a>
+
+        <div class="hint">Move your cursor to tilt • Click to Book</div>
       </section>
     </main>
   </body>
@@ -35,12 +45,14 @@
 
 <style>
   :root {
-    --ink: #1b1b1a;
-    --cream: #f6f4ef;
+    --ink: #1C1B1A;
+    --cream: #F4F1EA;
+    --border-beige: #C5BCAB;
   }
 
   .stage {
     position: relative;
+    display: block;
     width: 100%;
     max-width: 1100px;
     aspect-ratio: 851/315;
@@ -48,13 +60,17 @@
     perspective: 1600px;
     border-radius: 6px;
     overflow: hidden;
-    box-shadow: 0 30px 60px -20px rgba(0,0,0,0.6);
+    box-shadow: 0 30px 60px -20px rgba(28, 27, 26, 0.15);
+    text-decoration: none;
+    cursor: pointer;
   }
 
   .bg {
     position: absolute;
     inset: 0;
-    background-color: #1b1b1a;
+    background-color: #E8E4DC;
+    border: 1px solid rgba(197, 188, 171, 0.5);
+    border-radius: 6px;
   }
 
   .plaque {
@@ -65,20 +81,25 @@
     height: 76%;
     transform: translate(-50%, -50%);
     transform-style: preserve-3d;
-    background: linear-gradient(135deg, rgba(246, 244, 239, 0.08) 0%, rgba(246, 244, 239, 0.02) 100%);
-    border: 1px solid rgba(246, 244, 239, 0.2);
+    background: linear-gradient(135deg, rgba(28, 27, 26, 0.04) 0%, rgba(28, 27, 26, 0.01) 100%);
+    border: 1px solid rgba(28, 27, 26, 0.15);
     border-radius: 4px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     animation: idleFloat 7s ease-in-out infinite;
+    transition: border-color 0.3s ease;
+  }
+
+  .stage:hover .plaque {
+    border-color: rgba(28, 27, 26, 0.35);
   }
 
   .glass {
     position: absolute;
     inset: 0;
-    background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.05) 50%, transparent 100%);
+    background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.4) 50%, transparent 100%);
     pointer-events: none;
   }
 
@@ -93,15 +114,15 @@
     font-family: 'Playfair Display', serif;
     font-weight: 900;
     font-size: clamp(2.5rem, 5vw, 4.5rem);
-    color: var(--cream);
+    color: var(--ink);
     letter-spacing: -0.02em;
-    text-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    text-shadow: 0 4px 12px rgba(28, 27, 26, 0.1);
   }
 
   .divider {
     width: 2px;
     height: 40px;
-    background: rgba(246, 244, 239, 0.4);
+    background: rgba(28, 27, 26, 0.3);
   }
 
   .wordmark-bar {
@@ -114,7 +135,7 @@
     font-weight: 500;
     font-size: clamp(0.6rem, 1.2vw, 0.9rem);
     letter-spacing: 0.35em;
-    color: var(--cream);
+    color: var(--ink);
     opacity: 0.9;
   }
 
@@ -124,8 +145,30 @@
     font-weight: 400;
     font-size: clamp(0.5rem, 0.9vw, 0.7rem);
     letter-spacing: 0.5em;
-    color: #c5bcab;
+    color: #6B6354;
     transform: translateZ(15px);
+  }
+
+  .cta-badge {
+    margin-top: 12px;
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: #F4F1EA;
+    border: 1px solid #C5BCAB;
+    padding: 6px 14px;
+    border-radius: 2px;
+    transform: translateZ(30px);
+    opacity: 0;
+    transition: opacity 0.3s ease, background 0.3s ease;
+  }
+
+  .stage:hover .cta-badge {
+    opacity: 1;
+    background: #E8E4DC;
   }
 
   .hint {
@@ -134,7 +177,7 @@
     font-family: 'Jost', sans-serif;
     font-size: 11px;
     letter-spacing: 0.2em;
-    color: rgba(246, 244, 239, 0.4);
+    color: #6B6354;
     text-transform: uppercase;
     pointer-events: none;
   }
