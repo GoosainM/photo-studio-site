@@ -1,16 +1,14 @@
 ---
 // Portfolio Page - Minnaar-Matthews Creative House
-import FeatureShowcase from '../components/FeatureShowcase.astro';
 ---
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio | Minnaar-Matthews</title>
+    <title>Portfolio & Works | Minnaar-Matthews</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body style="background-color: #F5F2EB; color: #2C2A29; font-family: 'Jost', sans-serif; margin: 0; min-height: 100vh; display: flex; flex-direction: column;">
     
@@ -20,21 +18,71 @@ import FeatureShowcase from '../components/FeatureShowcase.astro';
     <!-- Header Navigation -->
     <header style="position: relative; z-index: 10; padding: 2rem 3rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(227, 222, 212, 0.8); background-color: rgba(245, 242, 235, 0.9);">
       <a href="/" style="font-family: 'Playfair Display', serif; letter-spacing: 0.2em; font-size: 1.125rem; text-transform: uppercase; color: #2C2A29; text-decoration: none; font-weight: bold;">Minnaar-Matthews</a>
-      <a href="/" style="font-size: 0.75rem; letter-spacing: 0.35em; text-transform: uppercase; color: #2C2A29; text-decoration: none;">&larr; Back to Home</a>
+      <div style="display: flex; gap: 2rem; align-items: center;">
+        <a href="/contact" style="font-size: 0.75rem; letter-spacing: 0.35em; text-transform: uppercase; color: #2C2A29; text-decoration: none;">Inquiries</a>
+        <a href="/" style="font-size: 0.75rem; letter-spacing: 0.35em; text-transform: uppercase; color: #2C2A29; text-decoration: none;">&larr; Home</a>
+      </div>
     </header>
 
-    <!-- Main Portfolio Content -->
-    <main style="position: relative; z-index: 10; flex-grow: 1; width: 100%;">
+    <!-- Main Content Area -->
+    <main style="position: relative; z-index: 10; flex-grow: 1; width: 100%; max-width: 75rem; margin: 0 auto; padding: 5rem 2rem 8rem 2rem; box-sizing: border-box;">
       
       <!-- Page Title Section -->
-      <div style="text-align: center; margin: 5rem 0 3rem 0; padding: 0 2rem;">
-        <span style="font-size: 0.75rem; letter-spacing: 0.4em; text-transform: uppercase; color: #7A756D; display: block; margin-bottom: 0.75rem;">Curated Visual Archival</span>
-        <h1 style="font-family: 'Playfair Display', serif; font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 400; letter-spacing: 0.05em; text-transform: uppercase; color: #2C2A29; margin: 0;">Portfolio</h1>
+      <div style="text-align: center; margin-bottom: 5rem;">
+        <span style="font-size: 0.75rem; letter-spacing: 0.4em; text-transform: uppercase; color: #7A756D; display: block; margin-bottom: 0.75rem;">Selected Works</span>
+        <h1 style="font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 400; letter-spacing: 0.05em; text-transform: uppercase; color: #2C2A29; margin: 0;">Portfolio & Series</h1>
         <div style="width: 3rem; height: 1px; background-color: #C5BEB0; margin: 1.5rem auto 0 auto;"></div>
       </div>
 
-      <!-- Interactive Apple-Style Feature Showcase -->
-      <FeatureShowcase />
+      <!-- Portfolio Grid (Apple Style Showcase Cards) -->
+      <div style="display: flex; flex-direction: column; gap: 4rem;">
+        
+        <!-- Project Item 1 -->
+        <article style="background-color: rgba(235, 230, 218, 0.85); backdrop-filter: blur(16px); border: 1px solid #DDD6C8; border-radius: 4px; overflow: hidden; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); box-shadow: 0 20px 40px rgba(0,0,0,0.02);">
+          <div style="padding: 4rem 3rem; display: flex; flex-direction: column; justify-content: center;">
+            <span style="font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase; color: #7A756D; display: block; margin-bottom: 0.75rem;">Architectural Series</span>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 400; color: #2C2A29; margin: 0 0 1.25rem 0; line-height: 1.2;">Spatial Harmony & Structure</h2>
+            <p style="font-size: 0.95rem; font-weight: 300; color: #5C5750; line-height: 1.7; margin: 0 0 2.5rem 0;">Exploration of modern minimalist spatial layouts, timber pergolas, and structural integration designed for contemporary residential properties with absolute clarity.</p>
+            <div>
+              <a href="/contact" style="font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: #2C2A29; font-weight: 500; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid #2C2A29; padding-bottom: 2px;">
+                Inquire About Series &rarr;
+              </a>
+            </div>
+          </div>
+          <div style="min-height: 320px; background-image: url('/hero-bg.png'); background-size: cover; background-position: center; border-left: 1px solid #DDD6C8; filter: grayscale(80%) contrast(120%);"></div>
+        </article>
+
+        <!-- Project Item 2 -->
+        <article style="background-color: rgba(235, 230, 218, 0.85); backdrop-filter: blur(16px); border: 1px solid #DDD6C8; border-radius: 4px; overflow: hidden; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); box-shadow: 0 20px 40px rgba(0,0,0,0.02);">
+          <div style="min-height: 320px; background-image: url('/hero-bg.png'); background-size: cover; background-position: center; border-right: 1px solid #DDD6C8; filter: grayscale(80%) contrast(120%); order: 2; /* responsive flip on desktop */"></div>
+          <div style="padding: 4rem 3rem; display: flex; flex-direction: column; justify-content: center; order: 1;">
+            <span style="font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase; color: #7A756D; display: block; margin-bottom: 0.75rem;">Digital Architecture</span>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 400; color: #2C2A29; margin: 0 0 1.25rem 0; line-height: 1.2;">E-Guard Security Platform</h2>
+            <p style="font-size: 0.95rem; font-weight: 300; color: #5C5750; line-height: 1.7; margin: 0 0 2.5rem 0;">Full-stack web architecture and high-performance custom client portals engineered with precision, exceptional speed, and clean modern aesthetics.</p>
+            <div>
+              <a href="/contact" style="font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: #2C2A29; font-weight: 500; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid #2C2A29; padding-bottom: 2px;">
+                Inquire About Series &rarr;
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project Item 3 -->
+        <article style="background-color: rgba(235, 230, 218, 0.85); backdrop-filter: blur(16px); border: 1px solid #DDD6C8; border-radius: 4px; overflow: hidden; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); box-shadow: 0 20px 40px rgba(0,0,0,0.02);">
+          <div style="padding: 4rem 3rem; display: flex; flex-direction: column; justify-content: center;">
+            <span style="font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase; color: #7A756D; display: block; margin-bottom: 0.75rem;">Bespoke Visual Arts</span>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 400; color: #2C2A29; margin: 0 0 1.25rem 0; line-height: 1.2;">Minnaar-Matthews Photography</h2>
+            <p style="font-size: 0.95rem; font-weight: 300; color: #5C5750; line-height: 1.7; margin: 0 0 2.5rem 0;">Curated visual storytelling, fine-art editorial branding, and bespoke spatial showcases captured through timeless creative direction.</p>
+            <div>
+              <a href="/contact" style="font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: #2C2A29; font-weight: 500; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid #2C2A29; padding-bottom: 2px;">
+                Inquire About Series &rarr;
+              </a>
+            </div>
+          </div>
+          <div style="min-height: 320px; background-image: url('/hero-bg.png'); background-size: cover; background-position: center; border-left: 1px solid #DDD6C8; filter: grayscale(80%) contrast(120%);"></div>
+        </article>
+
+      </div>
 
     </main>
 
