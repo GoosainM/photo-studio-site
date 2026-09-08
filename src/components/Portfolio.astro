@@ -54,10 +54,10 @@ const categories = [
       </p>
     </div>
 
-    <!-- Side-by-Side 3-Column Row Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+    <!-- Forced Side-by-Side Flex Layout -->
+    <div class="flex flex-col md:flex-row gap-6 w-full">
       {categories.map((cat, index) => (
-        <div class="bg-[#E8E4DC] border border-[#C5BCAB]/60 rounded-sm overflow-hidden flex flex-col shadow-sm">
+        <div class="flex-1 bg-[#E8E4DC] border border-[#C5BCAB]/60 rounded-sm overflow-hidden flex flex-col shadow-sm min-w-0">
           
           <!-- Swiper Container -->
           <div class={`swiper category-swiper-${index} w-full h-[360px] relative group cursor-pointer select-none`}>
