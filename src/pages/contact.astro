@@ -1,84 +1,84 @@
 ---
-// Contact Page - Minnaar-Matthews Creative House
+// Contact / Inquiries Page - Minnaar-Matthews Creative House
 ---
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact & Bookings | Minnaar-Matthews</title>
+    <title>Inquiries & Bookings | Minnaar-Matthews</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-[#F5F2EB] text-[#2C2A29] font-['Jost',sans-serif] m-0 min-h-screen flex flex-col antialiased selection:bg-[#2C2A29] selection:text-[#F5F2EB]">
+  <body style="background-color: #F5F2EB; color: #2C2A29; font-family: 'Jost', sans-serif; margin: 0; min-height: 100vh; display: flex; flex-direction: column;">
     
     <!-- Fixed Atmospheric Background Visual -->
-    <div class="fixed inset-0 pointer-events-none z-0 opacity-15 bg-[url('/hero-bg.png')] bg-cover bg-center grayscale contrast-125"></div>
+    <div style="position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: 0.15; background-image: url('/hero-bg.png'); background-size: cover; background-position: center; filter: grayscale(100%) contrast(125%);"></div>
 
     <!-- Header Navigation -->
-    <header class="relative z-10 px-6 sm:px-12 py-6 sm:py-8 flex justify-between items-center border-b border-[#E3DED4]/80 bg-[#F5F2EB]/90 backdrop-blur-md">
-      <a href="/" class="font-['Playfair_Display',serif] tracking-[0.2em] text-base sm:text-lg uppercase text-[#2C2A29] no-underline font-bold">Minnaar-Matthews</a>
-      <a href="/" class="text-[0.65rem] sm:text-xs tracking-[0.3em] sm:tracking-[0.35em] uppercase text-[#2C2A29] no-underline hover:opacity-75 transition-opacity">&larr; Back to Home</a>
+    <header style="position: relative; z-index: 10; padding: 2rem 3rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(227, 222, 212, 0.8); background-color: rgba(245, 242, 235, 0.9);">
+      <a href="/" style="font-family: 'Playfair Display', serif; letter-spacing: 0.2em; font-size: 1.125rem; text-transform: uppercase; color: #2C2A29; text-decoration: none; font-weight: bold;">Minnaar-Matthews</a>
+      <div style="display: flex; gap: 2rem; align-items: center;">
+        <span style="font-size: 0.75rem; letter-spacing: 0.35em; text-transform: uppercase; color: #7A756D;">Get in Touch</span>
+        <a href="/" style="font-size: 0.75rem; letter-spacing: 0.35em; text-transform: uppercase; color: #2C2A29; text-decoration: none;">&larr; Home</a>
+      </div>
     </header>
 
     <!-- Main Content Area -->
-    <main class="relative z-10 flex-grow w-full max-w-4xl mx-auto px-4 sm:px-8 py-12 sm:py-20 lg:py-24">
+    <main style="position: relative; z-index: 10; flex-grow: 1; width: 100%; max-width: 45rem; margin: 0 auto; padding: 5rem 2rem 8rem 2rem; box-sizing: border-box;">
       
       <!-- Page Title Section -->
-      <div class="text-center mb-12 sm:mb-16">
-        <span class="text-[0.65rem] sm:text-xs tracking-[0.35em] sm:tracking-[0.4em] uppercase text-[#7A756D] block mb-3">Get in Touch</span>
-        <h1 class="font-['Playfair_Display',serif] text-3xl sm:text-5xl lg:text-6xl font-normal tracking-[0.05em] uppercase text-[#2C2A29] m-0">Inquiries & Bookings</h1>
-        <div class="w-12 h-[1px] bg-[#C5BEB0] mx-auto mt-6"></div>
+      <div style="text-align: center; margin-bottom: 3.5rem;">
+        <span style="font-size: 0.75rem; letter-spacing: 0.4em; text-transform: uppercase; color: #7A756D; display: block; margin-bottom: 0.75rem;">Reservations & Collaboration</span>
+        <h1 style="font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 400; letter-spacing: 0.05em; text-transform: uppercase; color: #2C2A29; margin: 0;">Inquiries & Bookings</h1>
+        <div style="width: 3rem; height: 1px; background-color: #C5BEB0; margin: 1.5rem auto 0 auto;"></div>
       </div>
 
-      <!-- Contact Form Container (Web3Forms Integration) -->
-      <div class="bg-[#EBE6DA]/85 backdrop-blur-xl border border-[#DDD6C8] p-6 sm:p-10 lg:p-12 shadow-sm">
-        <form action="https://api.web3forms.com/submit" method="POST" class="flex flex-col gap-6 sm:gap-8">
+      <!-- Form Card Container -->
+      <div style="background-color: rgba(235, 230, 218, 0.85); backdrop-filter: blur(12px); border: 1px solid #DDD6C8; padding: 3rem 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
+        <form action="#" method="POST" style="display: flex; flex-direction: column; gap: 1.75rem;">
           
-          <!-- Web3Forms Access Key & Config -->
-          <input type="hidden" name="access_key" value="7ccd0b54-a506-45ef-85ab-4a13b570d3a3" />
-          <input type="hidden" name="subject" value="New Inquiry from Minnaar-Matthews Contact Page" />
-
-          <!-- Name & Email Grid -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-            <div class="flex flex-col gap-2">
-              <label for="name" class="text-[0.65rem] sm:text-xs tracking-[0.25em] sm:tracking-[0.3em] uppercase text-[#5C5750]">Full Name</label>
-              <input type="text" id="name" name="name" required class="bg-[#F5F2EB]/90 border border-[#DDD6C8] px-4 py-3 sm:py-3.5 text-[#2C2A29] font-['Jost',sans-serif] text-sm sm:text-base outline-none focus:border-[#2C2A29] transition-colors" />
-            </div>
-            <div class="flex flex-col gap-2">
-              <label for="email" class="text-[0.65rem] sm:text-xs tracking-[0.25em] sm:tracking-[0.3em] uppercase text-[#5C5750]">Email Address</label>
-              <input type="email" id="email" name="email" required class="bg-[#F5F2EB]/90 border border-[#DDD6C8] px-4 py-3 sm:py-3.5 text-[#2C2A29] font-['Jost',sans-serif] text-sm sm:text-base outline-none focus:border-[#2C2A29] transition-colors" />
-            </div>
+          <!-- Full Name Field -->
+          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <label for="name" style="font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: #5C5750; font-weight: 500;">Full Name</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your full name" style="background-color: rgba(255,255,255,0.6); border: 1px solid #DDD6C8; padding: 0.875rem 1rem; font-family: 'Jost', sans-serif; font-size: 0.95rem; color: #2C2A29; outline: none; transition: border-color 0.2s;" />
           </div>
 
-          <!-- Phone & Service Grid -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-            <div class="flex flex-col gap-2">
-              <label for="phone" class="text-[0.65rem] sm:text-xs tracking-[0.25em] sm:tracking-[0.3em] uppercase text-[#5C5750]">WhatsApp / Phone Number</label>
-              <input type="tel" id="phone" name="phone" placeholder="+27..." class="bg-[#F5F2EB]/90 border border-[#DDD6C8] px-4 py-3 sm:py-3.5 text-[#2C2A29] font-['Jost',sans-serif] text-sm sm:text-base outline-none focus:border-[#2C2A29] transition-colors" />
-            </div>
-            <div class="flex flex-col gap-2">
-              <label for="service" class="text-[0.65rem] sm:text-xs tracking-[0.25em] sm:tracking-[0.3em] uppercase text-[#5C5750]">Service / Series Interest</label>
-              <select id="service" name="service" class="bg-[#F5F2EB]/90 border border-[#DDD6C8] px-4 py-3 sm:py-3.5 text-[#2C2A29] font-['Jost',sans-serif] text-sm sm:text-base outline-none focus:border-[#2C2A29] transition-colors cursor-pointer">
-                <option value="architectural">Architectural & Spatial Series</option>
-                <option value="editorial">Editorial Direction</option>
-                <option value="digital">Digital Architecture & Web Development</option>
-                <option value="bespoke">Bespoke Craft & Brand Showcase</option>
-              </select>
-            </div>
+          <!-- Email Address Field -->
+          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <label for="email" style="font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: #5C5750; font-weight: 500;">Email Address</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email address" style="background-color: rgba(255,255,255,0.6); border: 1px solid #DDD6C8; padding: 0.875rem 1rem; font-family: 'Jost', sans-serif; font-size: 0.95rem; color: #2C2A29; outline: none;" />
           </div>
 
-          <!-- Message Textarea -->
-          <div class="flex flex-col gap-2">
-            <label for="message" class="text-[0.65rem] sm:text-xs tracking-[0.25em] sm:tracking-[0.3em] uppercase text-[#5C5750]">Project Details / Message</label>
-            <textarea id="message" name="message" rows="5" required class="bg-[#F5F2EB]/90 border border-[#DDD6C8] px-4 py-3 text-[#2C2A29] font-['Jost',sans-serif] text-sm sm:text-base outline-none focus:border-[#2C2A29] transition-colors resize-y"></textarea>
+          <!-- WhatsApp / Phone Number Field -->
+          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <label for="phone" style="font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: #5C5750; font-weight: 500;">WhatsApp / Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="+27..." style="background-color: rgba(255,255,255,0.6); border: 1px solid #DDD6C8; padding: 0.875rem 1rem; font-family: 'Jost', sans-serif; font-size: 0.95rem; color: #2C2A29; outline: none;" />
+          </div>
+
+          <!-- Service / Series Interest Dropdown -->
+          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <label for="service" style="font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: #5C5750; font-weight: 500;">Service / Series Interest</label>
+            <select id="service" name="service" style="background-color: rgba(255,255,255,0.6); border: 1px solid #DDD6C8; padding: 0.875rem 1rem; font-family: 'Jost', sans-serif; font-size: 0.95rem; color: #2C2A29; outline: none;">
+              <option value="architectural">Architectural & Spatial Series</option>
+              <option value="digital">Digital Architecture & Web Development</option>
+              <option value="photography">Bespoke Visual Arts & Photography</option>
+              <option value="general">General Creative Consultation</option>
+            </select>
+          </div>
+
+          <!-- Project Details / Message Textarea -->
+          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <label for="message" style="font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: #5C5750; font-weight: 500;">Project Details / Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Describe your vision, timeline, or inquiry scope..." style="background-color: rgba(255,255,255,0.6); border: 1px solid #DDD6C8; padding: 0.875rem 1rem; font-family: 'Jost', sans-serif; font-size: 0.95rem; color: #2C2A29; outline: none; resize: vertical;"></textarea>
           </div>
 
           <!-- Submit Button -->
-          <button type="submit" class="bg-[#2C2A29] text-[#F5F2EB] border-none px-8 py-4 text-[0.65rem] sm:text-xs tracking-[0.3em] sm:tracking-[0.35em] uppercase cursor-pointer hover:bg-[#4A4745] transition-colors self-start w-full sm:w-auto text-center mt-2">
-            Send Inquiry
-          </button>
+          <div style="padding-top: 0.5rem; text-align: center;">
+            <button type="submit" style="background-color: #2C2A29; color: #F5F2EB; border: none; padding: 1.125rem 2.5rem; font-family: 'Jost', sans-serif; font-size: 0.75rem; letter-spacing: 0.35em; text-transform: uppercase; cursor: pointer; transition: background-color 0.2s; width: 100%;">
+              Send Inquiry
+            </button>
+          </div>
 
         </form>
       </div>
@@ -86,7 +86,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="relative z-10 px-6 sm:px-12 py-8 text-center text-[0.65rem] sm:text-xs tracking-[0.25em] sm:tracking-[0.3em] uppercase border-t border-[#E3DED4] text-[#7A756D] bg-[#F5F2EB]/90 backdrop-blur-md">
+    <footer style="position: relative; z-index: 10; padding: 2rem 3rem; text-align: center; font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; border-top: 1px solid #E3DED4; color: #7A756D; background-color: rgba(245, 242, 235, 0.9);">
       &copy; 2026 Minnaar-Matthews Creative House. All Rights Reserved.
     </footer>
 
