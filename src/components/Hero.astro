@@ -15,8 +15,8 @@
     <ul class="menu-links">
       <li><a href="#" class="nav-link" data-section="Home">Home</a></li>
       <li><a href="#about" class="nav-link" data-section="About Us">About Us</a></li>
-      <li><a href="#portfolio" class="nav-link" data-section="Portfolio">Portfolio</a></li>
-      <li><a href="#review" class="nav-link" data-section="Review">Review</a></li>
+      <li><a href="/portfolio" class="nav-link" data-section="Portfolio">Portfolio</a></li>
+      <li><a href="/review" class="nav-link" data-section="Review">Review</a></li>
       <li><a href="/contact" class="nav-link" data-section="Contact">Contact</a></li>
     </ul>
   </div>
@@ -63,8 +63,8 @@
         e.preventDefault();
         window.scrollTo({ top: 0, behavior: 'smooth' });
         menuOverlay?.classList.remove('active');
-      } else if (section === 'Contact') {
-        // Lets it naturally navigate to /contact (contact.astro)
+      } else if (section === 'Portfolio' || section === 'Review' || section === 'Contact') {
+        // Lets them naturally navigate to their respective pages (/portfolio, /review, /contact)
         return;
       } else {
         e.preventDefault();
