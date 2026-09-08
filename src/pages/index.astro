@@ -1,18 +1,149 @@
 ---
-// src/pages/index.astro
-import Hero from '../components/Hero.astro';
+// Landing Page - Minnaar-Matthews Creative House
 ---
-
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Jost:wght@400;500&display=swap" rel="stylesheet">
     <title>Minnaar-Matthews | Creative House</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+      /* Sparkle Animation Keyframes */
+      @keyframes sparklePop {
+        0% { transform: scale(0.2) translateY(0); opacity: 1; }
+        100% { transform: scale(1.4) translateY(-35px); opacity: 0; }
+      }
+      .sparkle {
+        position: absolute;
+        pointer-events: none;
+        width: 8px;
+        height: 8px;
+        background-color: #D4AF37; /* Elegant gold accent */
+        border-radius: 50%;
+        box-shadow: 0 0 8px #D4AF37;
+        animation: sparklePop 0.6s ease-out forwards;
+        z-index: 9999;
+      }
+      body {
+        margin: 0; 
+        padding: 0; 
+        background-color: #F5F2EB; 
+        color: #2C2A29; 
+        font-family: 'Jost', sans-serif; 
+        min-height: 100vh; 
+        display: flex; 
+        flex-direction: column; 
+        overflow-x: hidden;
+      }
+    </style>
   </head>
-  <body class="bg-[#1C1B1A] text-[#F4F1EA] m-0 p-0 overflow-hidden">
-    <Hero />
+  <body>
+    
+    <!-- Background Audio (Chic Ambient Track) -->
+    <audio id="bg-audio" loop>
+      <!-- Using a smooth, copyright-free ambient/lounge stream or local audio asset -->
+      <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf756.mp3?filename=gentle-jazz-lofi-111181.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Fixed Atmospheric Background Visual -->
+    <div style="position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: 0.15; background-image: url('/hero-bg.png'); background-size: cover; background-position: center; filter: grayscale(100%) contrast(125%);"></div>
+
+    <!-- Header Navigation -->
+    <header style="position: relative; z-index: 10; padding: 2rem 3rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(227, 222, 212, 0.8); background-color: rgba(245, 242, 235, 0.9);">
+      <a href="/" class="interactive-trigger" style="font-family: 'Playfair Display', serif; letter-spacing: 0.2em; font-size: 1.125rem; text-transform: uppercase; color: #2C2A29; text-decoration: none; font-weight: bold;">Minnaar-Matthews</a>
+      
+      <div style="display: flex; gap: 2rem; align-items: center;">
+        <!-- Audio Toggle Control -->
+        <button id="audio-toggle" style="background: none; border: 1px solid #C5BEB0; padding: 0.4rem 0.8rem; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; color: #5C5750; display: flex; align-items: center; gap: 0.4rem; transition: all 0.2s;">
+          <span id="audio-icon">&#9834;</span> <span id="audio-text">Play Audio</span>
+        </button>
+
+        <a href="/portfolio" class="interactive-trigger" style="font-size: 0.75rem; letter-spacing: 0.35em; text-transform: uppercase; color: #2C2A29; text-decoration: none;">Portfolio</a>
+        <a href="/contact" class="interactive-trigger" style="font-size: 0.75rem; letter-spacing: 0.35em; text-transform: uppercase; color: #2C2A29; text-decoration: none;">Inquiries</a>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main style="position: relative; z-index: 10; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 5rem 2rem;">
+      <span style="font-size: 0.75rem; letter-spacing: 0.4em; text-transform: uppercase; color: #7A756D; display: block; margin-bottom: 1rem;">Creative House</span>
+      <h1 style="font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: #2C2A29; margin: 0 0 1.5rem 0;">Minnaar-Matthews</h1>
+      <div style="width: 3rem; height: 1px; background-color: #C5BEB0; margin: 0 auto 2rem auto;"></div>
+      <p style="font-size: 1rem; font-weight: 300; color: #5C5750; letter-spacing: 0.05em; max-width: 32rem; line-height: 1.7; margin: 0 auto 3rem auto;">Bespoke visual architecture, spatial compositions, and digital experiences crafted with uncompromising precision.</p>
+      
+      <div style="display: flex; gap: 1.5rem; justify-content: center;">
+        <a href="/portfolio" class="interactive-trigger" style="background-color: #2C2A29; color: #F5F2EB; border: none; padding: 1rem 2.5rem; font-size: 0.75rem; letter-spacing: 0.35em; text-transform: uppercase; text-decoration: none; transition: background-color 0.2s;">Explore Works</a>
+        <a href="/contact" class="interactive-trigger" style="background-color: transparent; color: #2C2A29; border: 1px solid #C5BEB0; padding: 1rem 2.5rem; font-size: 0.75rem; letter-spacing: 0.35em; text-transform: uppercase; text-decoration: none; transition: all 0.2s;">Get in Touch</a>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer style="position: relative; z-index: 10; padding: 2rem 3rem; text-align: center; font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; border-top: 1px solid #E3DED4; color: #7A756D; background-color: rgba(245, 242, 235, 0.9);">
+      &copy; 2026 Minnaar-Matthews Creative House. All Rights Reserved.
+    </footer>
+
+    <!-- Interactive Script for Audio & Sparkle Effect -->
+    <script>
+      // Background Audio Toggle Control
+      const audio = document.getElementById('bg-audio');
+      const audioToggle = document.getElementById('audio-toggle');
+      const audioText = document.getElementById('audio-text');
+      const audioIcon = document.getElementById('audio-icon');
+      let isPlaying = false;
+
+      audioToggle.addEventListener('click', () => {
+        if (!isPlaying) {
+          audio.play().then(() => {
+            isPlaying = true;
+            audioText.textContent = 'Pause Audio';
+            audioIcon.innerHTML = '&#9612;&#9612;';
+          }).catch(e => console.log("Audio play blocked:", e));
+        } else {
+          audio.pause();
+          isPlaying = false;
+          audioText.textContent = 'Play Audio';
+          audioIcon.innerHTML = '&#9834;';
+        }
+      });
+
+      // Sparkle Effect on Click for Menu Buttons & Links
+      document.addEventListener('click', (e) => {
+        const target = e.target.closest('a, button');
+        if (target) {
+          const rect = target.getBoundingClientRect();
+          const x = e.clientX || (rect.left + rect.width / 2);
+          const y = e.clientY || (rect.top + rect.height / 2);
+
+          // Generate multiple sparkling particles
+          for (let i = 0; i < 6; i++) {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            
+            // Random scatter angle & distance
+            const angle = Math.random() * Math.PI * 2;
+            const distance = 15 + Math.random() * 25;
+            const destX = Math.cos(angle) * distance;
+            const destY = Math.sin(angle) * distance;
+
+            sparkle.style.left = `${x}px`;
+            sparkle.style.top = `${y}px`;
+            sparkle.style.setProperty('--dest-x', `${destX}px`);
+            sparkle.style.setProperty('--dest-y', `${destY}px`);
+
+            // Apply custom offset transform via keyframe helper
+            sparkle.style.transform = `translate(${destX}px, ${destY}px)`;
+            
+            document.body.appendChild(sparkle);
+
+            // Remove after animation completes
+            setTimeout(() => {
+              sparkle.remove();
+            }, 600);
+          }
+        }
+      });
+    </script>
+
   </body>
 </html>
