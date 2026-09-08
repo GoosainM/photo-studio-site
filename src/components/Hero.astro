@@ -1,163 +1,208 @@
 ---
-// Hero.astro for Minnaar-Matthews Creative House
+// src/components/Hero.astro
 ---
 
-<section id="hero" class="relative w-full h-screen bg-[#0d0d0c] flex items-center justify-center overflow-hidden m-0 p-0">
-  <div id="stage" class="stage">
-    <div class="bg"></div>
-    <div class="plaque" id="plaque">
-      <div class="glass"></div>
-      <div class="monogram">
-        <span class="glyph">M</span>
-        <span class="divider"></span>
-        <span class="glyph">M</span>
-      </div>
-      <div class="wordmark-bar"><span>MINNAAR&nbsp;-&nbsp;MATTHEWS</span></div>
-      <div class="tagline">CREATIVE HOUSE</div>
-    </div>
+<div class="stage" id="stage">
+  <div class="bg"></div>
+  
+  <div class="logo-container" id="logoContainer">
+    <h1 class="brand-name">Minnaar-Matthews</h1>
+    <div class="brand-sub">Creative House</div>
   </div>
-  <div class="hint">Move your cursor to tilt the logo</div>
-</section>
+
+  <div class="menu-overlay" id="menuOverlay">
+    <button class="close-btn" id="closeBtn">&times;</button>
+    <ul class="menu-links">
+      <li><a href="#about" class="nav-link" data-section="About Us">About Us</a></li>
+      <li><a href="#portfolio" class="nav-link" data-section="Portfolio">Portfolio</a></li>
+      <li><a href="#review" class="nav-link" data-section="Review">Review</a></li>
+      <li><a href="#contact" class="nav-link" data-section="Contact">Contact</a></li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  const stage = document.getElementById('stage');
+  const logoContainer = document.getElementById('logoContainer');
+  const menuOverlay = document.getElementById('menuOverlay');
+  const closeBtn = document.getElementById('closeBtn');
+  const navLinks = document.querySelectorAll('.nav-link');
+  let raf = null;
+
+  stage?.addEventListener('mousemove', (e) => {
+    const rect = stage.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width;
+    const y = (e.clientY - rect.top) / rect.height;
+    const rotY = (x - 0.5) * 20;
+    const rotX = (0.5 - y) * 15;
+    if(raf) cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(() => {
+      if(logoContainer) logoContainer.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+    });
+  });
+
+  stage?.addEventListener('mouseleave', () => {
+    if(raf) cancelAnimationFrame(raf);
+    if(logoContainer) logoContainer.style.transform = `rotateX(0deg) rotateY(0deg)`;
+  });
+
+  stage?.addEventListener('click', () => {
+    menuOverlay?.classList.add('active');
+  });
+
+  closeBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    menuOverlay?.classList.remove('active');
+  });
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const section = link.getAttribute('data-section');
+      alert('Navigating to: ' + section);
+      menuOverlay?.classList.remove('active');
+    });
+  });
+</script>
 
 <style>
   :root {
-    --ink: #1b1b1a;
-    --cream: #f6f4ef;
+    --cream: #F4F1EA;
   }
 
   .stage {
     position: relative;
-    width: 100%;
-    max-width: 1100px;
-    aspect-ratio: 851/315;
-    margin: 24px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     perspective: 1600px;
-    border-radius: 6px;
     overflow: hidden;
-    box-shadow: 0 30px 60px -20px rgba(0,0,0,0.6);
+    cursor: pointer;
   }
 
   .bg {
     position: absolute;
     inset: 0;
-    background-color: #1b1b1a;
+    background-image: url('/bg.jpeg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.85);
+    z-index: 0;
   }
 
-  .plaque {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 82%;
-    height: 76%;
-    transform: translate(-50%, -50%);
+  .logo-container {
+    position: relative;
+    z-index: 2;
     transform-style: preserve-3d;
-    background: linear-gradient(135deg, rgba(246, 244, 239, 0.08) 0%, rgba(246, 244, 239, 0.02) 100%);
-    border: 1px solid rgba(246, 244, 239, 0.2);
-    border-radius: 4px;
+    transition: transform 0.15s ease-out;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .brand-name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(2rem, 5vw, 5rem);
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin: 0;
+    text-shadow: 
+      0 1px 0 #cccccc,
+      0 2px 0 #b3b3b3,
+      0 3px 0 #999999,
+      0 4px 0 #808080,
+      0 5px 0 #666666,
+      0 15px 30px rgba(0, 0, 0, 0.7),
+      0 0 35px rgba(255, 255, 255, 0.4);
+  }
+
+  .brand-sub {
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+    font-size: clamp(0.7rem, 1.2vw, 1.1rem);
+    color: #f0f0f0;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    margin-top: 12px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+  }
+
+  .menu-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(28, 27, 26, 0.94);
+    backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    animation: idleFloat 7s ease-in-out infinite;
-  }
-
-  .glass {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.05) 50%, transparent 100%);
+    opacity: 0;
     pointer-events: none;
+    transition: opacity 0.4s ease;
+    z-index: 10;
   }
 
-  .monogram {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    transform: translateZ(40px);
+  .menu-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
   }
 
-  .glyph {
+  .menu-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+
+  .menu-links li {
+    margin: 20px 0;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+  }
+
+  .menu-overlay.active .menu-links li {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .menu-overlay.active .menu-links li:nth-child(1) { transition-delay: 0.1s; }
+  .menu-overlay.active .menu-links li:nth-child(2) { transition-delay: 0.2s; }
+  .menu-overlay.active .menu-links li:nth-child(3) { transition-delay: 0.3s; }
+  .menu-overlay.active .menu-links li:nth-child(4) { transition-delay: 0.4s; }
+
+  .menu-links a {
     font-family: 'Playfair Display', serif;
-    font-weight: 900;
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-size: clamp(1.8rem, 3.5vw, 3rem);
     color: var(--cream);
-    letter-spacing: -0.02em;
-    text-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    transition: color 0.3s ease, letter-spacing 0.3s ease;
   }
 
-  .divider {
-    width: 2px;
-    height: 40px;
-    background: rgba(246, 244, 239, 0.4);
-  }
-
-  .wordmark-bar {
-    margin-top: 10px;
-    transform: translateZ(25px);
-  }
-
-  .wordmark-bar span {
-    font-family: 'Jost', sans-serif;
-    font-weight: 500;
-    font-size: clamp(0.6rem, 1.2vw, 0.9rem);
-    letter-spacing: 0.35em;
-    color: var(--cream);
-    opacity: 0.9;
-  }
-
-  .tagline {
-    margin-top: 6px;
-    font-family: 'Jost', sans-serif;
-    font-weight: 400;
-    font-size: clamp(0.5rem, 0.9vw, 0.7rem);
-    letter-spacing: 0.5em;
-    color: #c5bcab;
-    transform: translateZ(15px);
-  }
-
-  .hint {
-    position: absolute;
-    bottom: 30px;
-    font-family: 'Jost', sans-serif;
-    font-size: 11px;
+  .menu-links a:hover {
+    color: #ffffff;
     letter-spacing: 0.2em;
-    color: rgba(246, 244, 239, 0.4);
-    text-transform: uppercase;
-    pointer-events: none;
   }
 
-  @keyframes idleFloat {
-    0%, 100% { transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg); }
-    50% { transform: translate(-50%, -50%) rotateX(4deg) rotateY(-6deg); }
+  .close-btn {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    background: none;
+    border: none;
+    color: var(--cream);
+    font-size: 2.5rem;
+    cursor: pointer;
+    font-family: 'Jost', sans-serif;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+  }
+
+  .close-btn:hover {
+    opacity: 1;
   }
 </style>
-
-<script>
-  const stage = document.getElementById('stage');
-  const plaque = document.getElementById('plaque');
-  let raf: number | null = null;
-
-  function handleMove(e: MouseEvent) {
-    if (!stage || !plaque) return;
-    const rect = stage.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width;
-    const y = (e.clientY - rect.top) / rect.height;
-    const rotY = (x - 0.5) * 26;
-    const rotX = (0.5 - y) * 18;
-    
-    if (raf) cancelAnimationFrame(raf);
-    raf = requestAnimationFrame(() => {
-      plaque.style.animation = 'none';
-      plaque.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg) translate(-50%, -50%)`;
-    });
-  }
-
-  function resetTilt() {
-    if (!plaque) return;
-    plaque.style.transform = '';
-    void plaque.offsetWidth;
-    plaque.style.animation = 'idleFloat 7s ease-in-out infinite';
-  }
-
-  stage?.addEventListener('mousemove', handleMove);
-  stage?.addEventListener('mouseleave', resetTilt);
-</script>

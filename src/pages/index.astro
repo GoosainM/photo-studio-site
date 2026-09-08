@@ -1,5 +1,6 @@
 ---
-// index.astro for Minnaar-Matthews | Creative House
+// src/pages/index.astro
+import Hero from '../components/Hero.astro';
 ---
 
 <html lang="en">
@@ -7,34 +8,11 @@
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Jost:wght@400;500&display=swap" rel="stylesheet">
     <title>Minnaar-Matthews | Creative House</title>
   </head>
-  <body class="bg-[#1C1B1A] m-0 p-0 w-screen h-screen overflow-hidden">
-    <main class="w-full h-full relative flex items-center justify-center">
-      <img 
-        src="/bg.jpeg" 
-        alt="" 
-        class="responsive-bg"
-      />
-    </main>
+  <body class="bg-[#1C1B1A] text-[#F4F1EA] m-0 p-0 overflow-hidden">
+    <Hero />
   </body>
 </html>
-
-<style>
-  .responsive-bg {
-    position: absolute;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    object-position: center;
-  }
-
-  /* Tablet and Mobile device specific adjustments */
-  @media (max-width: 1024px) {
-    .responsive-bg {
-      object-fit: cover;
-      object-position: 50% 50%;
-    }
-  }
-</style>
