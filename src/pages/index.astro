@@ -2,25 +2,28 @@
 import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
 import Portfolio from '../components/Portfolio.astro';
-// Import any other sections you have (Reviews, Contact, etc.)
+import Reviews from '../components/Reviews.astro';
+import Contact from '../components/Contact.astro';
 import '../styles/global.css';
 ---
 
-<html lang="en" class="scroll-smooth">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Minnaar-Matthews | Creative House</title>
-	</head>
-	<body class="bg-[#F4F1EA] text-[#1C1B1A] antialiased overflow-x-hidden selection:bg-[#C5BCAB] selection:text-white">
-		
-		<Navbar />
-		
-		<main class="w-full">
-			<Hero />
-			<Portfolio />
-		</main>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minnaar-Matthews | Creative House</title>
+  </head>
+  <body class="bg-[#F4F1EA] text-[#1C1B1A] antialiased">
+    
+    <Navbar />
+    
+    <main class="w-full overflow-hidden">
+      <Hero />
+      <Portfolio />
+      <Reviews />
+      <Contact />
+    </main>
 
-	</body>
+  </body>
 </html>
