@@ -2,34 +2,74 @@
 // Navbar.astro for Minnaar-Matthews Creative House
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-[#F4F1EA]/95 backdrop-blur-md border-b border-[#C5BCAB]/40 w-full" style="max-width: 100vw; overflow-x: hidden;">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between flex-nowrap">
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#F4F1EA]/95 backdrop-blur-md border-b border-[#C5BCAB]/40 w-full">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between">
     
-    <!-- Logo -->
-    <a href="#" class="flex items-center flex-shrink-0" style="height: 40px;">
+    <!-- Logo Button (Triggers Pop-up Menu) -->
+    <button id="menu-toggle-btn" class="flex items-center focus:outline-none group cursor-pointer" aria-label="Toggle Navigation Menu">
       <img 
         src="/logo.png" 
         alt="Minnaar-Matthews Creative House Logo" 
-        style="height: 100%; width: auto; max-height: 40px; object-fit: contain;"
+        class="h-8 md:h-10 w-auto object-contain max-h-10 group-hover:opacity-80 transition-opacity"
       />
-    </a>
-
-    <!-- Nav Links -->
-    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-[#5A5348] flex-nowrap">
-      <a href="#corporate" class="hover:text-[#1C1B1A] transition-colors whitespace-nowrap">About us</a>
-      <a href="#portfolio" class="hover:text-[#1C1B1A] transition-colors whitespace-nowrap">Portfolio</a>
-      <a href="#reviews" class="hover:text-[#1C1B1A] transition-colors whitespace-nowrap">Reviews</a>
-      <a href="#contact" class="hover:text-[#1C1B1A] transition-colors whitespace-nowrap">Contact Us</a>
-    </nav>
+      <span class="ml-3 text-[10px] font-mono uppercase tracking-widest text-[#6B6354] hidden sm:inline-block">Menu ▾</span>
+    </button>
 
     <!-- WhatsApp Book Session Button -->
     <a 
       href="https://wa.me/27817586537?text=Hi%20Melissa!%20I'd%20like%20to%20enquire%20about%20booking%20a%20photography%20session." 
       target="_blank" 
       rel="noopener noreferrer"
-      class="bg-[#E8E4DC] border border-[#C5BCAB] text-[#1C1B1A] text-xs font-semibold uppercase tracking-wider px-4 py-2 hover:bg-[#DCD7CD] transition-colors rounded-sm shadow-sm flex-shrink-0 whitespace-nowrap"
+      class="bg-[#E8E4DC] border border-[#C5BCAB] text-[#1C1B1A] text-xs font-semibold uppercase tracking-wider px-4 py-2 hover:bg-[#DCD7CD] transition-colors rounded-sm shadow-sm"
     >
       Book Session
     </a>
   </div>
 </header>
+
+<!-- Pop-up Fullscreen Navigation Overlay -->
+<div id="nav-overlay" class="fixed inset-0 z-50 bg-[#F4F1EA] bg-opacity-98 backdrop-blur-xl flex flex-col justify-center items-center opacity-0 pointer-events-none transition-all duration-300">
+  
+  <!-- Close Button -->
+  <button id="menu-close-btn" class="absolute top-6 right-8 text-[#1C1B1A] text-xs font-mono uppercase tracking-widest hover:opacity-60 transition-opacity cursor-pointer">
+    [Close ✕]
+  </button>
+
+  <!-- Menu Links -->
+  <nav class="flex flex-col items-center space-y-6 text-center">
+    <a href="#corporate" class="nav-link font-serif text-3xl md:text-4xl text-[#1C1B1A] hover:text-[#6B6354] transition-colors">Birthday Photoshoots</a>
+    <a href="#portfolio" class="nav-link font-serif text-3xl md:text-4xl text-[#1C1B1A] hover:text-[#6B6354] transition-colors">Portfolio</a>
+    <a href="#reviews" class="nav-link font-serif text-3xl md:text-4xl text-[#1C1B1A] hover:text-[#6B6354] transition-colors">Client Reviews</a>
+    <a href="#contact" class="nav-link font-serif text-3xl md:text-4xl text-[#1C1B1A] hover:text-[#6B6354] transition-colors">Contact Us</a>
+  </nav>
+
+  <div class="absolute bottom-10 text-center">
+    <p class="text-[10px] font-mono uppercase tracking-widest text-[#6B6354]">Minnaar-Matthews Creative House</p>
+  </div>
+</div>
+
+<!-- Toggle Script -->
+<script>
+  const toggleBtn = document.getElementById('menu-toggle-btn');
+  const closeBtn = document.getElementById('menu-close-btn');
+  const overlay = document.getElementById('nav-overlay');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  function toggleMenu() {
+    if (!overlay) return;
+    const isOpen = overlay.classList.contains('opacity-100');
+    if (isOpen) {
+      overlay.classList.remove('opacity-100', 'pointer-events-auto');
+      overlay.classList.add('opacity-0', 'pointer-events-none');
+    } else {
+      overlay.classList.remove('opacity-0', 'pointer-events-none');
+      overlay.classList.add('opacity-100', 'pointer-events-auto');
+    }
+  }
+
+  toggleBtn?.addEventListener('click', toggleMenu);
+  closeBtn?.addEventListener('click', toggleMenu);
+  navLinks.forEach(link => {
+    link.addEventListener('click', toggleMenu);
+  });
+</script>
