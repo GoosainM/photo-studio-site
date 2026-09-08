@@ -2,108 +2,96 @@
 // Interactive Feature Showcase Component - Minnaar-Matthews
 ---
 
-<section class="w-full max-w-7xl mx-auto px-6 py-24">
-  <div class="text-center mb-16">
-    <span class="font-sans text-xs tracking-[0.4em] uppercase text-[#7A756D] block mb-3">Interactive Exploration</span>
-    <h2 class="font-serif text-4xl md:text-6xl font-normal tracking-wide uppercase text-[#2C2A29]">Take a closer look.</h2>
-    <div class="w-12 h-[1px] bg-[#C5BEB0] mx-auto mt-6"></div>
+<section style="width: 100%; max-width: 80rem; margin: 0 auto; padding: 4rem 2rem;">
+  <div style="text-align: center; margin-bottom: 4rem;">
+    <span style="font-size: 0.75rem; letter-spacing: 0.4em; text-transform: uppercase; color: #7A756D; display: block; margin-bottom: 0.75rem;">Interactive Exploration</span>
+    <h2 style="font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 4vw, 4rem); font-weight: 400; letter-spacing: 0.05em; text-transform: uppercase; color: #2C2A29; margin: 0;">Take a closer look.</h2>
+    <div style="width: 3rem; height: 1px; background-color: #C5BEB0; margin: 1.5rem auto 0 auto;"></div>
   </div>
 
   <!-- Main Showcase Container -->
-  <div class="bg-[#EBE6DA]/80 backdrop-blur-md border border-[#DDD6C8] p-8 md:p-12 shadow-sm rounded-none grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+  <div style="background-color: rgba(235, 230, 218, 0.85); backdrop-filter: blur(12px); border: 1px solid #DDD6C8; padding: 2.5rem; display: flex; flex-direction: column; gap: 3rem;" class="showcase-container">
     
-    <!-- Left Column: Interactive Navigation & Details -->
-    <div class="lg:col-span-5 flex flex-col space-y-4">
+    <!-- Navigation Buttons Grid -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;" class="nav-grid">
       
-      <!-- Feature 1 Button -->
-      <button 
-        class="feature-btn text-left p-5 transition-all duration-300 border border-transparent bg-[#DFD9CC]/60 hover:bg-[#DFD9CC] cursor-pointer group active-tab" 
-        data-index="0"
-      >
-        <div class="flex items-center justify-between mb-2">
-          <span class="font-serif text-xl tracking-wide font-medium text-[#2C2A29]">Architectural Study</span>
-          <span class="text-xs tracking-widest uppercase text-[#7A756D] group-hover:text-[#2C2A29] transition-colors">&rarr;</span>
+      <!-- Feature 1 -->
+      <button class="feature-btn active-tab" data-index="0" style="text-align: left; padding: 1.25rem; transition: all 0.3s ease; border: 1px solid #C5BEB0; background-color: #DFD9CC; cursor: pointer;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+          <span style="font-family: 'Playfair Display', serif; font-size: 1.125rem; font-weight: 500; color: #2C2A29;">Architectural Study</span>
+          <span style="font-size: 0.75rem; letter-spacing: 0.2em; color: #7A756D;">&rarr;</span>
         </div>
-        <p class="feature-desc font-sans text-sm text-[#5C5750] leading-relaxed font-light">
+        <p class="feature-desc" style="font-size: 0.875rem; color: #5C5750; line-height: 1.6; margin: 0; font-weight: 300;">
           Precision lighting and modern structural composition capturing high-end architectural design lines and spatial elegance.
         </p>
       </button>
 
-      <!-- Feature 2 Button -->
-      <button 
-        class="feature-btn text-left p-5 transition-all duration-300 border border-transparent bg-transparent hover:bg-[#DFD9CC]/50 cursor-pointer group" 
-        data-index="1"
-      >
-        <div class="flex items-center justify-between mb-2">
-          <span class="font-serif text-xl tracking-wide font-medium text-[#2C2A29]">Editorial Direction</span>
-          <span class="text-xs tracking-widest uppercase text-[#7A756D] group-hover:text-[#2C2A29] transition-colors">&rarr;</span>
+      <!-- Feature 2 -->
+      <button class="feature-btn" data-index="1" style="text-align: left; padding: 1.25rem; transition: all 0.3s ease; border: 1px solid #DDD6C8; background-color: rgba(235, 230, 218, 0.5); cursor: pointer;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+          <span style="font-family: 'Playfair Display', serif; font-size: 1.125rem; font-weight: 500; color: #2C2A29;">Editorial Direction</span>
+          <span style="font-size: 0.75rem; letter-spacing: 0.2em; color: #7A756D;">&rarr;</span>
         </div>
-        <p class="feature-desc font-sans text-sm text-[#5C5750] leading-relaxed font-light hidden">
+        <p class="feature-desc" style="font-size: 0.875rem; color: #5C5750; line-height: 1.6; margin: 0; font-weight: 300; display: none;">
           Curated studio visual narratives centered around mood, organic texture, and refined aesthetic storytelling.
         </p>
       </button>
 
-      <!-- Feature 3 Button -->
-      <button 
-        class="feature-btn text-left p-5 transition-all duration-300 border border-transparent bg-transparent hover:bg-[#DFD9CC]/50 cursor-pointer group" 
-        data-index="2"
-      >
-        <div class="flex items-center justify-between mb-2">
-          <span class="font-serif text-xl tracking-wide font-medium text-[#2C2A29]">Digital Architecture</span>
-          <span class="text-xs tracking-widest uppercase text-[#7A756D] group-hover:text-[#2C2A29] transition-colors">&rarr;</span>
+      <!-- Feature 3 -->
+      <button class="feature-btn" data-index="2" style="text-align: left; padding: 1.25rem; transition: all 0.3s ease; border: 1px solid #DDD6C8; background-color: rgba(235, 230, 218, 0.5); cursor: pointer;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+          <span style="font-family: 'Playfair Display', serif; font-size: 1.125rem; font-weight: 500; color: #2C2A29;">Digital Architecture</span>
+          <span style="font-size: 0.75rem; letter-spacing: 0.2em; color: #7A756D;">&rarr;</span>
         </div>
-        <p class="feature-desc font-sans text-sm text-[#5C5750] leading-relaxed font-light hidden">
+        <p class="feature-desc" style="font-size: 0.875rem; color: #5C5750; line-height: 1.6; margin: 0; font-weight: 300; display: none;">
           Full-stack web applications, custom e-commerce architecture, and lightning-fast digital performance.
         </p>
       </button>
 
-      <!-- Feature 4 Button -->
-      <button 
-        class="feature-btn text-left p-5 transition-all duration-300 border border-transparent bg-transparent hover:bg-[#DFD9CC]/50 cursor-pointer group" 
-        data-index="3"
-      >
-        <div class="flex items-center justify-between mb-2">
-          <span class="font-serif text-xl tracking-wide font-medium text-[#2C2A29]">Bespoke Craft</span>
-          <span class="text-xs tracking-widest uppercase text-[#7A756D] group-hover:text-[#2C2A29] transition-colors">&rarr;</span>
+      <!-- Feature 4 -->
+      <button class="feature-btn" data-index="3" style="text-align: left; padding: 1.25rem; transition: all 0.3s ease; border: 1px solid #DDD6C8; background-color: rgba(235, 230, 218, 0.5); cursor: pointer;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+          <span style="font-family: 'Playfair Display', serif; font-size: 1.125rem; font-weight: 500; color: #2C2A29;">Bespoke Craft</span>
+          <span style="font-size: 0.75rem; letter-spacing: 0.2em; color: #7A756D;">&rarr;</span>
         </div>
-        <p class="feature-desc font-sans text-sm text-[#5C5750] leading-relaxed font-light hidden">
+        <p class="feature-desc" style="font-size: 0.875rem; color: #5C5750; line-height: 1.6; margin: 0; font-weight: 300; display: none;">
           Tailored branding, high-end client showcases, and interactive visual presentations crafted with precision.
         </p>
       </button>
 
     </div>
 
-    <!-- Right Column: Dynamic Visual Showcase Display -->
-    <div class="lg:col-span-7 w-full h-[400px] md:h-[500px] relative overflow-hidden bg-[#DFD9CC] border border-[#DDD6C8] shadow-inner">
+    <!-- Visual Display Area -->
+    <div style="width: 100%; height: 450px; position: relative; overflow: hidden; background-color: #DFD9CC; border: 1px solid #DDD6C8;">
       
       <!-- Image 1 -->
-      <div class="showcase-img absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop" alt="Architectural Study" class="w-full h-full object-cover filter contrast-105" />
-        <div class="absolute bottom-6 left-6 bg-[#F5F2EB]/90 backdrop-blur-sm px-4 py-2 border border-[#DDD6C8] text-[10px] tracking-[0.3em] uppercase text-[#2C2A29]">
+      <div class="showcase-img" data-img-index="0" style="position: absolute; inset: 0; transition: opacity 0.7s ease-in-out; opacity: 1;">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop" alt="Architectural Study" style="width: 100%; height: 100%; object-fit: cover;" />
+        <div style="position: absolute; bottom: 1.5rem; left: 1.5rem; background-color: rgba(245, 242, 235, 0.9); padding: 0.5rem 1rem; border: 1px solid #DDD6C8; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: #2C2A29;">
           Series 01 // Spatial Elegance
         </div>
       </div>
 
       <!-- Image 2 -->
-      <div class="showcase-img absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 pointer-events-none">
-        <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=1200&auto=format&fit=crop" alt="Editorial Direction" class="w-full h-full object-cover filter contrast-105" />
-        <div class="absolute bottom-6 left-6 bg-[#F5F2EB]/90 backdrop-blur-sm px-4 py-2 border border-[#DDD6C8] text-[10px] tracking-[0.3em] uppercase text-[#2C2A29]">
+      <div class="showcase-img" data-img-index="1" style="position: absolute; inset: 0; transition: opacity 0.7s ease-in-out; opacity: 0; pointer-events: none;">
+        <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=1200&auto=format&fit=crop" alt="Editorial Direction" style="width: 100%; height: 100%; object-fit: cover;" />
+        <div style="position: absolute; bottom: 1.5rem; left: 1.5rem; background-color: rgba(245, 242, 235, 0.9); padding: 0.5rem 1rem; border: 1px solid #DDD6C8; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: #2C2A29;">
           Series 02 // Atmospheric Portraiture
         </div>
       </div>
 
       <!-- Image 3 -->
-      <div class="showcase-img absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 pointer-events-none">
-        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop" alt="Digital Architecture" class="w-full h-full object-cover filter contrast-105" />
-        <div class="absolute bottom-6 left-6 bg-[#F5F2EB]/90 backdrop-blur-sm px-4 py-2 border border-[#DDD6C8] text-[10px] tracking-[0.3em] uppercase text-[#2C2A29]">
+      <div class="showcase-img" data-img-index="2" style="position: absolute; inset: 0; transition: opacity 0.7s ease-in-out; opacity: 0; pointer-events: none;">
+        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop" alt="Digital Architecture" style="width: 100%; height: 100%; object-fit: cover;" />
+        <div style="position: absolute; bottom: 1.5rem; left: 1.5rem; background-color: rgba(245, 242, 235, 0.9); padding: 0.5rem 1rem; border: 1px solid #DDD6C8; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: #2C2A29;">
           Series 03 // Full-Stack Code & Scale
         </div>
       </div>
 
       <!-- Image 4 -->
-      <div class="showcase-img absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 pointer-events-none">
-        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200&auto=format&fit=crop" alt="Bespoke Craft" class="w-full h-full object-cover filter contrast-105" />
-        <div class="absolute bottom-6 left-6 bg-[#F5F2EB]/90 backdrop-blur-sm px-4 py-2 border border-[#DDD6C8] text-[10px] tracking-[0.3em] uppercase text-[#2C2A29]">
+      <div class="showcase-img" data-img-index="3" style="position: absolute; inset: 0; transition: opacity 0.7s ease-in-out; opacity: 0; pointer-events: none;">
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200&auto=format&fit=crop" alt="Bespoke Craft" style="width: 100%; height: 100%; object-fit: cover;" />
+        <div style="position: absolute; bottom: 1.5rem; left: 1.5rem; background-color: rgba(245, 242, 235, 0.9); padding: 0.5rem 1rem; border: 1px solid #DDD6C8; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: #2C2A29;">
           Series 04 // Bespoke Brand Craft
         </div>
       </div>
@@ -123,24 +111,24 @@
         const index = btn.getAttribute('data-index');
 
         buttons.forEach(b => {
-          b.classList.remove('bg-[#DFD9CC]', 'border-[#C5BEB0]');
-          b.classList.add('bg-transparent', 'border-transparent');
+          b.style.backgroundColor = 'rgba(235, 230, 218, 0.5)';
+          b.style.borderColor = '#DDD6C8';
           const desc = b.querySelector('.feature-desc');
-          if (desc) desc.classList.add('hidden');
+          if (desc) desc.style.display = 'none';
         });
 
-        btn.classList.remove('bg-transparent', 'border-transparent');
-        btn.classList.add('bg-[#DFD9CC]', 'border-[#C5BEB0]');
+        btn.style.backgroundColor = '#DFD9CC';
+        btn.style.borderColor = '#C5BEB0';
         const activeDesc = btn.querySelector('.feature-desc');
-        if (activeDesc) activeDesc.classList.remove('hidden');
+        if (activeDesc) activeDesc.style.display = 'block';
 
-        images.forEach((img, imgIndex) => {
-          if (imgIndex.toString() === index) {
-            img.classList.remove('opacity-0', 'pointer-events-none');
-            img.classList.add('opacity-100');
+        images.forEach(img => {
+          if (img.getAttribute('data-img-index') === index) {
+            img.style.opacity = '1';
+            img.style.pointerEvents = 'auto';
           } else {
-            img.classList.remove('opacity-100');
-            img.classList.add('opacity-0', 'pointer-events-none');
+            img.style.opacity = '0';
+            img.style.pointerEvents = 'none';
           }
         });
       });
