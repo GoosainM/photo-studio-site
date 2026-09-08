@@ -32,19 +32,15 @@
         <div style="width: 3rem; height: 1px; background-color: #C5BEB0; margin: 1.5rem auto 0 auto;"></div>
       </div>
 
-      <!-- Quick WhatsApp Booking Banner -->
-      <div style="background-color: rgba(235, 230, 218, 0.85); backdrop-filter: blur(12px); border: 1px solid #DDD6C8; padding: 2.5rem; text-align: center; margin-bottom: 3rem;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 500; margin: 0 0 0.75rem 0; color: #2C2A29;">Prefer instant communication?</h2>
-        <p style="font-size: 0.9rem; color: #5C5750; font-weight: 300; margin-bottom: 1.5rem;">Connect with us directly via WhatsApp to discuss your project or schedule a session.</p>
-        <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" style="display: inline-block; background-color: #2C2A29; color: #F5F2EB; padding: 0.875rem 2.25rem; font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; text-decoration: none; transition: background-color 0.3s ease;">
-          Book Session via WhatsApp &rarr;
-        </a>
-      </div>
-
-      <!-- Contact Form Container -->
+      <!-- Contact Form Container (Web3Forms Integration) -->
       <div style="background-color: rgba(235, 230, 218, 0.85); backdrop-filter: blur(12px); border: 1px solid #DDD6C8; padding: 3rem 2.5rem;">
-        <form style="display: flex; flex-direction: column; gap: 2rem;">
+        <form action="https://api.web3forms.com/submit" method="POST" style="display: flex; flex-direction: column; gap: 2rem;">
           
+          <!-- Web3Forms Access Key -->
+          <input type="hidden" name="access_key" value="7ccd0b54-a506-45ef-85ab-4a13b570d3a3" />
+          <!-- Optional custom subject line for incoming form submissions -->
+          <input type="hidden" name="subject" value="New Inquiry from Minnaar-Matthews Contact Page" />
+
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem;">
             <div style="display: flex; flex-direction: column; gap: 0.5rem;">
               <label for="name" style="font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: #5C5750;">Full Name</label>
@@ -56,14 +52,20 @@
             </div>
           </div>
 
-          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-            <label for="service" style="font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: #5C5750;">Service / Series Interest</label>
-            <select id="service" name="service" style="background-color: rgba(245, 242, 235, 0.9); border: 1px solid #DDD6C8; padding: 0.875rem 1rem; color: #2C2A29; font-family: 'Jost', sans-serif; font-size: 0.95rem; outline: none;">
-              <option value="architectural">Architectural & Spatial Series</option>
-              <option value="editorial">Editorial Direction</option>
-              <option value="digital">Digital Architecture & Web Development</option>
-              <option value="bespoke">Bespoke Craft & Brand Showcase</option>
-            </select>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem;">
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+              <label for="phone" style="font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: #5C5750;">WhatsApp / Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+27..." style="background-color: rgba(245, 242, 235, 0.9); border: 1px solid #DDD6C8; padding: 0.875rem 1rem; color: #2C2A29; font-family: 'Jost', sans-serif; font-size: 0.95rem; outline: none;" />
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+              <label for="service" style="font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: #5C5750;">Service / Series Interest</label>
+              <select id="service" name="service" style="background-color: rgba(245, 242, 235, 0.9); border: 1px solid #DDD6C8; padding: 0.875rem 1rem; color: #2C2A29; font-family: 'Jost', sans-serif; font-size: 0.95rem; outline: none;">
+                <option value="architectural">Architectural & Spatial Series</option>
+                <option value="editorial">Editorial Direction</option>
+                <option value="digital">Digital Architecture & Web Development</option>
+                <option value="bespoke">Bespoke Craft & Brand Showcase</option>
+              </select>
+            </div>
           </div>
 
           <div style="display: flex; flex-direction: column; gap: 0.5rem;">
