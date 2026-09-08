@@ -60,7 +60,7 @@ const categories = [
         <div class="bg-[#E8E4DC] border border-[#C5BCAB]/60 rounded-sm overflow-hidden flex flex-col shadow-sm">
           
           <!-- Swiper Container with fixed aspect ratio -->
-          <div class={`swiper category-swiper-${index} w-full aspect-[4/5] relative group cursor-pointer select-none`}>
+          <div class={`swiper category-swiper-${index} w-full aspect-[4/5] relative overflow-hidden group cursor-pointer select-none`}>
             <div class="swiper-wrapper w-full h-full">
               {cat.images.map((imgUrl) => (
                 <div class="swiper-slide h-full w-full flex items-center justify-center overflow-hidden">
