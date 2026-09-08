@@ -1,0 +1,76 @@
+---
+// Reviews.astro for Minnaar-Matthews Creative House
+const reviews = [
+  {
+    quote: "Melissa captured our family flawlessly. The lighting and turnaround time were unmatched.",
+    author: "Carla M.",
+    platform: "Instagram"
+  },
+  {
+    quote: "An absolute professional on set. The headshots completely transformed my image.",
+    author: "Ashleigh.",
+    platform: "Instagram"
+  },
+  {
+    quote: "Fast, efficient, and exceptionally talented. The mobile studio setup made our shoot effortless.",
+    author: "Jason L.",
+    platform: "Facebook"
+  }
+];
+---
+
+<section id="reviews" class="py-16 bg-[#F4F1EA] text-[#1C1B1A] px-4 md:px-8 border-t border-[#C5BCAB]/40 w-full max-w-full overflow-hidden">
+  <div class="max-w-6xl mx-auto w-full overflow-hidden">
+    
+    <!-- Header -->
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 md:mb-10 gap-4">
+      <div>
+        <p class="text-[10px] font-mono uppercase tracking-widest text-[#6B6354] mb-1">Testimonials & Social</p>
+        <h2 class="font-serif text-2xl md:text-3xl font-light tracking-tight text-[#1C1B1A]">Client Endorsements & Feed</h2>
+      </div>
+
+      <a 
+        href="https://www.instagram.com/" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="text-[10px] font-mono uppercase tracking-widest text-[#6B6354] hover:text-[#1C1B1A] transition underline"
+      >
+        Follow on Instagram →
+      </a>
+    </div>
+
+    <!-- Grid Layout: Reviews + Live Instagram Feed -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full max-w-full overflow-hidden items-start">
+      
+      <!-- Left Column: Reviews -->
+      <div class="space-y-4 w-full">
+        {reviews.map((item) => (
+          <div class="bg-[#E8E4DC] border border-[#C5BCAB]/60 rounded-sm p-5 flex flex-col justify-between w-full shadow-sm">
+            <div>
+              <div class="text-[#8C7A5B] text-xs mb-2">★★★★★</div>
+              <p class="text-[#1C1B1A] text-xs md:text-sm leading-relaxed mb-3 italic">
+                "{item.quote}"
+              </p>
+            </div>
+            <div class="border-t border-[#C5BCAB]/40 pt-2.5">
+              <p class="font-semibold text-xs text-[#1C1B1A]">{item.author}</p>
+              <p class="text-[#6B6354] text-[10px]">{item.platform}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Right Column: Elfsight Instagram Widget Container -->
+      <div class="lg:col-span-2 bg-[#E8E4DC] border border-[#C5BCAB]/60 rounded-sm p-4 md:p-6 w-full max-w-full overflow-hidden shadow-sm">
+        <p class="text-[10px] font-mono uppercase tracking-widest text-[#6B6354] mb-4">Latest Instagram Posts</p>
+        
+        <!-- RESPONSIVE ELFSIGHT WRAPPER -->
+        <div class="w-full max-w-full overflow-x-hidden [&_*]:!max-w-full">
+          <script src="https://elfsightcdn.com/platform.js" async></script>
+          <div class="elfsight-app-928f87a2-ef93-4136-8057-343cc9a2efbe" data-elfsight-app-lazy></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
