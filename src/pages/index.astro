@@ -1,5 +1,7 @@
 ---
 // index.astro for Minnaar-Matthews | Creative House
+import bgImage from '../assets/bg.jpeg';
+import { Image } from 'astro:assets';
 ---
 
 <html lang="en">
@@ -11,8 +13,9 @@
   </head>
   <body style="margin: 0; padding: 0; width: 100vw; height: 100vh; overflow: hidden; background-color: #1C1B1A;">
     <div style="position: relative; width: 100%; height: 100%;">
-      <img 
-        src="/bg.jpeg" 
+      <Image 
+        src={bgImage} 
+        alt="Background" 
         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" 
       />
     </div>
