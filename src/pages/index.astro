@@ -11,10 +11,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Jost:wght@400;500&display=swap" rel="stylesheet">
     <title>Minnaar-Matthews | Creative House</title>
   </head>
-  <body class="bg-[#F4F1EA] text-[#1C1B1A] m-0 p-0 overflow-x-hidden">
-    <main>
-      <section id="hero" class="relative w-full h-screen bg-[#F4F1EA] flex items-center justify-center overflow-hidden m-0 p-0">
+  <body class="bg-[#F4F1EA] text-[#1C1B1A] m-0 p-0 overflow-hidden">
+    <main class="w-screen h-screen">
+      <section id="hero" class="relative w-full h-full bg-[#F4F1EA] flex flex-col items-center justify-center overflow-hidden m-0 p-4">
         
+        <!-- Active Wrapper Button linking to WhatsApp -->
         <a 
           href="https://wa.me/27817586537?text=Hi%20Melissa!%20I'd%20like%20to%20enquire%20about%20booking%20a%20photography%20session." 
           target="_blank" 
@@ -54,13 +55,13 @@
     position: relative;
     display: block;
     width: 100%;
-    max-width: 1100px;
-    aspect-ratio: 851/315;
-    margin: 24px;
+    max-width: 900px;
+    height: 58vh;
+    max-height: 420px;
     perspective: 1600px;
     border-radius: 6px;
     overflow: hidden;
-    box-shadow: 0 30px 60px -20px rgba(28, 27, 26, 0.15);
+    box-shadow: 0 25px 50px -15px rgba(28, 27, 26, 0.12);
     text-decoration: none;
     cursor: pointer;
   }
@@ -77,8 +78,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 82%;
-    height: 76%;
+    width: 86%;
+    height: 80%;
     transform: translate(-50%, -50%);
     transform-style: preserve-3d;
     background: linear-gradient(135deg, rgba(28, 27, 26, 0.04) 0%, rgba(28, 27, 26, 0.01) 100%);
@@ -106,14 +107,14 @@
   .monogram {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 14px;
     transform: translateZ(40px);
   }
 
   .glyph {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-size: clamp(2.2rem, 4.5vw, 4rem);
     color: var(--ink);
     letter-spacing: -0.02em;
     text-shadow: 0 4px 12px rgba(28, 27, 26, 0.1);
@@ -121,45 +122,45 @@
 
   .divider {
     width: 2px;
-    height: 40px;
+    height: 34px;
     background: rgba(28, 27, 26, 0.3);
   }
 
   .wordmark-bar {
-    margin-top: 10px;
+    margin-top: 8px;
     transform: translateZ(25px);
   }
 
   .wordmark-bar span {
     font-family: 'Jost', sans-serif;
     font-weight: 500;
-    font-size: clamp(0.6rem, 1.2vw, 0.9rem);
+    font-size: clamp(0.55rem, 1vw, 0.8rem);
     letter-spacing: 0.35em;
     color: var(--ink);
     opacity: 0.9;
   }
 
   .tagline {
-    margin-top: 6px;
+    margin-top: 4px;
     font-family: 'Jost', sans-serif;
     font-weight: 400;
-    font-size: clamp(0.5rem, 0.9vw, 0.7rem);
+    font-size: clamp(0.45rem, 0.8vw, 0.65rem);
     letter-spacing: 0.5em;
     color: #6B6354;
     transform: translateZ(15px);
   }
 
   .cta-badge {
-    margin-top: 12px;
+    margin-top: 10px;
     font-family: 'Jost', sans-serif;
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 500;
     letter-spacing: 0.25em;
     text-transform: uppercase;
     color: var(--ink);
     background: #F4F1EA;
     border: 1px solid #C5BCAB;
-    padding: 6px 14px;
+    padding: 5px 12px;
     border-radius: 2px;
     transform: translateZ(30px);
     opacity: 0;
@@ -172,10 +173,9 @@
   }
 
   .hint {
-    position: absolute;
-    bottom: 30px;
+    margin-top: 20px;
     font-family: 'Jost', sans-serif;
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 0.2em;
     color: #6B6354;
     text-transform: uppercase;
