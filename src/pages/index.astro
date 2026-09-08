@@ -11,20 +11,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Jost:wght@400;500&display=swap" rel="stylesheet">
     <title>Minnaar-Matthews | Creative House</title>
   </head>
-  <body class="bg-[#F4F1EA] text-[#1C1B1A] m-0 p-0 overflow-hidden">
+  <body class="bg-[#1C1B1A] text-[#F4F1EA] m-0 p-0 overflow-hidden">
     <main class="w-screen h-screen">
-      <section id="hero" class="relative w-full h-full bg-[#F4F1EA] flex flex-col items-center justify-center overflow-hidden m-0 p-4">
+      <section id="hero" class="relative w-full h-full flex flex-col items-center justify-center overflow-hidden m-0 p-4">
         
+        <!-- Background Image Layer with Dark Overlay -->
+        <div class="absolute inset-0 z-0">
+          <img 
+            src="/bg.png.jpeg" 
+            alt="Background" 
+            class="w-full h-full object-cover object-center"
+          />
+          <div class="absolute inset-0 bg-black/60 backdrop-blur-[2px]"></div>
+        </div>
+
         <!-- Active Wrapper Button linking to WhatsApp -->
         <a 
           href="https://wa.me/27817586537?text=Hi%20Melissa!%20I'd%20like%20to%20enquire%20about%20booking%20a%20photography%20session." 
           target="_blank" 
           rel="noopener noreferrer"
           id="stage" 
-          class="stage group"
+          class="stage group relative z-10"
           aria-label="Book Session on WhatsApp"
         >
-          <div class="bg"></div>
+          <div class="bg-card"></div>
           <div class="plaque" id="plaque">
             <div class="glass"></div>
             <div class="monogram">
@@ -38,7 +48,7 @@
           </div>
         </a>
 
-        <div class="hint">Move your cursor to tilt • Click to Book</div>
+        <div class="hint relative z-10">Move your cursor to tilt • Click to Book</div>
       </section>
     </main>
   </body>
@@ -61,16 +71,17 @@
     perspective: 1600px;
     border-radius: 6px;
     overflow: hidden;
-    box-shadow: 0 25px 50px -15px rgba(28, 27, 26, 0.12);
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.5);
     text-decoration: none;
     cursor: pointer;
   }
 
-  .bg {
+  .bg-card {
     position: absolute;
     inset: 0;
-    background-color: #E8E4DC;
-    border: 1px solid rgba(197, 188, 171, 0.5);
+    background-color: rgba(28, 27, 26, 0.75);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(244, 241, 234, 0.2);
     border-radius: 6px;
   }
 
@@ -82,8 +93,8 @@
     height: 80%;
     transform: translate(-50%, -50%);
     transform-style: preserve-3d;
-    background: linear-gradient(135deg, rgba(28, 27, 26, 0.04) 0%, rgba(28, 27, 26, 0.01) 100%);
-    border: 1px solid rgba(28, 27, 26, 0.15);
+    background: linear-gradient(135deg, rgba(244, 241, 234, 0.08) 0%, rgba(244, 241, 234, 0.02) 100%);
+    border: 1px solid rgba(244, 241, 234, 0.25);
     border-radius: 4px;
     display: flex;
     flex-direction: column;
@@ -94,13 +105,13 @@
   }
 
   .stage:hover .plaque {
-    border-color: rgba(28, 27, 26, 0.35);
+    border-color: rgba(244, 241, 234, 0.5);
   }
 
   .glass {
     position: absolute;
     inset: 0;
-    background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.4) 50%, transparent 100%);
+    background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%);
     pointer-events: none;
   }
 
@@ -115,15 +126,15 @@
     font-family: 'Playfair Display', serif;
     font-weight: 900;
     font-size: clamp(2.2rem, 4.5vw, 4rem);
-    color: var(--ink);
+    color: var(--cream);
     letter-spacing: -0.02em;
-    text-shadow: 0 4px 12px rgba(28, 27, 26, 0.1);
+    text-shadow: 0 4px 16px rgba(0,0,0,0.6);
   }
 
   .divider {
     width: 2px;
     height: 34px;
-    background: rgba(28, 27, 26, 0.3);
+    background: rgba(244, 241, 234, 0.4);
   }
 
   .wordmark-bar {
@@ -136,8 +147,8 @@
     font-weight: 500;
     font-size: clamp(0.55rem, 1vw, 0.8rem);
     letter-spacing: 0.35em;
-    color: var(--ink);
-    opacity: 0.9;
+    color: var(--cream);
+    opacity: 0.95;
   }
 
   .tagline {
@@ -146,7 +157,7 @@
     font-weight: 400;
     font-size: clamp(0.45rem, 0.8vw, 0.65rem);
     letter-spacing: 0.5em;
-    color: #6B6354;
+    color: #D3CBC0;
     transform: translateZ(15px);
   }
 
@@ -158,8 +169,8 @@
     letter-spacing: 0.25em;
     text-transform: uppercase;
     color: var(--ink);
-    background: #F4F1EA;
-    border: 1px solid #C5BCAB;
+    background: var(--cream);
+    border: 1px solid var(--border-beige);
     padding: 5px 12px;
     border-radius: 2px;
     transform: translateZ(30px);
@@ -177,7 +188,7 @@
     font-family: 'Jost', sans-serif;
     font-size: 10px;
     letter-spacing: 0.2em;
-    color: #6B6354;
+    color: rgba(244, 241, 234, 0.6);
     text-transform: uppercase;
     pointer-events: none;
   }
