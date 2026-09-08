@@ -5,73 +5,99 @@
 <header class="fixed top-0 left-0 right-0 z-50 bg-[#F4F1EA]/95 backdrop-blur-md border-b border-[#C5BCAB]/40 w-full">
   <div class="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between">
     
-    <!-- Logo Button (Triggers Pop-up Menu) -->
-    <button id="menu-toggle-btn" class="flex items-center focus:outline-none group cursor-pointer" aria-label="Toggle Navigation Menu">
+    <!-- Logo -->
+    <a href="#" class="flex items-center">
       <img 
         src="/logo.png" 
         alt="Minnaar-Matthews Creative House Logo" 
-        class="h-8 md:h-10 w-auto object-contain max-h-10 group-hover:opacity-80 transition-opacity"
+        class="h-8 md:h-10 w-auto object-contain max-h-10"
       />
-      <span class="ml-3 text-[10px] font-mono uppercase tracking-widest text-[#6B6354] hidden sm:inline-block">Menu ▾</span>
-    </button>
+    </a>
 
-    <!-- WhatsApp Book Session Button -->
+    <!-- Right Side Controls: Dropdown Toggle + WhatsApp CTA -->
+    <div class="flex items-center space-x-3">
+      
+      <!-- Dropdown Menu Toggle Button -->
+      <button 
+        id="menu-toggle-btn" 
+        class="bg-[#E8E4DC] border border-[#C5BCAB] text-[#1C1B1A] text-xs font-mono uppercase tracking-wider px-4 py-2 hover:bg-[#DCD7CD] transition-colors rounded-sm shadow-sm flex items-center gap-2 cursor-pointer"
+        aria-label="Toggle Menu"
+      >
+        <span>Menu</span>
+        <svg id="menu-icon" class="w-3.5 h-3.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+
+      <!-- WhatsApp Book Session Button -->
+      <a 
+        href="https://wa.me/27817586537?text=Hi%20Melissa!%20I'd%20like%20to%20enquire%20about%20booking%20a%20photography%20session." 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="bg-[#E8E4DC] border border-[#C5BCAB] text-[#1C1B1A] text-xs font-semibold uppercase tracking-wider px-4 py-2 hover:bg-[#DCD7CD] transition-colors rounded-sm shadow-sm hidden sm:inline-block"
+      >
+        Book Session
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Drop-down Menu Panel -->
+<div id="dropdown-menu" class="fixed top-20 right-4 sm:right-8 z-50 w-72 bg-[#F4F1EA] border border-[#C5BCAB] shadow-lg rounded-sm p-6 opacity-0 pointer-events-none transform -translate-y-2 transition-all duration-300">
+  <nav class="flex flex-col space-y-4">
+    <a href="#corporate" class="nav-link font-serif text-lg text-[#1C1B1A] hover:text-[#6B6354] transition-colors pb-2 border-b border-[#C5BCAB]/30">Birthday Photoshoots</a>
+    <a href="#portfolio" class="nav-link font-serif text-lg text-[#1C1B1A] hover:text-[#6B6354] transition-colors pb-2 border-b border-[#C5BCAB]/30">Portfolio</a>
+    <a href="#reviews" class="nav-link font-serif text-lg text-[#1C1B1A] hover:text-[#6B6354] transition-colors pb-2 border-b border-[#C5BCAB]/30">Client Reviews</a>
+    <a href="#contact" class="nav-link font-serif text-lg text-[#1C1B1A] hover:text-[#6B6354] transition-colors pb-2">Contact Us</a>
+    
+    <!-- Mobile WhatsApp Link -->
     <a 
       href="https://wa.me/27817586537?text=Hi%20Melissa!%20I'd%20like%20to%20enquire%20about%20booking%20a%20photography%20session." 
       target="_blank" 
       rel="noopener noreferrer"
-      class="bg-[#E8E4DC] border border-[#C5BCAB] text-[#1C1B1A] text-xs font-semibold uppercase tracking-wider px-4 py-2 hover:bg-[#DCD7CD] transition-colors rounded-sm shadow-sm"
+      class="sm:hidden text-center bg-[#E8E4DC] border border-[#C5BCAB] text-[#1C1B1A] text-xs font-semibold uppercase tracking-wider py-2.5 mt-2 rounded-sm"
     >
       Book Session
     </a>
-  </div>
-</header>
-
-<!-- Pop-up Fullscreen Navigation Overlay -->
-<div id="nav-overlay" class="fixed inset-0 z-50 bg-[#F4F1EA] bg-opacity-98 backdrop-blur-xl flex flex-col justify-center items-center opacity-0 pointer-events-none transition-all duration-300 w-screen h-screen overflow-hidden">
-  
-  <!-- Close Button -->
-  <button id="menu-close-btn" class="absolute top-6 right-8 text-[#1C1B1A] text-xs font-mono uppercase tracking-widest hover:opacity-60 transition-opacity cursor-pointer">
-    [Close ✕]
-  </button>
-
-  <!-- Menu Links -->
-  <nav class="flex flex-col items-center space-y-6 text-center">
-    <a href="#corporate" class="nav-link font-serif text-2xl md:text-4xl text-[#1C1B1A] hover:text-[#6B6354] transition-colors">Birthday Photoshoots</a>
-    <a href="#portfolio" class="nav-link font-serif text-2xl md:text-4xl text-[#1C1B1A] hover:text-[#6B6354] transition-colors">Portfolio</a>
-    <a href="#reviews" class="nav-link font-serif text-2xl md:text-4xl text-[#1C1B1A] hover:text-[#6B6354] transition-colors">Client Reviews</a>
-    <a href="#contact" class="nav-link font-serif text-2xl md:text-4xl text-[#1C1B1A] hover:text-[#6B6354] transition-colors">Contact Us</a>
   </nav>
-
-  <div class="absolute bottom-10 text-center">
-    <p class="text-[10px] font-mono uppercase tracking-widest text-[#6B6354]">Minnaar-Matthews Creative House</p>
-  </div>
 </div>
 
-<!-- Toggle Script -->
+<!-- Dropdown Toggle Script -->
 <script>
   const toggleBtn = document.getElementById('menu-toggle-btn');
-  const closeBtn = document.getElementById('menu-close-btn');
-  const overlay = document.getElementById('nav-overlay');
+  const dropdownMenu = document.getElementById('dropdown-menu');
   const navLinks = document.querySelectorAll('.nav-link');
 
-  function toggleMenu() {
-    if (!overlay) return;
-    const isOpen = overlay.classList.contains('opacity-100');
+  function toggleDropdown() {
+    if (!dropdownMenu) return;
+    const isOpen = dropdownMenu.classList.contains('opacity-100');
     if (isOpen) {
-      overlay.classList.remove('opacity-100', 'pointer-events-auto');
-      overlay.classList.add('opacity-0', 'pointer-events-none');
-      document.body.style.overflow = '';
+      dropdownMenu.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+      dropdownMenu.classList.add('opacity-0', 'pointer-events-none', '-translate-y-2');
     } else {
-      overlay.classList.remove('opacity-0', 'pointer-events-none');
-      overlay.classList.add('opacity-100', 'pointer-events-auto');
-      document.body.style.overflow = 'hidden';
+      dropdownMenu.classList.remove('opacity-0', 'pointer-events-none', '-translate-y-2');
+      dropdownMenu.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
     }
   }
 
-  toggleBtn?.addEventListener('click', toggleMenu);
-  closeBtn?.addEventListener('click', toggleMenu);
+  toggleBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleDropdown();
+  });
+
+  // Close dropdown when clicking a link
   navLinks.forEach(link => {
-    link.addEventListener('click', toggleMenu);
+    link.addEventListener('click', () => {
+      dropdownMenu?.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+      dropdownMenu?.classList.add('opacity-0', 'pointer-events-none', '-translate-y-2');
+    });
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', (e) => {
+    if (dropdownMenu && !dropdownMenu.contains(e.target as Node) && !toggleBtn?.contains(e.target as Node)) {
+      dropdownMenu.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+      dropdownMenu.classList.add('opacity-0', 'pointer-events-none', '-translate-y-2');
+    }
   });
 </script>
