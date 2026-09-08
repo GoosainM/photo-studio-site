@@ -24,39 +24,51 @@ Set-Content -Path "src/pages/portfolio.astro" -Value @"
     <main class="flex-grow max-w-7xl mx-auto px-6 py-20 w-full">
       <div class="text-center mb-16">
         <h1 class="font-serif text-4xl md:text-6xl font-black tracking-wider uppercase mb-4">Portfolio</h1>
-        <p class="font-sans font-medium tracking-[0.4em] text-xs uppercase text-gray-400">Selected Works & Creative Archival</p>
+        <p class="font-sans font-medium tracking-[0.4em] text-xs uppercase text-gray-400">Selected Works & Visual Archival</p>
       </div>
 
-      <!-- Portfolio Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- 3-Column Grid Layout -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         
-        <!-- Project 1 -->
-        <div class="group relative overflow-hidden bg-[#242322] aspect-[4/5] flex items-center justify-center cursor-pointer border border-[#333]">
-          <div class="absolute inset-0 bg-cover bg-center opacity-60 group-hover:scale-105 transition-transform duration-700 ease-out" style="background-image: url('/bg.jpeg');"></div>
-          <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
-          <div class="relative z-10 text-center p-6">
-            <h3 class="font-serif text-2xl tracking-wider mb-2 font-bold">E-Guard Security</h3>
-            <p class="font-sans text-xs tracking-[0.25em] uppercase text-gray-300">Web Architecture & Identity</p>
+        <!-- Tile 1 -->
+        <div class="bg-[#242322] border border-[#333] flex flex-col overflow-hidden group">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <img src="/IMG_0661.jpg" alt="E-Guard Security" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" />
+          </div>
+          <div class="p-6 flex flex-col flex-grow justify-between">
+            <div>
+              <h3 class="font-serif text-xl tracking-wider mb-2 font-bold">E-Guard Security</h3>
+              <p class="font-sans text-sm text-gray-300 leading-relaxed">Custom full-stack web architecture and high-performance interactive UI deployment for modern security operations.</p>
+            </div>
+            <span class="mt-6 font-sans text-xs tracking-[0.2em] uppercase text-gray-400">Web Architecture</span>
           </div>
         </div>
 
-        <!-- Project 2 -->
-        <div class="group relative overflow-hidden bg-[#242322] aspect-[4/5] flex items-center justify-center cursor-pointer border border-[#333]">
-          <div class="absolute inset-0 bg-cover bg-center opacity-60 group-hover:scale-105 transition-transform duration-700 ease-out" style="background-image: url('/bg.jpeg');"></div>
-          <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
-          <div class="relative z-10 text-center p-6">
-            <h3 class="font-serif text-2xl tracking-wider mb-2 font-bold">Photography Showcase</h3>
-            <p class="font-sans text-xs tracking-[0.25em] uppercase text-gray-300">Visual Art Direction</p>
+        <!-- Tile 2 -->
+        <div class="bg-[#242322] border border-[#333] flex flex-col overflow-hidden group">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <img src="/IMG_0713.jpg" alt="Visual Art Direction" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" />
+          </div>
+          <div class="p-6 flex flex-col flex-grow justify-between">
+            <div>
+              <h3 class="font-serif text-xl tracking-wider mb-2 font-bold">Visual Art Direction</h3>
+              <p class="font-sans text-sm text-gray-300 leading-relaxed">Curated photography showcasing refined editorial lighting, atmosphere, and high-end composition standards.</p>
+            </div>
+            <span class="mt-6 font-sans text-xs tracking-[0.2em] uppercase text-gray-400">Photography</span>
           </div>
         </div>
 
-        <!-- Project 3 -->
-        <div class="group relative overflow-hidden bg-[#242322] aspect-[4/5] flex items-center justify-center cursor-pointer border border-[#333]">
-          <div class="absolute inset-0 bg-cover bg-center opacity-60 group-hover:scale-105 transition-transform duration-700 ease-out" style="background-image: url('/bg.jpeg');"></div>
-          <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
-          <div class="relative z-10 text-center p-6">
-            <h3 class="font-serif text-2xl tracking-wider mb-2 font-bold">Matthews Developments</h3>
-            <p class="font-sans text-xs tracking-[0.25em] uppercase text-gray-300">Custom Web Applications</p>
+        <!-- Tile 3 -->
+        <div class="bg-[#242322] border border-[#333] flex flex-col overflow-hidden group">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <img src="/IMG_0784.jpg" alt="Matthews Developments" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" />
+          </div>
+          <div class="p-6 flex flex-col flex-grow justify-between">
+            <div>
+              <h3 class="font-serif text-xl tracking-wider mb-2 font-bold">Matthews Developments</h3>
+              <p class="font-sans text-sm text-gray-300 leading-relaxed">Bespoke digital branding, client showcases, and tailored interactive solutions built for scale and aesthetic precision.</p>
+            </div>
+            <span class="mt-6 font-sans text-xs tracking-[0.2em] uppercase text-gray-400">Digital Agency</span>
           </div>
         </div>
 
