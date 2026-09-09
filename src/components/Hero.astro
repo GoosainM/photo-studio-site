@@ -20,11 +20,11 @@
   <div class="menu-overlay" id="menuOverlay">
     <button class="close-btn" id="closeBtn">&times;</button>
     <ul class="menu-links">
-      <li><a href="#" class="nav-link" data-section="Home" data-target="bannerHome">Home</a></li>
-      <li><a href="/about" class="nav-link" data-section="About Us" data-target="bannerAbout">About Us</a></li>
-      <li><a href="/portfolio" class="nav-link" data-section="Portfolio" data-target="bannerPortfolio">Portfolio</a></li>
-      <li><a href="/review" class="nav-link" data-section="Review" data-target="bannerReview">Review</a></li>
-      <li><a href="/contact" class="nav-link" data-section="Contact" data-target="bannerContact">Contact</a></li>
+      <li><a href="#" class="nav-link" data-section="Home" data-target="bannerHome"><span>Home</span></a></li>
+      <li><a href="/about" class="nav-link" data-section="About Us" data-target="bannerAbout"><span>About Us</span></a></li>
+      <li><a href="/portfolio" class="nav-link" data-section="Portfolio" data-target="bannerPortfolio"><span>Portfolio</span></a></li>
+      <li><a href="/review" class="nav-link" data-section="Review" data-target="bannerReview"><span>Review</span></a></li>
+      <li><a href="/contact" class="nav-link" data-section="Contact" data-target="bannerContact"><span>Contact</span></a></li>
     </ul>
   </div>
 </div>
@@ -65,7 +65,6 @@
   });
 
   navLinks.forEach(link => {
-    // Hover event to switch banner backgrounds
     link.addEventListener('mouseenter', () => {
       const targetId = link.getAttribute('data-target');
       bannerLayers.forEach(banner => {
@@ -84,13 +83,11 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
         menuOverlay?.classList.remove('active');
       } else {
-        // Allows standard page navigation to /about, /portfolio, /review, and /contact
         menuOverlay?.classList.remove('active');
       }
     });
   });
 
-  // Reset banners when mouse leaves the menu list
   document.querySelector('.menu-links')?.addEventListener('mouseleave', () => {
     bannerLayers.forEach(banner => banner.classList.remove('active'));
   });
@@ -123,7 +120,6 @@
     z-index: 0;
   }
 
-  /* Interactive Hover Banner Layers */
   .banner-layer {
     position: absolute;
     inset: 0;
@@ -202,11 +198,15 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .menu-links li {
-    margin: 14px 0;
+    width: 100%;
+    text-align: center;
     transform: translateY(20px);
     opacity: 0;
     transition: transform 0.4s ease, opacity 0.4s ease;
@@ -224,23 +224,30 @@
   .menu-overlay.active .menu-links li:nth-child(5) { transition-delay: 0.25s; }
 
   .menu-links a {
-    display: inline-block;
+    display: block;
+    width: 100vw;
+    padding: 14px 0;
     font-family: 'Playfair Display', serif;
     font-size: clamp(1.6rem, 3vw, 2.6rem);
     color: var(--cream);
     text-decoration: none;
     letter-spacing: 0.1em;
-    padding: 8px 24px;
-    border: 1px solid transparent;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
     background: transparent;
     transition: color 0.3s ease, letter-spacing 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+  }
+
+  .menu-links a span {
+    display: inline-block;
+    transition: transform 0.3s ease;
   }
 
   .menu-links a:hover {
     color: #ffffff;
     letter-spacing: 0.18em;
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(244, 241, 234, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(244, 241, 234, 0.25);
   }
 
   .close-btn {
@@ -255,6 +262,7 @@
     font-family: 'Jost', sans-serif;
     opacity: 0.7;
     transition: opacity 0.3s ease;
+    z-index: 20;
   }
 
   .close-btn:hover {
