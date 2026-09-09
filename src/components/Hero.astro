@@ -1,21 +1,215 @@
 ---
-// Hero Component with Full-Screen Menu
+// src/components/Hero.astro
 ---
-<div class="relative w-screen h-screen flex flex-col justify-center items-center text-center overflow-hidden">
-  
-  <!-- Background Image Overlay -->
-  <div class="absolute inset-0 z-1 bg-cover bg-center filter grayscale contrast-125 opacity-15" style="background-image: url('/hero-bg.png');"></div>
-  
-  <!-- Dark Backdrop -->
-  <div class="absolute inset-0 z-2 bg-black/85"></div>
 
-  <!-- Navigation Menu Links -->
-  <nav class="relative z-10 flex flex-col gap-6 items-center">
-    <a href="/" class="font-['Playfair_Display'] text-3xl md:text-4xl text-[#F4F1EA] no-underline tracking-widest transition-opacity hover:opacity-70">Home</a>
-    <a href="/about" class="font-['Playfair_Display'] text-3xl md:text-4xl text-[#F4F1EA] no-underline tracking-widest transition-opacity hover:opacity-70">About Us</a>
-    <a href="/portfolio" class="font-['Playfair_Display'] text-3xl md:text-4xl text-[#F4F1EA] no-underline tracking-widest transition-opacity hover:opacity-70">Portfolio</a>
-    <a href="/review" class="font-['Playfair_Display'] text-3xl md:text-4xl text-[#F4F1EA] no-underline tracking-widest transition-opacity hover:opacity-70">Review</a>
-    <a href="/contact" class="font-['Playfair_Display'] text-3xl md:text-4xl text-[#F4F1EA] no-underline tracking-widest transition-opacity hover:opacity-70">Contact</a>
-  </nav>
+<div class="stage" id="stage">
+  <div class="bg"></div>
+  
+  <div class="logo-container" id="logoContainer">
+    <h1 class="brand-name">Minnaar-Matthews</h1>
+    <div class="brand-sub">Creative House</div>
+  </div>
 
+  <div class="menu-overlay" id="menuOverlay">
+    <button class="close-btn" id="closeBtn">&times;</button>
+    <ul class="menu-links">
+      <li><a href="#" class="nav-link" data-section="Home">Home</a></li>
+      <li><a href="#about" class="nav-link" data-section="About Us">About Us</a></li>
+      <li><a href="/portfolio" class="nav-link" data-section="Portfolio">Portfolio</a></li>
+      <li><a href="/review" class="nav-link" data-section="Review">Review</a></li>
+      <li><a href="/contact" class="nav-link" data-section="Contact">Contact</a></li>
+    </ul>
+  </div>
 </div>
+
+<script>
+  const stage = document.getElementById('stage');
+  const logoContainer = document.getElementById('logoContainer');
+  const menuOverlay = document.getElementById('menuOverlay');
+  const closeBtn = document.getElementById('closeBtn');
+  const navLinks = document.querySelectorAll('.nav-link');
+  let raf = null;
+
+  stage?.addEventListener('mousemove', (e) => {
+    const rect = stage.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width;
+    const y = (e.clientY - rect.top) / rect.height;
+    const rotY = (x - 0.5) * 20;
+    const rotX = (0.5 - y) * 15;
+    if(raf) cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(() => {
+      if(logoContainer) logoContainer.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+    });
+  });
+
+  stage?.addEventListener('mouseleave', () => {
+    if(raf) cancelAnimationFrame(raf);
+    if(logoContainer) logoContainer.style.transform = `rotateX(0deg) rotateY(0deg)`;
+  });
+
+  stage?.addEventListener('click', () => {
+    menuOverlay?.classList.add('active');
+  });
+
+  closeBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    menuOverlay?.classList.remove('active');
+  });
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const section = link.getAttribute('data-section');
+      if (section === 'Home') {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        menuOverlay?.classList.remove('active');
+      } else {
+        // Allows standard page navigation to /portfolio, /review, and /contact
+        menuOverlay?.classList.remove('active');
+      }
+    });
+  });
+</script>
+
+<style>
+  :root {
+    --cream: #F4F1EA;
+  }
+
+  .stage {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1600px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('/bg.jpeg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.85);
+    z-index: 0;
+  }
+
+  .logo-container {
+    position: relative;
+    z-index: 2;
+    transform-style: preserve-3d;
+    transition: transform 0.15s ease-out;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .brand-name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(2rem, 5vw, 5rem);
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin: 0;
+    text-shadow: 
+      0 1px 0 #cccccc,
+      0 2px 0 #b3b3b3,
+      0 3px 0 #999999,
+      0 4px 0 #808080,
+      0 5px 0 #666666,
+      0 15px 30px rgba(0, 0, 0, 0.7),
+      0 0 35px rgba(255, 255, 255, 0.4);
+  }
+
+  .brand-sub {
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+    font-size: clamp(0.7rem, 1.2vw, 1.1rem);
+    color: #f0f0f0;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    margin-top: 12px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+  }
+
+  .menu-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(28, 27, 26, 0.94);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    z-index: 10;
+  }
+
+  .menu-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .menu-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+
+  .menu-links li {
+    margin: 18px 0;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+  }
+
+  .menu-overlay.active .menu-links li {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .menu-overlay.active .menu-links li:nth-child(1) { transition-delay: 0.05s; }
+  .menu-overlay.active .menu-links li:nth-child(2) { transition-delay: 0.1s; }
+  .menu-overlay.active .menu-links li:nth-child(3) { transition-delay: 0.15s; }
+  .menu-overlay.active .menu-links li:nth-child(4) { transition-delay: 0.2s; }
+  .menu-overlay.active .menu-links li:nth-child(5) { transition-delay: 0.25s; }
+
+  .menu-links a {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 3vw, 2.6rem);
+    color: var(--cream);
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    transition: color 0.3s ease, letter-spacing 0.3s ease;
+  }
+
+  .menu-links a:hover {
+    color: #ffffff;
+    letter-spacing: 0.2em;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    background: none;
+    border: none;
+    color: var(--cream);
+    font-size: 2.5rem;
+    cursor: pointer;
+    font-family: 'Jost', sans-serif;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+  }
+
+  .close-btn:hover {
+    opacity: 1;
+  }
+</style>
