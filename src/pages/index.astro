@@ -1,18 +1,50 @@
 ---
-// src/pages/index.astro
-import Hero from '../components/Hero.astro';
+// Landing Page - Minnaar-Matthews Creative House
 ---
-
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Jost:wght@400;500&display=swap" rel="stylesheet">
     <title>Minnaar-Matthews | Creative House</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+      *, *::before, *::after { box-sizing: border-box; }
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #1C1B1A;
+        color: #F4F1EA;
+        font-family: 'Jost', sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+      }
+    </style>
   </head>
-  <body class="bg-[#1C1B1A] text-[#F4F1EA] m-0 p-0 overflow-hidden">
-    <Hero />
+  <body>
+
+    <!-- Full-Screen Menu Overlay / Landing View -->
+    <main style="position: relative; width: 100vw; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; overflow: hidden;">
+      
+      <!-- Background Image Overlay -->
+      <div style="position: absolute; inset: 0; z-index: 1; background-image: url('/hero-bg.png'); background-size: cover; background-position: center; filter: grayscale(100%) contrast(125%); opacity: 0.15;"></div>
+      
+      <!-- Dark Backdrop -->
+      <div style="position: absolute; inset: 0; z-index: 2; background-color: rgba(28, 27, 26, 0.9);"></div>
+
+      <!-- Navigation Menu Links -->
+      <nav style="position: relative; z-index: 10; display: flex; flex-direction: column; gap: 1.5rem; align-items: center;">
+        <a href="/" style="font-family: 'Playfair Display', serif; font-size: clamp(1.75rem, 3vw, 2.25rem); color: #F4F1EA; text-decoration: none; letter-spacing: 0.15em; transition: opacity 0.2s;">Home</a>
+        <a href="/about" style="font-family: 'Playfair Display', serif; font-size: clamp(1.75rem, 3vw, 2.25rem); color: #F4F1EA; text-decoration: none; letter-spacing: 0.15em; transition: opacity 0.2s;">About Us</a>
+        <a href="/portfolio" style="font-family: 'Playfair Display', serif; font-size: clamp(1.75rem, 3vw, 2.25rem); color: #F4F1EA; text-decoration: none; letter-spacing: 0.15em; transition: opacity 0.2s;">Portfolio</a>
+        <a href="/review" style="font-family: 'Playfair Display', serif; font-size: clamp(1.75rem, 3vw, 2.25rem); color: #F4F1EA; text-decoration: none; letter-spacing: 0.15em; transition: opacity 0.2s;">Review</a>
+        <a href="/contact" style="font-family: 'Playfair Display', serif; font-size: clamp(1.75rem, 3vw, 2.25rem); color: #F4F1EA; text-decoration: none; letter-spacing: 0.15em; transition: opacity 0.2s;">Contact</a>
+      </nav>
+
+    </main>
+
   </body>
 </html>
