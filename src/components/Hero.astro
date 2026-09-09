@@ -13,34 +13,40 @@
   <div class="banner-layer" id="bannerContact" style="background-image: url('https://images.unsplash.com/photo-1512314889357-e157c22f938d?auto=format&fit=crop&w=1920&q=80');"></div>
   
   <div class="logo-container" id="logoContainer">
+    <div class="chic-badge">Studio Collection</div>
     <h1 class="brand-name">Minnaar-Matthews</h1>
-    <div class="brand-sub">Creative House</div>
+    <div class="brand-sub">Creative House &bull; Pure Design</div>
   </div>
 
-  <!-- Audio element (Put your audio file in the public folder, e.g., /public/ambient.mp3) -->
+  <!-- Audio element -->
   <audio id="bgAudio" loop preload="auto">
     <source src="/ambient.mp3" type="audio/mpeg" />
   </audio>
 
   <!-- Audio Toggle Button -->
   <button class="audio-btn" id="audioToggle" aria-label="Toggle Audio">
-    <svg class="sound-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+    <svg class="sound-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
       <path class="speaker" d="M11 5L6 9H2v6h4l5 4V5z"></path>
       <path class="wave1" d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-      <path class="wave2" d="M19.07 4.93a10 10 0 0 1 0 14.14" style="display: none;"></path>
     </svg>
     <span id="audioText">Sound: Off</span>
   </button>
 
   <div class="menu-overlay" id="menuOverlay">
     <button class="close-btn" id="closeBtn">&times;</button>
-    <ul class="menu-links">
-      <li><a href="#" class="nav-link" data-section="Home" data-target="bannerHome"><span>Home</span></a></li>
-      <li><a href="/about" class="nav-link" data-section="About Us" data-target="bannerAbout"><span>About Us</span></a></li>
-      <li><a href="/portfolio" class="nav-link" data-section="Portfolio" data-target="bannerPortfolio"><span>Portfolio</span></a></li>
-      <li><a href="/review" class="nav-link" data-section="Review" data-target="bannerReview"><span>Review</span></a></li>
-      <li><a href="/contact" class="nav-link" data-section="Contact" data-target="bannerContact"><span>Contact</span></a></li>
-    </ul>
+    <div class="menu-inner-grid">
+      <div class="menu-header-left">
+        <span class="menu-subtitle">Index</span>
+        <h2>Navigation</h2>
+      </div>
+      <ul class="menu-links">
+        <li><a href="#" class="nav-link" data-section="Home" data-target="bannerHome"><span>01. Home</span></a></li>
+        <li><a href="/about" class="nav-link" data-section="About Us" data-target="bannerAbout"><span>02. About Us</span></a></li>
+        <li><a href="/portfolio" class="nav-link" data-section="Portfolio" data-target="bannerPortfolio"><span>03. Portfolio</span></a></li>
+        <li><a href="/review" class="nav-link" data-section="Review" data-target="bannerReview"><span>04. Review</span></a></li>
+        <li><a href="/contact" class="nav-link" data-section="Contact" data-target="bannerContact"><span>05. Contact</span></a></li>
+      </ul>
+    </div>
   </div>
 </div>
 
@@ -65,13 +71,13 @@
       audioToggle.classList.remove('playing');
       isPlaying = false;
     } else {
-      audio.volume = 0.4; // 40% volume for comfortable background sound
+      audio.volume = 0.35; 
       audio.play().then(() => {
         if(audioText) audioText.textContent = 'Sound: On';
         audioToggle.classList.add('playing');
         isPlaying = true;
       }).catch(err => {
-        console.log("Audio playback blocked or failed:", err);
+        console.log("Audio play failed:", err);
       });
     }
   });
@@ -82,8 +88,8 @@
     const rect = stage.getBoundingClientRect();
     const x = (e.clientX - rect.left) / rect.width;
     const y = (e.clientY - rect.top) / rect.height;
-    const rotY = (x - 0.5) * 20;
-    const rotX = (0.5 - y) * 15;
+    const rotY = (x - 0.5) * 15;
+    const rotX = (0.5 - y) * 12;
     if(raf) cancelAnimationFrame(raf);
     raf = requestAnimationFrame(() => {
       if(logoContainer) logoContainer.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
@@ -135,7 +141,9 @@
 
 <style>
   :root {
-    --cream: #F4F1EA;
+    --cream: #F9F8F6;
+    --pure-white: #FFFFFF;
+    --charcoal: #1C1B1A;
   }
 
   .stage {
@@ -148,6 +156,7 @@
     perspective: 1600px;
     overflow: hidden;
     cursor: pointer;
+    background-color: var(--charcoal);
   }
 
   .bg {
@@ -156,7 +165,7 @@
     background-image: url('/bg.jpeg');
     background-size: cover;
     background-position: center;
-    filter: brightness(0.85);
+    filter: brightness(0.9) contrast(105%);
     z-index: 0;
   }
 
@@ -165,100 +174,110 @@
     inset: 0;
     background-size: cover;
     background-position: center;
-    filter: grayscale(100%) brightness(0.95) contrast(130%);
+    filter: grayscale(100%) brightness(0.95) contrast(125%);
     opacity: 0;
-    transition: opacity 0.4s ease-in-out;
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 1;
     pointer-events: none;
   }
 
   .banner-layer.active {
-    opacity: 0.85;
+    opacity: 0.82;
   }
 
   .logo-container {
     position: relative;
     z-index: 3;
     transform-style: preserve-3d;
-    transition: transform 0.15s ease-out;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     text-align: center;
-    padding: 20px;
+    padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(28, 27, 26, 0.35);
+    backdrop-filter: blur(16px);
+    max-width: 700px;
+    width: 90%;
+  }
+
+  .chic-badge {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.35em;
+    color: var(--cream);
+    margin-bottom: 16px;
+    opacity: 0.8;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    display: inline-block;
+    padding-bottom: 4px;
   }
 
   .brand-name {
     font-family: 'Playfair Display', serif;
-    font-weight: 900;
-    font-size: clamp(2rem, 5vw, 5rem);
-    color: #ffffff;
+    font-weight: 700;
+    font-size: clamp(2.2rem, 4.5vw, 4.2rem);
+    color: var(--pure-white);
     text-transform: uppercase;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.12em;
     margin: 0;
-    text-shadow: 
-      0 1px 0 #cccccc,
-      0 2px 0 #b3b3b3,
-      0 3px 0 #999999,
-      0 4px 0 #808080,
-      0 5px 0 #666666,
-      0 15px 30px rgba(0, 0, 0, 0.7),
-      0 0 35px rgba(255, 255, 255, 0.4);
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   }
 
   .brand-sub {
     font-family: 'Jost', sans-serif;
-    font-weight: 500;
-    font-size: clamp(0.7rem, 1.2vw, 1.1rem);
-    color: #f0f0f0;
-    letter-spacing: 0.4em;
+    font-weight: 400;
+    font-size: clamp(0.75rem, 1vw, 0.95rem);
+    color: var(--cream);
+    letter-spacing: 0.3em;
     text-transform: uppercase;
-    margin-top: 12px;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+    margin-top: 16px;
+    opacity: 0.9;
   }
 
-  /* Audio Floating Control Button */
   .audio-btn {
     position: absolute;
-    bottom: 30px;
-    left: 40px;
-    background: rgba(28, 27, 26, 0.6);
-    border: 1px solid rgba(244, 241, 234, 0.2);
+    bottom: 35px;
+    left: 45px;
+    background: rgba(28, 27, 26, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     color: var(--cream);
-    padding: 10px 16px;
-    border-radius: 30px;
+    padding: 10px 18px;
+    border-radius: 4px;
     font-family: 'Jost', sans-serif;
-    font-size: 0.85rem;
-    letter-spacing: 0.15em;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     cursor: pointer;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(10px);
     transition: all 0.3s ease;
     z-index: 20;
   }
 
   .audio-btn:hover {
-    background: rgba(28, 27, 26, 0.9);
-    border-color: rgba(244, 241, 234, 0.5);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
   }
 
   .audio-btn.playing {
-    border-color: #ffffff;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    border-color: var(--pure-white);
+    background: rgba(255, 255, 255, 0.1);
   }
 
   .menu-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(28, 27, 26, 0.88);
-    backdrop-filter: blur(10px);
+    background: rgba(24, 23, 22, 0.94);
+    backdrop-filter: blur(14px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.4s ease;
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 10;
   }
 
@@ -267,22 +286,53 @@
     pointer-events: auto;
   }
 
+  .menu-inner-grid {
+    width: 100%;
+    max-width: 900px;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .menu-header-left {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu-subtitle {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(249, 248, 246, 0.5);
+    margin-bottom: 8px;
+  }
+
+  .menu-header-left h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--pure-white);
+    letter-spacing: 0.05em;
+    margin: 0;
+  }
+
   .menu-links {
     list-style: none;
     padding: 0;
     margin: 0;
-    width: 100%;
+    width: 50%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
   }
 
   .menu-links li {
     width: 100%;
-    text-align: center;
-    transform: translateY(20px);
+    text-align: right;
+    transform: translateY(15px);
     opacity: 0;
-    transition: transform 0.4s ease, opacity 0.4s ease;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
   }
 
   .menu-overlay.active .menu-links li {
@@ -298,17 +348,14 @@
 
   .menu-links a {
     display: block;
-    width: 100vw;
-    padding: 14px 0;
+    padding: 12px 0;
     font-family: 'Playfair Display', serif;
-    font-size: clamp(1.6rem, 3vw, 2.6rem);
+    font-size: clamp(1.4rem, 2.2vw, 2.2rem);
     color: var(--cream);
     text-decoration: none;
-    letter-spacing: 0.1em;
-    border-top: 1px solid transparent;
-    border-bottom: 1px solid transparent;
-    background: transparent;
-    transition: color 0.3s ease, letter-spacing 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+    letter-spacing: 0.08em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: color 0.3s ease, letter-spacing 0.3s ease, border-color 0.3s ease;
   }
 
   .menu-links a span {
@@ -317,16 +364,15 @@
   }
 
   .menu-links a:hover {
-    color: #ffffff;
-    letter-spacing: 0.18em;
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(244, 241, 234, 0.25);
+    color: var(--pure-white);
+    letter-spacing: 0.14em;
+    border-color: rgba(255, 255, 255, 0.4);
   }
 
   .close-btn {
     position: absolute;
-    top: 30px;
-    right: 40px;
+    top: 40px;
+    right: 50px;
     background: none;
     border: none;
     color: var(--cream);
