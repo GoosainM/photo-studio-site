@@ -17,6 +17,21 @@
     <div class="brand-sub">Creative House</div>
   </div>
 
+  <!-- Audio element (Put your audio file in the public folder, e.g., /public/ambient.mp3) -->
+  <audio id="bgAudio" loop preload="auto">
+    <source src="/ambient.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- Audio Toggle Button -->
+  <button class="audio-btn" id="audioToggle" aria-label="Toggle Audio">
+    <svg class="sound-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+      <path class="speaker" d="M11 5L6 9H2v6h4l5 4V5z"></path>
+      <path class="wave1" d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+      <path class="wave2" d="M19.07 4.93a10 10 0 0 1 0 14.14" style="display: none;"></path>
+    </svg>
+    <span id="audioText">Sound: Off</span>
+  </button>
+
   <div class="menu-overlay" id="menuOverlay">
     <button class="close-btn" id="closeBtn">&times;</button>
     <ul class="menu-links">
@@ -36,6 +51,31 @@
   const closeBtn = document.getElementById('closeBtn');
   const navLinks = document.querySelectorAll('.nav-link');
   const bannerLayers = document.querySelectorAll('.banner-layer');
+  
+  const audio = document.getElementById('bgAudio') as HTMLAudioElement;
+  const audioToggle = document.getElementById('audioToggle');
+  const audioText = document.getElementById('audioText');
+  let isPlaying = false;
+
+  audioToggle?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (isPlaying) {
+      audio.pause();
+      if(audioText) audioText.textContent = 'Sound: Off';
+      audioToggle.classList.remove('playing');
+      isPlaying = false;
+    } else {
+      audio.volume = 0.4; // 40% volume for comfortable background sound
+      audio.play().then(() => {
+        if(audioText) audioText.textContent = 'Sound: On';
+        audioToggle.classList.add('playing');
+        isPlaying = true;
+      }).catch(err => {
+        console.log("Audio playback blocked or failed:", err);
+      });
+    }
+  });
+
   let raf = null;
 
   stage?.addEventListener('mousemove', (e) => {
@@ -125,7 +165,6 @@
     inset: 0;
     background-size: cover;
     background-position: center;
-    /* Increased brightness and contrast so images stand out vividly */
     filter: grayscale(100%) brightness(0.95) contrast(130%);
     opacity: 0;
     transition: opacity 0.4s ease-in-out;
@@ -134,7 +173,6 @@
   }
 
   .banner-layer.active {
-    /* Raised opacity significantly from 0.45 to 0.85 */
     opacity: 0.85;
   }
 
@@ -174,6 +212,39 @@
     text-transform: uppercase;
     margin-top: 12px;
     text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+  }
+
+  /* Audio Floating Control Button */
+  .audio-btn {
+    position: absolute;
+    bottom: 30px;
+    left: 40px;
+    background: rgba(28, 27, 26, 0.6);
+    border: 1px solid rgba(244, 241, 234, 0.2);
+    color: var(--cream);
+    padding: 10px 16px;
+    border-radius: 30px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+    z-index: 20;
+  }
+
+  .audio-btn:hover {
+    background: rgba(28, 27, 26, 0.9);
+    border-color: rgba(244, 241, 234, 0.5);
+  }
+
+  .audio-btn.playing {
+    border-color: #ffffff;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
   }
 
   .menu-overlay {
