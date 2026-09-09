@@ -5,6 +5,13 @@
 <div class="stage" id="stage">
   <div class="bg"></div>
   
+  <!-- Dynamic Background Hover Banners -->
+  <div class="banner-layer" id="bannerHome" style="background-image: url('/bg.jpeg');"></div>
+  <div class="banner-layer" id="bannerAbout" style="background-image: url('/hero-bg.png');"></div>
+  <div class="banner-layer" id="bannerPortfolio" style="background-image: url('/bg.jpeg');"></div>
+  <div class="banner-layer" id="bannerReview" style="background-image: url('/hero-bg.png');"></div>
+  <div class="banner-layer" id="bannerContact" style="background-image: url('/bg.jpeg');"></div>
+  
   <div class="logo-container" id="logoContainer">
     <h1 class="brand-name">Minnaar-Matthews</h1>
     <div class="brand-sub">Creative House</div>
@@ -13,11 +20,11 @@
   <div class="menu-overlay" id="menuOverlay">
     <button class="close-btn" id="closeBtn">&times;</button>
     <ul class="menu-links">
-      <li><a href="#" class="nav-link" data-section="Home">Home</a></li>
-      <li><a href="/about" class="nav-link" data-section="About Us">About Us</a></li>
-      <li><a href="/portfolio" class="nav-link" data-section="Portfolio">Portfolio</a></li>
-      <li><a href="/review" class="nav-link" data-section="Review">Review</a></li>
-      <li><a href="/contact" class="nav-link" data-section="Contact">Contact</a></li>
+      <li><a href="#" class="nav-link" data-section="Home" data-target="bannerHome">Home</a></li>
+      <li><a href="/about" class="nav-link" data-section="About Us" data-target="bannerAbout">About Us</a></li>
+      <li><a href="/portfolio" class="nav-link" data-section="Portfolio" data-target="bannerPortfolio">Portfolio</a></li>
+      <li><a href="/review" class="nav-link" data-section="Review" data-target="bannerReview">Review</a></li>
+      <li><a href="/contact" class="nav-link" data-section="Contact" data-target="bannerContact">Contact</a></li>
     </ul>
   </div>
 </div>
@@ -28,6 +35,7 @@
   const menuOverlay = document.getElementById('menuOverlay');
   const closeBtn = document.getElementById('closeBtn');
   const navLinks = document.querySelectorAll('.nav-link');
+  const bannerLayers = document.querySelectorAll('.banner-layer');
   let raf = null;
 
   stage?.addEventListener('mousemove', (e) => {
@@ -57,6 +65,18 @@
   });
 
   navLinks.forEach(link => {
+    // Hover event to switch banner backgrounds
+    link.addEventListener('mouseenter', () => {
+      const targetId = link.getAttribute('data-target');
+      bannerLayers.forEach(banner => {
+        if (banner.id === targetId) {
+          banner.classList.add('active');
+        } else {
+          banner.classList.remove('active');
+        }
+      });
+    });
+
     link.addEventListener('click', (e) => {
       const section = link.getAttribute('data-section');
       if (section === 'Home') {
@@ -64,10 +84,15 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
         menuOverlay?.classList.remove('active');
       } else {
-        // Allows standard page navigation to /portfolio, /review, and /contact
+        // Allows standard page navigation to /about, /portfolio, /review, and /contact
         menuOverlay?.classList.remove('active');
       }
     });
+  });
+
+  // Reset banners when mouse leaves the menu list
+  document.querySelector('.menu-links')?.addEventListener('mouseleave', () => {
+    bannerLayers.forEach(banner => banner.classList.remove('active'));
   });
 </script>
 
@@ -98,9 +123,26 @@
     z-index: 0;
   }
 
+  /* Interactive Hover Banner Layers */
+  .banner-layer {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.7) contrast(110%);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .banner-layer.active {
+    opacity: 0.35;
+  }
+
   .logo-container {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     transform-style: preserve-3d;
     transition: transform 0.15s ease-out;
     text-align: center;
@@ -139,7 +181,7 @@
   .menu-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(28, 27, 26, 0.94);
+    background: rgba(28, 27, 26, 0.88);
     backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
@@ -164,7 +206,7 @@
   }
 
   .menu-links li {
-    margin: 18px 0;
+    margin: 14px 0;
     transform: translateY(20px);
     opacity: 0;
     transition: transform 0.4s ease, opacity 0.4s ease;
@@ -182,17 +224,23 @@
   .menu-overlay.active .menu-links li:nth-child(5) { transition-delay: 0.25s; }
 
   .menu-links a {
+    display: inline-block;
     font-family: 'Playfair Display', serif;
     font-size: clamp(1.6rem, 3vw, 2.6rem);
     color: var(--cream);
     text-decoration: none;
     letter-spacing: 0.1em;
-    transition: color 0.3s ease, letter-spacing 0.3s ease;
+    padding: 8px 24px;
+    border: 1px solid transparent;
+    background: transparent;
+    transition: color 0.3s ease, letter-spacing 0.3s ease, background 0.3s ease, border-color 0.3s ease;
   }
 
   .menu-links a:hover {
     color: #ffffff;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.18em;
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(244, 241, 234, 0.3);
   }
 
   .close-btn {
