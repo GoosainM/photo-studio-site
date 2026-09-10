@@ -22,7 +22,7 @@
     </div>
   </div>
 
-  <!-- Responsive Side Bar Menu -->
+  <!-- Side Bar Menu (Desktop) / Top Bar (Mobile) -->
   <aside class="sidebar-menu">
     <div class="sidebar-header">
       <span class="sidebar-subtitle">Index</span>
@@ -82,7 +82,6 @@
 
   navLinks.forEach(link => {
     link.addEventListener('mouseenter', () => {
-      // Only trigger hover state changes on non-touch screens or larger viewports
       if (window.innerWidth > 768) {
         const targetId = link.getAttribute('data-target');
         bannerLayers.forEach(banner => {
@@ -118,9 +117,9 @@
 
   .page-container {
     position: relative;
-    width: 100%;
+    width: 100vw;
     min-height: 100vh;
-    min-height: 100dvh; /* Adapts correctly to mobile browser address bars */
+    min-height: 100dvh;
     display: flex;
     overflow-x: hidden;
     background-color: var(--charcoal);
@@ -143,7 +142,7 @@
     background-position: center;
     filter: grayscale(100%) brightness(0.95) contrast(125%);
     opacity: 0;
-    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: opacity 0.5s ease;
     z-index: 1;
     pointer-events: none;
   }
@@ -152,7 +151,7 @@
     opacity: 0.85;
   }
 
-  /* Left Main Content Layout */
+  /* Main Content Layout */
   .content-wrapper {
     position: relative;
     z-index: 3;
@@ -160,185 +159,168 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5vh 5vw;
-    pointer-events: none;
+    padding: 40px 20px;
   }
 
   .brand-block {
     width: 100%;
-    max-width: 600px;
-    padding: clamp(30px, 5vw, 50px);
+    max-width: 550px;
+    padding: 35px 25px;
     border: 1px solid rgba(255, 255, 255, 0.12);
-    background: rgba(28, 27, 26, 0.55);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: rgba(28, 27, 26, 0.65);
+    backdrop-filter: blur(12px);
     text-align: center;
   }
 
   .chic-badge {
     font-family: 'Jost', sans-serif;
-    font-size: clamp(0.65rem, 1.2vw, 0.75rem);
+    font-size: 0.65rem;
     text-transform: uppercase;
-    letter-spacing: 0.35em;
+    letter-spacing: 0.3em;
     color: var(--cream);
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     opacity: 0.8;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     display: inline-block;
-    padding-bottom: 4px;
+    padding-bottom: 3px;
   }
 
   .brand-name {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
-    font-size: clamp(1.8rem, 4vw, 3.8rem);
+    font-size: clamp(1.6rem, 6vw, 3.2rem);
     color: var(--pure-white);
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
     margin: 0;
-    word-break: break-word;
-    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    word-wrap: break-word;
   }
 
   .brand-sub {
     font-family: 'Jost', sans-serif;
     font-weight: 400;
-    font-size: clamp(0.7rem, 1vw, 0.9rem);
+    font-size: 0.75rem;
     color: var(--cream);
-    letter-spacing: 0.25em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    margin-top: 16px;
+    margin-top: 12px;
     opacity: 0.9;
   }
 
-  /* Right Side Bar Menu */
+  /* Sidebar Menu */
   .sidebar-menu {
     position: relative;
     z-index: 10;
-    width: 100%;
-    max-width: 380px;
+    width: 340px;
     min-height: 100vh;
-    background: rgba(20, 19, 18, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(20, 19, 18, 0.96);
+    backdrop-filter: blur(16px);
     border-left: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: clamp(40px, 6vh, 60px) clamp(25px, 4vw, 40px);
+    padding: 40px 30px;
   }
 
   .sidebar-header {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 20px;
+    padding-bottom: 15px;
   }
 
   .sidebar-subtitle {
     font-family: 'Jost', sans-serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.3em;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
     color: rgba(249, 248, 246, 0.5);
-    margin-bottom: 6px;
+    margin-bottom: 4px;
     display: block;
   }
 
   .sidebar-header h3 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(1.3rem, 2vw, 1.6rem);
+    font-size: 1.3rem;
     color: var(--pure-white);
-    letter-spacing: 0.05em;
     margin: 0;
   }
 
   .sidebar-links {
     list-style: none;
     padding: 0;
-    margin: 30px 0;
+    margin: 20px 0;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
   }
 
   .sidebar-links a {
     display: block;
     padding: 6px 0;
     font-family: 'Playfair Display', serif;
-    font-size: clamp(1.2rem, 2.2vw, 1.4rem);
+    font-size: 1.15rem;
     color: var(--cream);
     text-decoration: none;
-    letter-spacing: 0.08em;
-    transition: color 0.3s ease, letter-spacing 0.3s ease;
-  }
-
-  .sidebar-links a span {
-    display: inline-block;
-    transition: transform 0.3s ease;
+    letter-spacing: 0.06em;
+    transition: color 0.3s ease;
   }
 
   .sidebar-links a:hover {
     color: var(--pure-white);
-    letter-spacing: 0.14em;
   }
 
   .sidebar-footer {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 20px;
+    padding-top: 15px;
   }
 
   .audio-btn {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.15);
     color: var(--cream);
-    padding: 10px 16px;
+    padding: 8px 14px;
     border-radius: 4px;
     font-family: 'Jost', sans-serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     cursor: pointer;
-    transition: all 0.3s ease;
     width: 100%;
     justify-content: center;
   }
 
-  .audio-btn:hover {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 255, 255, 0.3);
-  }
-
-  .audio-btn.playing {
-    border-color: var(--pure-white);
-    background: rgba(255, 255, 255, 0.1);
-  }
-
-  /* Responsive Breakpoint for Mobile and Tablets */
-  @media(max-width: 1024px) {
+  /* Mobile Phone Layout Breakpoint (Screens under 768px) */
+  @media(max-width: 768px) {
     .page-container {
       flex-direction: column;
       height: auto;
-      min-height: 100vh;
-    }
-    
-    .content-wrapper {
-      min-height: 60vh;
-      padding: 40px 20px;
     }
 
     .sidebar-menu {
-      max-width: 100%;
-      min-height: auto;
       width: 100%;
+      min-height: auto;
       border-left: none;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 30px 20px;
+    }
+
+    .content-wrapper {
+      padding: 50px 16px;
+      min-height: 50vh;
+    }
+
+    .brand-block {
+      padding: 25px 16px;
     }
 
     .sidebar-links {
-      margin: 20px 0;
-      gap: 12px;
+      gap: 10px;
+    }
+
+    .sidebar-links a {
+      font-size: 1rem;
     }
   }
 </style>
