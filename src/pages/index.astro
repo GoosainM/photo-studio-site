@@ -23,7 +23,7 @@
       <!-- Main Scrolling Sections -->
       <main class="scroll-container">
         
-        <!-- SECTION 01: HOME (With bg.jpeg Background) -->
+        <!-- SECTION 01: HOME -->
         <section id="home" class="editorial-section home-section-hero">
           <div class="hero-bg-asset"></div>
           <div class="hero-vignette"></div>
@@ -54,14 +54,58 @@
           </div>
         </section>
 
-        <!-- SECTION 03: PORTFOLIO -->
-        <section id="portfolio" class="editorial-section">
+        <!-- SECTION 03: PORTFOLIO (3 Flip Cards for Gallery IMGs) -->
+        <section id="portfolio" class="editorial-section portfolio-section">
           <div class="section-inner">
             <span class="chic-badge">03 &bull; Portfolio</span>
             <h2 class="section-heading">Selected Works</h2>
-            <p class="section-body">
-              A curated exhibition of digital platforms, custom e-commerce web architecture, and brand identities engineered for global distinction.
+            <p class="section-body portfolio-intro">
+              A curated exhibition of digital platforms, custom e-commerce web architecture, and brand identities. Tap or click any card to reveal the exhibition piece.
             </p>
+
+            <div class="flip-cards-grid">
+              <!-- Card 1 -->
+              <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <div class="card-number">01 / Collection</div>
+                    <h3 class="card-title">Architectural Form</h3>
+                    <p class="card-hint">Tap to Flip &rarr;</p>
+                  </div>
+                  <div class="flip-card-back">
+                    <img src="/IMG_0661.jpg" alt="Exhibition Piece 01" loading="lazy" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <div class="card-number">02 / Collection</div>
+                    <h3 class="card-title">Spatial Harmony</h3>
+                    <p class="card-hint">Tap to Flip &rarr;</p>
+                  </div>
+                  <div class="flip-card-back">
+                    <img src="/IMG_0713.jpg" alt="Exhibition Piece 02" loading="lazy" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <div class="card-number">03 / Collection</div>
+                    <h3 class="card-title">Textural Precision</h3>
+                    <p class="card-hint">Tap to Flip &rarr;</p>
+                  </div>
+                  <div class="flip-card-back">
+                    <img src="/IMG_0784.jpg" alt="Exhibition Piece 03" loading="lazy" />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -365,6 +409,101 @@
         text-transform: uppercase;
       }
 
+      /* Portfolio 3D Flip Cards Styling */
+      .portfolio-section {
+        min-height: auto;
+        padding: 10vh 5vw;
+      }
+
+      .portfolio-intro {
+        margin-bottom: 2.5rem;
+      }
+
+      .flip-cards-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        width: 100%;
+      }
+
+      .flip-card {
+        background-color: transparent;
+        width: 100%;
+        height: 380px;
+        perspective: 1000px;
+        cursor: pointer;
+      }
+
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+        transform-style: preserve-3d;
+      }
+
+      .flip-card.flipped .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+
+      .flip-card-front, .flip-card-back {
+        position: absolute;
+        inset: 0;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border: 1px solid var(--color-border);
+        box-sizing: border-box;
+      }
+
+      .flip-card-front {
+        background-color: #EFECE6;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 2.5rem 2rem;
+        text-align: left;
+      }
+
+      .card-number {
+        font-size: 0.55rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--color-muted);
+      }
+
+      .card-title {
+        font-family: 'Playfair Display', serif;
+        font-weight: 400;
+        font-size: 1.8rem;
+        color: var(--color-obsidian);
+        margin: 0;
+        line-height: 1.2;
+      }
+
+      .card-hint {
+        font-size: 0.6rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--color-charcoal);
+        opacity: 0.7;
+      }
+
+      .flip-card-back {
+        background-color: var(--color-obsidian);
+        transform: rotateY(180deg);
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .flip-card-back img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
       /* Mobile-Optimized Sticky Bottom Navigation */
       .site-footer-nav {
         position: fixed;
@@ -494,6 +633,13 @@
           grid-template-columns: 1.2fr 0.8fr;
           gap: 4rem;
           align-items: flex-end;
+        }
+        .flip-cards-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 2rem;
+        }
+        .flip-card {
+          height: 440px;
         }
       }
     </style>
