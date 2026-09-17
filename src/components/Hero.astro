@@ -2,50 +2,45 @@
 // src/components/Hero.astro
 ---
 
-<section class="editorial-stage">
-  <!-- Background Image & Atmospheric Grain -->
-  <div class="bg-asset"></div>
-  <div class="vignette-overlay"></div>
-  
-  <!-- Dynamic Background Hover Banners -->
-  <div class="banner-layer" id="bannerHome" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80');"></div>
-  <div class="banner-layer" id="bannerAbout" style="background-image: url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1920&q=80');"></div>
-  <div class="banner-layer" id="bannerPortfolio" style="background-image: url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1920&q=80');"></div>
-  <div class="banner-layer" id="bannerReview" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1920&q=80');"></div>
-  <div class="banner-layer" id="bannerContact" style="background-image: url('https://images.unsplash.com/photo-1512314889357-e157c22f938d?auto=format&fit=crop&w=1920&q=80');"></div>
+<section class="editorial-home">
+  <!-- Atmospheric Gradient & Grain -->
+  <div class="ambient-backdrop"></div>
 
-  <!-- Main Editorial Canvas -->
-  <div class="canvas-main">
-    <div class="editorial-header-meta">
+  <!-- Main Editorial Content Canvas -->
+  <div class="home-container">
+    <header class="home-top-bar">
       <span class="meta-tag">Maison &bull; Vol. 01</span>
-      <span class="meta-location">Cape Town</span>
-    </div>
+      <span class="meta-location">Cape Town, South Africa</span>
+    </header>
 
-    <div class="brand-signature">
-      <h1 class="brand-title">
-        Minnaar<span class="separator">&mdash;</span><br />
-        <span class="italic-surname">Matthews</span>
-      </h1>
-      <p class="brand-caption">Creative Architecture &bull; Digital Haute Couture</p>
-    </div>
-  </div>
+    <main class="home-hero-content">
+      <div class="brand-block">
+        <h1 class="brand-title">
+          Minnaar<span class="separator">&mdash;</span><br />
+          <span class="italic-surname">Matthews</span>
+        </h1>
+        <p class="brand-caption">Creative Architecture &bull; Digital Haute Couture</p>
+      </div>
 
-  <!-- Minimalist High-End Sidebar -->
-  <nav class="editorial-sidebar">
-    <div class="sidebar-top">
-      <span class="index-label">Index // Directory</span>
-    </div>
+      <div class="intro-statement">
+        <p>We craft bespoke digital spaces, architectural identities, and timeless web applications with uncompromising precision and elegance.</p>
+      </div>
+    </main>
 
-    <ul class="editorial-menu">
-      <li><a href="#" class="nav-link" data-section="Home" data-target="bannerHome"><span class="num">01</span><span class="text">Home</span></a></li>
-      <li><a href="/about" class="nav-link" data-section="About Us" data-target="bannerAbout"><span class="num">02</span><span class="text">About Us</span></a></li>
-      <li><a href="/portfolio" class="nav-link" data-section="Portfolio" data-target="bannerPortfolio"><span class="num">03</span><span class="text">Portfolio</span></a></li>
-      <li><a href="/review" class="nav-link" data-section="Review" data-target="bannerReview"><span class="num">04</span><span class="text">Review</span></a></li>
-      <li><a href="/contact" class="nav-link" data-section="Contact" data-target="bannerContact"><span class="num">05</span><span class="text">Contact</span></a></li>
-    </ul>
+    <!-- Editorial Navigation Bar -->
+    <nav class="home-navigation">
+      <span class="index-label">Directory // Index</span>
+      <ul class="home-menu">
+        <li><a href="#" class="nav-link active"><span class="num">01</span><span class="text">Home</span></a></li>
+        <li><a href="/about" class="nav-link"><span class="num">02</span><span class="text">About Us</span></a></li>
+        <li><a href="/portfolio" class="nav-link"><span class="num">03</span><span class="text">Portfolio</span></a></li>
+        <li><a href="/review" class="nav-link"><span class="num">04</span><span class="text">Review</span></a></li>
+        <li><a href="/contact" class="nav-link"><span class="num">05</span><span class="text">Contact</span></a></li>
+      </ul>
+    </nav>
 
     <!-- Audio Player Footer -->
-    <div class="sidebar-bottom">
+    <footer class="home-footer">
       <audio id="bgAudio" loop preload="auto">
         <source src="/ambient.mp3" type="audio/mpeg" />
       </audio>
@@ -53,21 +48,17 @@
         <span class="audio-dot"></span>
         <span id="audioText">Soundscape: Off</span>
       </button>
-    </div>
-  </nav>
+    </footer>
+  </div>
 </section>
 
 <script>
-  const navLinks = document.querySelectorAll('.nav-link');
-  const bannerLayers = document.querySelectorAll('.banner-layer');
-  
   const audio = document.getElementById('bgAudio') as HTMLAudioElement;
   const audioToggle = document.getElementById('audioToggle');
   const audioText = document.getElementById('audioText');
   let isPlaying = false;
 
-  audioToggle?.addEventListener('click', (e) => {
-    e.stopPropagation();
+  audioToggle?.addEventListener('click', () => {
     if (isPlaying) {
       audio.pause();
       if(audioText) audioText.textContent = 'Soundscape: Off';
@@ -84,44 +75,17 @@
       });
     }
   });
-
-  navLinks.forEach(link => {
-    link.addEventListener('mouseenter', () => {
-      if (window.innerWidth > 768) {
-        const targetId = link.getAttribute('data-target');
-        bannerLayers.forEach(banner => {
-          if (banner.id === targetId) {
-            banner.classList.add('active');
-          } else {
-            banner.classList.remove('active');
-          }
-        });
-      }
-    });
-
-    link.addEventListener('click', (e) => {
-      const section = link.getAttribute('data-section');
-      if (section === 'Home') {
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    });
-  });
-
-  document.querySelector('.editorial-menu')?.addEventListener('mouseleave', () => {
-    bannerLayers.forEach(banner => banner.classList.remove('active'));
-  });
 </script>
 
 <style>
   :root {
-    --color-bg: #0C0B0A;
+    --color-bg: #0A0A09;
     --color-ivory: #F4F1EA;
-    --color-muted: #9E9A92;
+    --color-muted: #8C8880;
     --color-white: #FFFFFF;
+    --color-border: rgba(244, 241, 234, 0.08);
   }
 
-  /* Global Lockdown to Prevent Horizontal Scrollbars */
   html, body {
     margin: 0;
     padding: 0;
@@ -133,82 +97,65 @@
     font-family: 'Jost', sans-serif;
   }
 
-  .editorial-stage {
+  .editorial-home {
     position: relative;
     width: 100vw;
-    height: 100vh;
-    height: 100dvh;
-    display: flex;
-    overflow: hidden;
+    min-height: 100vh;
+    min-height: 100dvh;
     background-color: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
   }
 
-  .bg-asset {
+  .ambient-backdrop {
     position: absolute;
     inset: 0;
-    background-image: url('/bg.jpeg');
-    background-size: cover;
-    background-position: center;
-    filter: brightness(0.8) contrast(105%);
+    background: radial-gradient(circle at 75% 30%, rgba(30, 28, 26, 0.5) 0%, rgba(10, 10, 9, 1) 70%);
+    pointer-events: none;
     z-index: 0;
   }
 
-  .vignette-overlay {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle, rgba(12,11,10,0.2) 0%, rgba(12,11,10,0.85) 100%);
-    z-index: 1;
-    pointer-events: none;
-  }
-
-  .banner-layer {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-    filter: grayscale(100%) brightness(0.9) contrast(130%);
-    opacity: 0;
-    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: 2;
-    pointer-events: none;
-  }
-
-  .banner-layer.active {
-    opacity: 0.85;
-  }
-
-  /* Main Canvas Area */
-  .canvas-main {
+  .home-container {
     position: relative;
-    z-index: 4;
+    z-index: 2;
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 5vh 5vw;
-    pointer-events: none;
+    padding: 5vh 8vw;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
   }
 
-  .editorial-header-meta {
+  .home-top-bar {
     display: flex;
     justify-content: space-between;
     font-size: 0.65rem;
     letter-spacing: 0.4em;
     text-transform: uppercase;
     color: var(--color-muted);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 20px;
   }
 
-  .brand-signature {
-    max-width: 700px;
+  .home-hero-content {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+    align-items: flex-end;
+    margin: 8vh 0;
   }
 
   .brand-title {
     font-family: 'Playfair Display', serif;
     font-weight: 300;
-    font-size: clamp(2.8rem, 6.5vw, 5.5rem);
+    font-size: clamp(3rem, 6.5vw, 5.8rem);
     color: var(--color-white);
     line-height: 1.05;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.04em;
     margin: 0;
     text-transform: uppercase;
   }
@@ -216,7 +163,7 @@
   .brand-title .separator {
     color: var(--color-muted);
     font-weight: 200;
-    margin: 0 10px;
+    margin: 0 12px;
   }
 
   .brand-title .italic-surname {
@@ -227,8 +174,6 @@
   }
 
   .brand-caption {
-    font-family: 'Jost', sans-serif;
-    font-weight: 300;
     font-size: 0.75rem;
     letter-spacing: 0.35em;
     text-transform: uppercase;
@@ -236,25 +181,20 @@
     margin-top: 2rem;
   }
 
-  /* High-End Editorial Sidebar */
-  .editorial-sidebar {
-    position: relative;
-    z-index: 10;
-    width: 360px;
-    height: 100%;
-    background: rgba(12, 11, 10, 0.92);
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
-    border-left: 1px solid rgba(244, 241, 234, 0.08);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 60px 45px;
+  .intro-statement {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--color-ivory);
+    opacity: 0.85;
+    max-width: 440px;
+    letter-spacing: 0.03em;
   }
 
-  .sidebar-top {
-    border-bottom: 1px solid rgba(244, 241, 234, 0.08);
-    padding-bottom: 20px;
+  .home-navigation {
+    border-top: 1px solid var(--color-border);
+    padding-top: 30px;
+    margin-bottom: 40px;
   }
 
   .index-label {
@@ -262,23 +202,24 @@
     letter-spacing: 0.35em;
     text-transform: uppercase;
     color: var(--color-muted);
+    display: block;
+    margin-bottom: 20px;
   }
 
-  .editorial-menu {
+  .home-menu {
     list-style: none;
     padding: 0;
-    margin: auto 0;
+    margin: 0;
     display: flex;
-    flex-direction: column;
-    gap: 24px;
+    gap: 4vw;
+    flex-wrap: wrap;
   }
 
   .nav-link {
     display: flex;
     align-items: baseline;
-    gap: 1.5rem;
+    gap: 1rem;
     text-decoration: none;
-    padding: 4px 0;
   }
 
   .nav-link .num {
@@ -290,34 +231,35 @@
 
   .nav-link .text {
     font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     letter-spacing: 0.1em;
     color: var(--color-ivory);
-    opacity: 0.7;
+    opacity: 0.65;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .nav-link:hover .text {
+  .nav-link:hover .text, .nav-link.active .text {
     opacity: 1;
     color: var(--color-white);
-    letter-spacing: 0.16em;
-    transform: translateX(6px);
+    letter-spacing: 0.15em;
   }
 
-  .nav-link:hover .num {
+  .nav-link:hover .num, .nav-link.active .num {
     color: var(--color-white);
   }
 
-  .sidebar-bottom {
-    border-top: 1px solid rgba(244, 241, 234, 0.08);
-    padding-top: 24px;
+  .home-footer {
+    border-top: 1px solid var(--color-border);
+    padding-top: 20px;
+    display: flex;
+    justify-content: flex-end;
   }
 
   .audio-trigger {
     background: transparent;
     border: 1px solid rgba(244, 241, 234, 0.15);
     color: var(--color-ivory);
-    padding: 12px 20px;
+    padding: 10px 20px;
     font-family: 'Jost', sans-serif;
     font-size: 0.65rem;
     letter-spacing: 0.25em;
@@ -326,8 +268,6 @@
     align-items: center;
     gap: 12px;
     cursor: pointer;
-    width: 100%;
-    justify-content: center;
     transition: all 0.3s ease;
   }
 
@@ -349,30 +289,21 @@
     background: rgba(244, 241, 234, 0.04);
   }
 
-  /* Responsive Breakpoints */
+  /* Responsive Adjustments */
   @media(max-width: 992px) {
-    .editorial-stage {
+    .home-hero-content {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      margin: 5vh 0;
+    }
+
+    .home-menu {
       flex-direction: column;
-      height: auto;
-      min-height: 100vh;
+      gap: 16px;
     }
 
-    .canvas-main {
-      min-height: 55vh;
-      padding: 40px 24px;
-    }
-
-    .editorial-sidebar {
-      width: 100%;
-      height: auto;
-      border-left: none;
-      border-top: 1px solid rgba(244, 241, 234, 0.08);
-      padding: 40px 24px;
-    }
-
-    .editorial-menu {
-      margin: 30px 0;
-      gap: 18px;
+    .home-container {
+      padding: 30px 20px;
     }
   }
 </style>
