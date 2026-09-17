@@ -50,13 +50,42 @@
         </section>
 
         <!-- SECTION 02: ABOUT US -->
-        <section id="about" class="editorial-section">
+        <section id="about" class="editorial-section about-section">
           <div class="section-inner">
             <span class="chic-badge">02 &bull; About Us</span>
             <h2 class="section-heading">The Architecture of Elegance</h2>
-            <p class="section-body">
-              Rooted in Cape Town, Minnaar-Matthews operates at the intersection of high-end digital craftsmanship and timeless architectural minimalism. Every project is sculpted with intention, structure, and enduring grace.
-            </p>
+            
+            <div class="about-script-content">
+              <p class="section-body about-lead">
+                A creative space created for small businesses, entrepreneurs and individuals who want to show up professionally, creatively and authentically.
+              </p>
+              
+              <p class="section-body about-emphasis">
+                I believe your brand should tell your story.
+              </p>
+              
+              <p class="section-body">
+                So we're here to help you do exactly that.
+              </p>
+              
+              <p class="section-body">
+                From <em>branding and content creation</em> to <em>professional portraits and personal branding photography</em>, we create visuals that help you communicate who you are and what you do.
+              </p>
+              
+              <p class="section-body">
+                Whether you're starting something new, refreshing your existing brand or simply ready to take your content to the next level &mdash; let's create something that feels like you.
+              </p>
+              
+              <div class="about-closing-triad">
+                <span class="triad-line">Your brand.</span>
+                <span class="triad-line">Your story.</span>
+                <span class="triad-line">Your vision.</span>
+              </div>
+
+              <p class="section-body about-welcome">
+                Welcome to the House.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -413,7 +442,7 @@
       }
 
       .section-inner {
-        max-width: 1200px;
+        max-width: 900px;
         width: 100%;
         margin: 0 auto;
       }
@@ -430,23 +459,78 @@
         opacity: 0.8;
       }
 
-      .section-body {
-        font-family: 'Playfair Display', serif;
-        font-size: 1.1rem;
-        line-height: 1.5;
-        color: var(--color-charcoal);
-        opacity: 0.9;
-        max-width: 100%;
-        letter-spacing: 0.02em;
-      }
-
       .section-heading {
         font-family: 'Playfair Display', serif;
         font-weight: 300;
         font-size: clamp(2rem, 8vw, 3rem);
         color: var(--color-obsidian);
-        margin: 0 0 1rem 0;
+        margin: 0 0 2rem 0;
         text-transform: uppercase;
+      }
+
+      /* About Us Section Typography Styling */
+      .about-section {
+        padding: 10vh 5vw;
+      }
+
+      .about-script-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .section-body {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.15rem;
+        line-height: 1.6;
+        color: var(--color-charcoal);
+        opacity: 0.9;
+        margin: 0;
+        letter-spacing: 0.02em;
+      }
+
+      .about-lead {
+        font-size: 1.3rem;
+        color: var(--color-obsidian);
+        line-height: 1.5;
+      }
+
+      .about-emphasis {
+        font-style: italic;
+        font-size: 1.25rem;
+        color: var(--color-obsidian);
+        padding-top: 0.5rem;
+      }
+
+      .about-script-content em {
+        font-style: italic;
+        color: var(--color-obsidian);
+      }
+
+      .about-closing-triad {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        margin: 1.5rem 0 0.5rem 0;
+        padding-left: 1rem;
+        border-left: 2px solid var(--color-obsidian);
+      }
+
+      .triad-line {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.2rem;
+        font-style: italic;
+        color: var(--color-obsidian);
+        letter-spacing: 0.03em;
+      }
+
+      .about-welcome {
+        font-family: 'Jost', sans-serif;
+        font-size: 0.7rem;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--color-obsidian);
+        margin-top: 1rem;
       }
 
       /* Portfolio 3D Flip Cards Styling */
