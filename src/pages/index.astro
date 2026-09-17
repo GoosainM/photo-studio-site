@@ -184,9 +184,8 @@
           <audio id="bgAudio" loop preload="auto">
             <source src="/ambient.mp3" type="audio/mpeg" />
           </audio>
-          <button class="audio-trigger" id="audioToggle" aria-label="Toggle Audio">
-            <span class="audio-dot"></span>
-            <span id="audioText">Sound: Off</span>
+          <button class="audio-trigger" id="audioToggle" aria-label="Toggle Audio" title="Toggle Sound">
+            <span class="audio-symbol">ılılılılılılı</span>
           </button>
         </div>
       </footer>
@@ -195,19 +194,16 @@
     <script>
       const audio = document.getElementById('bgAudio') as HTMLAudioElement;
       const audioToggle = document.getElementById('audioToggle');
-      const audioText = document.getElementById('audioText');
       let isPlaying = false;
 
       audioToggle?.addEventListener('click', () => {
         if (isPlaying) {
           audio.pause();
-          if(audioText) audioText.textContent = 'Sound: Off';
           audioToggle.classList.remove('playing');
           isPlaying = false;
         } else {
           audio.volume = 0.3; 
           audio.play().then(() => {
-            if(audioText) audioText.textContent = 'Sound: Active';
             audioToggle.classList.add('playing');
             isPlaying = true;
           }).catch(err => {
@@ -750,28 +746,21 @@
         background: transparent;
         border: 1px solid rgba(20, 19, 18, 0.2);
         color: var(--color-obsidian);
-        padding: 6px 12px;
-        font-family: 'Jost', sans-serif;
-        font-size: 0.55rem;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
+        padding: 6px 14px;
+        font-family: monospace;
+        font-size: 0.85rem;
+        letter-spacing: 1px;
         display: flex;
         align-items: center;
-        gap: 8px;
+        justify-content: center;
         cursor: pointer;
+        opacity: 0.5;
+        transition: all 0.3s ease;
       }
 
-      .audio-dot {
-        width: 5px;
-        height: 5px;
-        background-color: var(--color-muted);
-        border-radius: 50%;
-        transition: background-color 0.3s ease;
-      }
-
-      .audio-trigger.playing .audio-dot {
-        background-color: #2e7d32;
-        box-shadow: 0 0 6px rgba(46, 125, 50, 0.4);
+      .audio-trigger.playing {
+        opacity: 1;
+        border-color: var(--color-obsidian);
       }
 
       /* Desktop enhancements */
