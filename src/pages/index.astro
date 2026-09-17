@@ -168,7 +168,7 @@
 
       </main>
 
-      <!-- Persistent Footer Navigation & Audio -->
+      <!-- Persistent Footer Navigation -->
       <footer class="site-footer-nav">
         <nav class="home-navigation">
           <ul class="home-menu">
@@ -179,39 +179,10 @@
             <li><a href="#contact" class="nav-link" data-target="contact"><span class="num">05</span><span class="text">Contact</span></a></li>
           </ul>
         </nav>
-
-        <div class="audio-footer-bar">
-          <audio id="bgAudio" loop preload="auto">
-            <source src="/ambient.mp3" type="audio/mpeg" />
-          </audio>
-          <button class="audio-trigger" id="audioToggle" aria-label="Toggle Audio" title="Toggle Sound">
-            <span class="audio-symbol">ılılılılılılı</span>
-          </button>
-        </div>
       </footer>
     </div>
 
     <script>
-      const audio = document.getElementById('bgAudio') as HTMLAudioElement;
-      const audioToggle = document.getElementById('audioToggle');
-      let isPlaying = false;
-
-      audioToggle?.addEventListener('click', () => {
-        if (isPlaying) {
-          audio.pause();
-          audioToggle.classList.remove('playing');
-          isPlaying = false;
-        } else {
-          audio.volume = 0.3; 
-          audio.play().then(() => {
-            audioToggle.classList.add('playing');
-            isPlaying = true;
-          }).catch(err => {
-            console.log("Audio play failed:", err);
-          });
-        }
-      });
-
       const sections = document.querySelectorAll('.editorial-section');
       const navLinks = document.querySelectorAll('.nav-link');
 
@@ -677,10 +648,9 @@
         background: rgba(247, 245, 240, 0.96);
         backdrop-filter: blur(12px);
         border-top: 1px solid var(--color-border);
-        padding: 12px 4vw;
+        padding: 14px 4vw;
         display: flex;
-        flex-direction: column;
-        gap: 8px;
+        justify-content: center;
         z-index: 10;
       }
 
@@ -689,6 +659,8 @@
         overflow-x: auto;
         white-space: nowrap;
         scrollbar-width: none;
+        display: flex;
+        justify-content: center;
       }
 
       .home-navigation::-webkit-scrollbar {
@@ -700,7 +672,7 @@
         padding: 0;
         margin: 0;
         display: inline-flex;
-        gap: 20px;
+        gap: 25px;
       }
 
       .nav-link {
@@ -735,34 +707,6 @@
         color: var(--color-obsidian);
       }
 
-      .audio-footer-bar {
-        display: flex;
-        justify-content: flex-end;
-        border-top: 1px solid rgba(20, 19, 18, 0.06);
-        padding-top: 6px;
-      }
-
-      .audio-trigger {
-        background: transparent;
-        border: 1px solid rgba(20, 19, 18, 0.2);
-        color: var(--color-obsidian);
-        padding: 6px 14px;
-        font-family: monospace;
-        font-size: 0.85rem;
-        letter-spacing: 1px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        opacity: 0.5;
-        transition: all 0.3s ease;
-      }
-
-      .audio-trigger.playing {
-        opacity: 1;
-        border-color: var(--color-obsidian);
-      }
-
       /* Desktop enhancements */
       @media(min-width: 992px) {
         .scroll-container {
@@ -770,20 +714,14 @@
           padding-bottom: 0;
         }
         .site-footer-nav {
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: center;
           padding: 20px 8vw;
+          justify-content: center;
         }
         .home-navigation {
           overflow-x: visible;
         }
         .home-menu {
-          gap: 3vw;
-        }
-        .audio-footer-bar {
-          border-top: none;
-          padding-top: 0;
+          gap: 4vw;
         }
         .split-hero-container {
           grid-template-columns: 1fr 1fr;
