@@ -3,27 +3,28 @@
 ---
 
 <section class="editorial-home">
-  <!-- Atmospheric Gradient & Grain -->
+  <!-- Soft Atmospheric Egyptian Cotton Minimalist Backdrop -->
   <div class="ambient-backdrop"></div>
 
   <!-- Main Editorial Content Canvas -->
   <div class="home-container">
     <header class="home-top-bar">
-      <span class="meta-tag">Maison &bull; Vol. 01</span>
+      <span class="meta-tag">Maison &bull; Haute Collection</span>
       <span class="meta-location">Cape Town, South Africa</span>
     </header>
 
     <main class="home-hero-content">
       <div class="brand-block">
+        <span class="chic-badge">Pure Design Studio</span>
         <h1 class="brand-title">
           Minnaar<span class="separator">&mdash;</span><br />
           <span class="italic-surname">Matthews</span>
         </h1>
-        <p class="brand-caption">Creative Architecture &bull; Digital Haute Couture</p>
+        <p class="brand-caption">Creative House &bull; Architectural &amp; Digital Precision</p>
       </div>
 
       <div class="intro-statement">
-        <p>We craft bespoke digital spaces, architectural identities, and timeless web applications with uncompromising precision and elegance.</p>
+        <p>Curating timeless digital sanctuaries and refined brand architectures with the texture of fine Egyptian cotton and uncompromising minimalist clarity.</p>
       </div>
     </main>
 
@@ -79,11 +80,11 @@
 
 <style>
   :root {
-    --color-bg: #0A0A09;
-    --color-ivory: #F4F1EA;
-    --color-muted: #8C8880;
-    --color-white: #FFFFFF;
-    --color-border: rgba(244, 241, 234, 0.08);
+    --color-cotton-bg: #F7F5F0;     /* Pure Egyptian Cotton Soft Ivory */
+    --color-obsidian: #141312;      /* Deep rich contrast black */
+    --color-charcoal: #3A3835;      /* Sophisticated secondary tone */
+    --color-muted: #7E7870;         /* Soft warm gray for indices */
+    --color-border: rgba(20, 19, 18, 0.12); /* Subtle linen border */
   }
 
   html, body {
@@ -92,8 +93,8 @@
     width: 100%;
     max-width: 100vw;
     overflow-x: hidden;
-    background-color: var(--color-bg);
-    color: var(--color-ivory);
+    background-color: var(--color-cotton-bg);
+    color: var(--color-obsidian);
     font-family: 'Jost', sans-serif;
   }
 
@@ -102,7 +103,7 @@
     width: 100vw;
     min-height: 100vh;
     min-height: 100dvh;
-    background-color: var(--color-bg);
+    background-color: var(--color-cotton-bg);
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
@@ -111,7 +112,7 @@
   .ambient-backdrop {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 75% 30%, rgba(30, 28, 26, 0.5) 0%, rgba(10, 10, 9, 1) 70%);
+    background: radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.8) 0%, rgba(247, 245, 240, 1) 75%);
     pointer-events: none;
     z-index: 0;
   }
@@ -149,11 +150,23 @@
     margin: 8vh 0;
   }
 
+  .chic-badge {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    color: var(--color-charcoal);
+    margin-bottom: 20px;
+    display: inline-block;
+    border-bottom: 1px solid var(--color-charcoal);
+    padding-bottom: 4px;
+    opacity: 0.8;
+  }
+
   .brand-title {
     font-family: 'Playfair Display', serif;
     font-weight: 300;
-    font-size: clamp(3rem, 6.5vw, 5.8rem);
-    color: var(--color-white);
+    font-size: clamp(3rem, 6.5vW, 5.8rem);
+    color: var(--color-obsidian);
     line-height: 1.05;
     letter-spacing: 0.04em;
     margin: 0;
@@ -170,7 +183,7 @@
     font-style: italic;
     font-weight: 400;
     letter-spacing: 0.02em;
-    color: var(--color-ivory);
+    color: var(--color-charcoal);
   }
 
   .brand-caption {
@@ -185,8 +198,8 @@
     font-family: 'Playfair Display', serif;
     font-size: 1.25rem;
     line-height: 1.6;
-    color: var(--color-ivory);
-    opacity: 0.85;
+    color: var(--color-charcoal);
+    opacity: 0.9;
     max-width: 440px;
     letter-spacing: 0.03em;
   }
@@ -233,19 +246,19 @@
     font-family: 'Playfair Display', serif;
     font-size: 1.25rem;
     letter-spacing: 0.1em;
-    color: var(--color-ivory);
-    opacity: 0.65;
+    color: var(--color-charcoal);
+    opacity: 0.7;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .nav-link:hover .text, .nav-link.active .text {
     opacity: 1;
-    color: var(--color-white);
+    color: var(--color-obsidian);
     letter-spacing: 0.15em;
   }
 
   .nav-link:hover .num, .nav-link.active .num {
-    color: var(--color-white);
+    color: var(--color-obsidian);
   }
 
   .home-footer {
@@ -257,8 +270,8 @@
 
   .audio-trigger {
     background: transparent;
-    border: 1px solid rgba(244, 241, 234, 0.15);
-    color: var(--color-ivory);
+    border: 1px solid rgba(20, 19, 18, 0.2);
+    color: var(--color-obsidian);
     padding: 10px 20px;
     font-family: 'Jost', sans-serif;
     font-size: 0.65rem;
@@ -280,13 +293,13 @@
   }
 
   .audio-trigger.playing .audio-dot {
-    background-color: #4ade80;
-    box-shadow: 0 0 8px rgba(74, 222, 128, 0.5);
+    background-color: #2e7d32;
+    box-shadow: 0 0 8px rgba(46, 125, 50, 0.4);
   }
 
   .audio-trigger:hover {
-    border-color: rgba(244, 241, 234, 0.4);
-    background: rgba(244, 241, 234, 0.04);
+    border-color: rgba(20, 19, 18, 0.45);
+    background: rgba(20, 19, 18, 0.03);
   }
 
   /* Responsive Adjustments */
