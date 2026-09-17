@@ -24,8 +24,11 @@
       <!-- Main Scrolling Sections -->
       <main class="scroll-container">
         
-        <!-- SECTION 01: HOME -->
-        <section id="home" class="editorial-section">
+        <!-- SECTION 01: HOME (With bg.jpeg Background) -->
+        <section id="home" class="editorial-section home-section-hero">
+          <div class="hero-bg-asset"></div>
+          <div class="hero-vignette"></div>
+
           <div class="section-inner home-grid">
             <div class="brand-block">
               <span class="chic-badge">Pure Design Studio</span>
@@ -221,7 +224,7 @@
         position: relative;
         z-index: 2;
         padding-top: 70px;
-        padding-bottom: 90px; /* clears mobile bottom navigation */
+        padding-bottom: 90px;
       }
 
       .editorial-section {
@@ -231,6 +234,61 @@
         padding: 6vh 5vw;
         box-sizing: border-box;
         border-bottom: 1px solid var(--color-border);
+      }
+
+      /* Home Section with bg.jpeg Background */
+      .home-section-hero {
+        position: relative;
+        overflow: hidden;
+        color: #F4F1EA !important;
+      }
+
+      .hero-bg-asset {
+        position: absolute;
+        inset: 0;
+        background-image: url('/bg.jpeg');
+        background-size: cover;
+        background-position: center;
+        filter: brightness(0.65) contrast(110%);
+        z-index: 0;
+      }
+
+      .hero-vignette {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle, rgba(12,11,10,0.3) 0%, rgba(12,11,10,0.85) 100%);
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      .home-section-hero .section-inner {
+        position: relative;
+        z-index: 2;
+      }
+
+      .home-section-hero .chic-badge {
+        color: #D4CEC3;
+        border-bottom-color: rgba(244, 241, 234, 0.4);
+      }
+
+      .home-section-hero .brand-title {
+        color: #FFFFFF;
+      }
+
+      .home-section-hero .brand-title .separator {
+        color: #9E9A92;
+      }
+
+      .home-section-hero .brand-title .italic-surname {
+        color: #F4F1EA;
+      }
+
+      .home-section-hero .brand-caption {
+        color: #9E9A92;
+      }
+
+      .home-section-hero .intro-statement p {
+        color: #E6E2D8;
       }
 
       .section-inner {
@@ -329,11 +387,11 @@
         width: 100%;
         overflow-x: auto;
         white-space: nowrap;
-        scrollbar-width: none; /* Firefox */
+        scrollbar-width: none;
       }
 
       .home-navigation::-webkit-scrollbar {
-        display: none; /* Safari and Chrome */
+        display: none;
       }
 
       .home-menu {
