@@ -165,7 +165,7 @@
                     </button>
                   </div>
                 </div>
-                <p id="gallery-error" class="gallery-error-msg">Incorrect passcode. Please verify your credentials.</p>
+                <p id="gallery-error" class="gallery-error-msg">Incorrect passcode or collection not found.</p>
               </form>
 
               <!-- Dynamic Gallery Display View (Hidden by default until unlocked) -->
@@ -178,15 +178,7 @@
                   <button type="button" onclick="lockGallery()" class="gallery-lock-btn">Lock Vault</button>
                 </div>
                 <div class="client-images-grid" id="client-images-container">
-                  <!-- Sample injected images upon correct password -->
-                  <div class="client-image-card">
-                    <img src="/IMG_0661.jpg" alt="Client Proof 01" />
-                    <a href="/IMG_0661.jpg" download class="image-download-link">Download High-Res &darr;</a>
-                  </div>
-                  <div class="client-image-card">
-                    <img src="/IMG_0713.jpg" alt="Client Proof 02" />
-                    <a href="/IMG_0713.jpg" download class="image-download-link">Download High-Res &darr;</a>
-                  </div>
+                  <!-- Dynamic Google Sheet images injected here upon correct password -->
                 </div>
               </div>
             </div>
@@ -270,20 +262,10 @@
         });
       });
 
-      // Simple client gallery passcode verification logic
-      // You can expand this mapping object or hook it to an external backend database/CMS later
-      const validGalleries = {
-        "house2026": {
-          title: "Private Collection — House Launch",
-          images: [
-            { url: "/IMG_0661.jpg", caption: "Archival Plate 01" },
-            { url: "/IMG_0713.jpg", caption: "Archival Plate 02" },
-            { url: "/IMG_0784.jpg", caption: "Archival Plate 03" }
-          ]
-        }
-      };
+      // Connected SheetDB API endpoint for client galleries
+      const SHEET_API_URL = "https://sheetdb.io/api/v1/vcnfx2ryw9sra";
 
-      function handleGalleryAccess(event) {
+      async function handleGalleryAccess(event) {
         event.preventDefault();
         const inputCode = document.getElementById('gallery-code').value.trim();
         const errorMsg = document.getElementById('gallery-error');
@@ -291,23 +273,43 @@
         const contentView = document.getElementById('gallery-content-view');
         const titleText = document.getElementById('gallery-title-text');
         const imagesContainer = document.getElementById('client-images-container');
+        const submitBtn = formEl.querySelector('button[type="submit"]');
 
-        if (validGalleries[inputCode]) {
-          const data = validGalleries[inputCode];
-          titleText.textContent = data.title;
-          
-          imagesContainer.innerHTML = data.images.map(img => `
-            <div class="client-image-card">
-              <img src="${img.url}" alt="${img.caption}" loading="lazy" />
-              <a href="${img.url}" download class="image-download-link">Download High-Res &darr;</a>
-            </div>
-          `).join('');
+        const btnSpan = submitBtn.querySelector('span');
+        const originalBtnText = btnSpan.textContent;
+        btnSpan.textContent = 'Searching...';
 
-          errorMsg.style.display = 'none';
-          formEl.style.display = 'none';
-          contentView.style.display = 'block';
-        } else {
+        try {
+          // Query Google Sheet via SheetDB API for the matching pin
+          const response = await fetch(`${SHEET_API_URL}/search?pin=${encodeURIComponent(inputCode)}`);
+          const data = await response.json();
+
+          if (data && data.length > 0) {
+            const galleryData = data[0]; 
+            titleText.textContent = galleryData.title || "Private Collection";
+
+            // Split comma-separated image URLs stored in the Google Sheet column
+            const imageUrls = galleryData.images ? galleryData.images.split(',').map(url => url.trim()) : [];
+
+            imagesContainer.innerHTML = imageUrls.map((url, index) => `
+              <div class="client-image-card">
+                <img src="${url}" alt="${galleryData.title} Proof 0${index + 1}" loading="lazy" />
+                <a href="${url}" download class="image-download-link" target="_blank">Download High-Res &darr;</a>
+              </div>
+            `).join('');
+
+            errorMsg.style.display = 'none';
+            formEl.style.display = 'none';
+            contentView.style.display = 'block';
+          } else {
+            errorMsg.style.display = 'block';
+          }
+        } catch (err) {
+          console.error("Error fetching gallery database:", err);
+          errorMsg.textContent = "Connection error. Please try again.";
           errorMsg.style.display = 'block';
+        } finally {
+          btnSpan.textContent = originalBtnText;
         }
       }
 
