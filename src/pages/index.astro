@@ -154,7 +154,7 @@
             </p>
 
             <div class="gallery-auth-card">
-              <form id="gallery-form" onsubmit="handleGalleryAccess(event); return false;" class="gallery-form">
+              <form id="gallery-form" class="gallery-form">
                 <div class="form-group">
                   <label for="gallery-code" class="form-label">Client Passcode</label>
                   <div class="gallery-input-row">
@@ -175,7 +175,7 @@
                     <span class="card-number">Authenticated Vault</span>
                     <h3 class="card-title" id="gallery-title-text">Collection Access Granted</h3>
                   </div>
-                  <button type="button" onclick="lockGallery()" class="gallery-lock-btn">Lock Vault</button>
+                  <button type="button" id="gallery-lock-btn" class="gallery-lock-btn">Lock Vault</button>
                 </div>
                 <div class="client-images-grid" id="client-images-container">
                   <!-- Dynamic Google Sheet images injected here upon correct password -->
@@ -265,6 +265,19 @@
       // Connected SheetDB API endpoint for client galleries
       const SHEET_API_URL = "https://sheetdb.io/api/v1/vcnfx2ryw9sra";
 
+      document.addEventListener('DOMContentLoaded', () => {
+        const galleryForm = document.getElementById('gallery-form');
+        const lockBtn = document.getElementById('gallery-lock-btn');
+
+        if (galleryForm) {
+          galleryForm.addEventListener('submit', handleGalleryAccess);
+        }
+
+        if (lockBtn) {
+          lockBtn.addEventListener('click', lockGallery);
+        }
+      });
+
       async function handleGalleryAccess(event) {
         if (event) event.preventDefault();
 
@@ -281,15 +294,16 @@
         btnSpan.textContent = 'Searching...';
 
         try {
-          // Query Google Sheet via SheetDB API for the matching pin
-          const response = await fetch(`${SHEET_API_URL}/search?pin=${encodeURIComponent(inputCode)}`);
-          const data = await response.json();
+          // Fetch all rows to safely handle string/number formatting or trailing whitespace variations in SheetDB
+          const response = await fetch(SHEET_API_URL);
+          const rows = await response.json();
 
-          if (data && data.length > 0) {
-            const galleryData = data[0]; 
+          const galleryData = rows.find(row => String(row.pin).trim() === inputCode);
+
+          if (galleryData) {
             titleText.textContent = galleryData.title || "Private Collection";
 
-            // Split comma-separated image URLs stored in the Google Sheet column
+            // Split comma-separated image URLs stored in the images column
             const imageUrls = galleryData.images ? galleryData.images.split(',').map(url => url.trim()) : [];
 
             imagesContainer.innerHTML = imageUrls.map((url, index) => `
@@ -320,6 +334,7 @@
         document.getElementById('gallery-form').style.display = 'flex';
         document.getElementById('gallery-content-view').style.display = 'none';
         document.getElementById('gallery-code').value = '';
+        document.getElementById('gallery-error').style.display = 'none';
       }
     </script>
 
