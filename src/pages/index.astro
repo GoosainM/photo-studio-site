@@ -154,11 +154,11 @@
             </p>
 
             <div class="gallery-auth-card">
-              <form id="gallery-form" onsubmit="handleGalleryAccess(event)" class="gallery-form">
+              <form id="gallery-form" onsubmit="handleGalleryAccess(event); return false;" class="gallery-form">
                 <div class="form-group">
                   <label for="gallery-code" class="form-label">Client Passcode</label>
                   <div class="gallery-input-row">
-                    <input type="password" id="gallery-code" required class="form-input" placeholder="Enter collection password..." />
+                    <input type="password" id="gallery-code" required autocomplete="new-password" class="form-input" placeholder="Enter collection password..." />
                     <button type="submit" class="editorial-submit-btn gallery-btn">
                       <span>Unlock</span>
                       <span class="btn-arrow">&rarr;</span>
@@ -266,7 +266,8 @@
       const SHEET_API_URL = "https://sheetdb.io/api/v1/vcnfx2ryw9sra";
 
       async function handleGalleryAccess(event) {
-        event.preventDefault();
+        if (event) event.preventDefault();
+
         const inputCode = document.getElementById('gallery-code').value.trim();
         const errorMsg = document.getElementById('gallery-error');
         const formEl = document.getElementById('gallery-form');
@@ -311,6 +312,8 @@
         } finally {
           btnSpan.textContent = originalBtnText;
         }
+
+        return false;
       }
 
       function lockGallery() {
