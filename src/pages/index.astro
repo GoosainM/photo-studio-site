@@ -1,1041 +1,183 @@
 ---
-// src/pages/index.astro
+import BaseLayouts from '../layouts/BaseLayouts.astro';
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Minnaar-Matthews | Creative House</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;1,300&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div class="editorial-site">
-      <div class="ambient-backdrop"></div>
-
-      <!-- Persistent Top Header -->
-      <header class="site-top-bar">
-        <span class="meta-tag">Creative House Collections</span>
+<BaseLayouts title="Minnaar - Matthews Creative House">
+  <main class="relative bg-[#FAF7F2] text-neutral-900 py-24 px-6 min-h-screen w-full font-sans antialiased">
+    
+    <div class="max-w-7xl mx-auto space-y-24">
+      
+      {/* Header Block */}
+      <header class="border-b border-neutral-900 pb-12 pt-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+          <div class="lg:col-span-8 space-y-4">
+            <span class="text-[11px] font-mono tracking-[0.3em] uppercase text-[#8C6D43]">
+              Archive / Selected Works
+            </span>
+            <h1 class="font-serif text-5xl sm:text-7xl lg:text-8xl font-normal text-neutral-950 tracking-tight leading-[0.95]">
+              Digital Systems &amp; Brand Artifacts
+            </h1>
+          </div>
+          <div class="lg:col-span-4 lg:pl-6">
+            <p class="text-neutral-700 text-sm sm:text-base font-light leading-relaxed">
+              Bespoke web architectures engineered to replace template noise with absolute clarity, sub-second performance, and quiet authority.
+            </p>
+          </div>
+        </div>
       </header>
 
-      <!-- Main Scrolling Sections -->
-      <main class="scroll-container">
-        
-        <!-- SECTION 01: HOME (Split-Screen M|M Hero Layout) -->
-        <section id="home" class="editorial-section home-section-hero">
-          <div class="split-hero-container">
-            <!-- Left Side: Photo Background -->
-            <div class="split-side left-side">
-              <div class="side-bg-image"></div>
-            </div>
-            <!-- Right Side: Clean Cotton Background -->
-            <div class="split-side right-side"></div>
-
-            <!-- Intersecting Center Monogram & Brand Elements -->
-            <div class="hero-monogram-overlay">
-              <div class="monogram-letters">
-                <span class="m-glyph left-m">M</span>
-                <div class="vertical-divider-line"></div>
-                <span class="m-glyph right-m">M</span>
-              </div>
-              
-              <div class="brand-pill-badge">
-                <span>Minnaar &mdash; Matthews</span>
-              </div>
-              <p class="hero-subtext">Creative House</p>
-            </div>
+      {/* Major Showcase Project */}
+      <section class="space-y-8">
+        <div class="flex items-center justify-between border-b border-neutral-300 pb-4">
+          <div class="flex items-center gap-3">
+            <span class="w-2 h-2 bg-[#3B151A]"></span>
+            <span class="text-xs font-mono uppercase tracking-[0.2em] text-neutral-900 font-bold">
+              Case No. 01 — Live Flagship Build
+            </span>
           </div>
-        </section>
+          <span class="text-xs font-mono text-neutral-500">2026 Deployment</span>
+        </div>
 
-        <!-- SECTION 02: ABOUT US -->
-        <section id="about" class="editorial-section about-section">
-          <div class="section-inner">
-            <span class="chic-badge">02 &bull; About Us</span>
-            <h2 class="section-heading">The Architecture of Elegance</h2>
-            
-            <div class="about-script-content">
-              <p class="section-body">
-                A creative space created for small businesses, entrepreneurs and individuals who want to show up professionally, creatively and authentically.
-              </p>
-              
-              <p class="section-body">
-                I believe your brand should tell your story.
-              </p>
-              
-              <p class="section-body">
-                So we're here to help you do exactly that.
-              </p>
-              
-              <p class="section-body">
-                From <em>branding and content creation</em> to <em>professional portraits and personal branding photography</em>, we create visuals that help you communicate who you are and what you do.
-              </p>
-              
-              <p class="section-body">
-                Whether you're starting something new, refreshing your existing brand or simply ready to take your content to the next level &mdash; let's create something that feels like you.
-              </p>
-              
-              <div class="about-closing-triad">
-                <span class="section-body triad-line">Your brand.</span>
-                <span class="section-body triad-line">Your story.</span>
-                <span class="section-body triad-line">Your vision.</span>
-              </div>
-
-              <p class="section-body about-welcome">
-                Welcome to the House.
-              </p>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          {/* Visual Frame */}
+          <div class="lg:col-span-7 bg-[#EFECE6] p-8 sm:p-16 border border-neutral-300 relative group">
+            <div class="relative aspect-[4/3] w-full flex items-center justify-center p-8 bg-[#FAF7F2] border border-neutral-200 shadow-sm transition-transform duration-500 group-hover:-translate-y-1">
+              <img
+                src="/minnaar-matthews-logo.png"
+                alt="Minnaar - Matthews Creative House Logo"
+                width="500"
+                height="500"
+                class="w-full h-auto max-h-[280px] object-contain filter contrast-125"
+              />
+            </div>
+            <div class="mt-6 flex justify-between items-center text-[10px] font-mono text-neutral-500 uppercase tracking-widest">
+              <span>Asset: Studio Identity &amp; Platform</span>
+              <span>Framework: Astro JS</span>
             </div>
           </div>
-        </section>
 
-        <!-- SECTION 03: PORTFOLIO -->
-        <section id="portfolio" class="editorial-section portfolio-section">
-          <div class="section-inner">
-            <span class="chic-badge">03 &bull; Portfolio</span>
-            <h2 class="section-heading">Selected Works</h2>
-            <p class="section-body portfolio-intro">
-              A curated exhibition of digital platforms, custom e-commerce web architecture, and brand identities. Tap or click any card to reveal the exhibition piece.
-            </p>
+          {/* Content & Context */}
+          <div class="lg:col-span-5 space-y-8">
+            <div class="space-y-3">
+              <p class="text-xs font-mono uppercase tracking-widest text-[#8C6D43]">
+                Full-Service Creative Agency &amp; Studio
+              </p>
+              <h2 class="font-serif text-3xl sm:text-4xl text-neutral-950 font-normal leading-tight">
+                Minnaar - Matthews Creative House
+              </h2>
+            </div>
 
-            <div class="flip-cards-grid">
-              <!-- Card 1 -->
-              <div class="flip-card" onclick="this.classList.toggle('flipped')">
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <div class="card-number">01 / Collection</div>
-                    <h3 class="card-title">Architectural Form</h3>
-                    <p class="card-hint">Tap to Flip &rarr;</p>
-                  </div>
-                  <div class="flip-card-back">
-                    <img src="/IMG_0661.jpg" alt="Exhibition Piece 01" loading="lazy" />
-                  </div>
-                </div>
+            <div class="space-y-6 text-neutral-800 text-sm leading-relaxed font-light border-l-2 border-[#3B151A] pl-6">
+              <div>
+                <h3 class="font-mono text-xs uppercase tracking-wider text-neutral-900 font-bold mb-1">
+                  The Imperative
+                </h3>
+                <p>
+                  A high-end media production house required an ultra-fast visual platform capable of exhibiting high-resolution commercial assets without compromising speed or operational elegance.
+                </p>
               </div>
-
-              <!-- Card 2 -->
-              <div class="flip-card" onclick="this.classList.toggle('flipped')">
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <div class="card-number">02 / Collection</div>
-                    <h3 class="card-title">Spatial Harmony</h3>
-                    <p class="card-hint">Tap to Flip &rarr;</p>
-                  </div>
-                  <div class="flip-card-back">
-                    <img src="/IMG_0713.jpg" alt="Exhibition Piece 02" loading="lazy" />
-                  </div>
-                </div>
-              </div>
-
-              <!-- Card 3 -->
-              <div class="flip-card" onclick="this.classList.toggle('flipped')">
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <div class="card-number">03 / Collection</div>
-                    <h3 class="card-title">Textural Precision</h3>
-                    <p class="card-hint">Tap to Flip &rarr;</p>
-                  </div>
-                  <div class="flip-card-back">
-                    <img src="/IMG_0784.jpg" alt="Exhibition Piece 03" loading="lazy" />
-                  </div>
-                </div>
+              <div>
+                <h3 class="font-mono text-xs uppercase tracking-wider text-neutral-900 font-bold mb-1">
+                  Architectural Response
+                </h3>
+                <p>
+                  Engineered on an Astro-first setup with tailored inquiry flows, yielding instantaneous page transitions and a minimal, content-first layout.
+                </p>
               </div>
             </div>
-          </div>
-        </section>
 
-        <!-- SECTION 04: CLIENT GALLERY ACCESS -->
-        <section id="gallery" class="editorial-section gallery-section">
-          <div class="section-inner">
-            <span class="chic-badge">04 &bull; Client Access</span>
-            <h2 class="section-heading">Private Galleries</h2>
-            <p class="section-body gallery-intro">
-              Enter your designated access code below to enter your private collection, view your high-resolution proofs, and download your deliverables.
-            </p>
+            <div class="pt-2 border-t border-neutral-300 text-[11px] font-mono text-neutral-600 space-y-1">
+              <p>— Astro Architecture</p>
+              <p>— Custom Lead Capture Integration</p>
+              <p>— Zero-JS Client-Side Rendering Focus</p>
+            </div>
 
-            <div class="gallery-auth-card">
-              <form id="gallery-form" class="gallery-form">
-                <div class="form-group">
-                  <label for="gallery-code" class="form-label">Client Passcode</label>
-                  <div class="gallery-input-row">
-                    <input type="password" id="gallery-code" required autocomplete="new-password" class="form-input" placeholder="Enter collection password..." />
-                    <button type="submit" class="editorial-submit-btn gallery-btn">
-                      <span>Unlock</span>
-                      <span class="btn-arrow">&rarr;</span>
-                    </button>
-                  </div>
-                </div>
-                <p id="gallery-error" class="gallery-error-msg">Incorrect passcode or collection not found.</p>
-              </form>
-
-              <!-- Dynamic Gallery Display View (Hidden by default until unlocked) -->
-              <div id="gallery-content-view" class="gallery-content-hidden">
-                <div class="gallery-success-header">
-                  <div>
-                    <span class="card-number">Authenticated Vault</span>
-                    <h3 class="card-title" id="gallery-title-text">Collection Access Granted</h3>
-                  </div>
-                  <button type="button" id="gallery-lock-btn" class="gallery-lock-btn">Lock Vault</button>
-                </div>
-                <div class="client-images-grid" id="client-images-container">
-                  <!-- Dynamic Google Sheet images injected here upon correct password -->
-                </div>
-              </div>
+            <div class="pt-4">
+              <a
+                href="https://photo-studio-site-one.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-4 bg-[#3B151A] hover:bg-[#4A121A] text-[#BA996E] text-xs font-mono uppercase tracking-[0.2em] py-4 px-8 transition-colors duration-300"
+              >
+                <span>Explore Live Deployment</span>
+                <span>&rarr;</span>
+              </a>
             </div>
           </div>
-        </section>
 
-        <!-- SECTION 05: CONTACT -->
-        <section id="contact" class="editorial-section contact-section">
-          <div class="section-inner">
-            <span class="chic-badge">05 &bull; Contact</span>
-            <h2 class="section-heading">Initiate a Dialogue</h2>
-            <p class="section-body contact-intro">
-              For bespoke inquiries, architectural web builds, and creative direction, connect with our studio directly in Cape Town.
-            </p>
+        </div>
+      </section>
 
-            <form action="https://api.web3forms.com/submit" method="POST" class="editorial-contact-form">
-              <!-- Web3Forms Access Key -->
-              <input type="hidden" name="access_key" value="7ccd0b54-a506-45ef-85ab-4a13b570d3a3">
-              
-              <!-- Honeypot Spam Protection -->
-              <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+      {/* Demonstrated Systems */}
+      <section class="space-y-8 pt-12 border-t border-neutral-900">
+        <div class="flex justify-between items-baseline">
+          <h2 class="font-serif text-3xl text-neutral-950">
+            Demonstrated Systems
+          </h2>
+          <span class="text-xs font-mono uppercase text-neutral-500 tracking-widest">
+            Prototypes &amp; Specifications
+          </span>
+        </div>
 
-              <div class="form-grid">
-                <div class="form-group">
-                  <label for="name" class="form-label">Name</label>
-                  <input type="text" id="name" name="name" required class="form-input" placeholder="Your Name" />
-                </div>
-                <div class="form-group">
-                  <label for="email" class="form-label">Email</label>
-                  <input type="email" id="email" name="email" required class="form-input" placeholder="Your Email" />
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="message" class="form-label">Message</label>
-                <textarea id="message" name="message" rows="4" required class="form-input" placeholder="Describe your project or inquiry..."></textarea>
-              </div>
-
-              <button type="submit" class="editorial-submit-btn">
-                <span>Submit Inquiry</span>
-                <span class="btn-arrow">&rarr;</span>
-              </button>
-            </form>
+        <div class="divide-y divide-neutral-300 border-y border-neutral-300">
+          
+          <div class="py-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-start hover:bg-[#EFECE6]/50 transition-colors duration-300 px-2">
+            <div class="md:col-span-2 font-mono text-xs uppercase tracking-widest text-[#8C6D43] font-bold">
+              Spec 01 / Retail
+            </div>
+            <div class="md:col-span-4 space-y-1">
+              <h3 class="font-serif text-xl text-neutral-950">
+                Boutique E-Commerce Architecture
+              </h3>
+              <p class="text-xs font-mono text-neutral-500">Next.js • Tailwind • Local Gateways</p>
+            </div>
+            <div class="md:col-span-6 text-neutral-700 text-sm font-light leading-relaxed">
+              A high-speed commerce engine with instant client-side filtering, seamless checkout state management, and direct integration with South African gateways (PayFast &amp; Yoco).
+            </div>
           </div>
-        </section>
 
-      </main>
+          <div class="py-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-start hover:bg-[#EFECE6]/50 transition-colors duration-300 px-2">
+            <div class="md:col-span-2 font-mono text-xs uppercase tracking-widest text-[#8C6D43] font-bold">
+              Spec 02 / Agency
+            </div>
+            <div class="md:col-span-4 space-y-1">
+              <h3 class="font-serif text-xl text-neutral-950">
+                Executive Service Platform
+              </h3>
+              <p class="text-xs font-mono text-neutral-500">Next.js • Web3Forms • Technical SEO</p>
+            </div>
+            <div class="md:col-span-6 text-neutral-700 text-sm font-light leading-relaxed">
+              Corporate web application designed for advisory and executive firms. Features interactive service scoping, schema structured data, and automated routing for high-value leads.
+            </div>
+          </div>
 
-      <!-- Persistent Footer Navigation -->
-      <footer class="site-footer-nav">
-        <nav class="home-navigation">
-          <ul class="home-menu">
-            <li><a href="#home" class="nav-link active" data-target="home"><span class="num">01</span><span class="text">Home</span></a></li>
-            <li><a href="#about" class="nav-link" data-target="about"><span class="num">02</span><span class="text">About</span></a></li>
-            <li><a href="#portfolio" class="nav-link" data-target="portfolio"><span class="num">03</span><span class="text">Work</span></a></li>
-            <li><a href="#gallery" class="nav-link" data-target="gallery"><span class="num">04</span><span class="text">Gallery</span></a></li>
-            <li><a href="#contact" class="nav-link" data-target="contact"><span class="num">05</span><span class="text">Contact</span></a></li>
-          </ul>
-        </nav>
-      </footer>
+        </div>
+      </section>
+
+      {/* Monolithic Call to Action */}
+      <section class="bg-[#3B151A] text-white p-12 sm:p-20 text-left border-l-4 border-[#BA996E] flex flex-col md:flex-row md:items-end justify-between gap-8">
+        <div class="space-y-4 max-w-2xl">
+          <span class="text-[10px] font-mono uppercase tracking-[0.3em] text-[#BA996E]">
+            Initiate Project
+          </span>
+          <h2 class="font-serif text-3xl sm:text-5xl font-normal leading-tight text-white">
+            Have a platform to build or modernize?
+          </h2>
+          <p class="text-neutral-300 text-sm font-light leading-relaxed">
+            We engineer custom web platforms built around your business goals, technical constraints, and brand positioning.
+          </p>
+        </div>
+        <div>
+          <a
+            href="/contact"
+            class="inline-block bg-[#BA996E] hover:bg-[#a8885e] text-[#3B151A] text-xs font-mono uppercase tracking-[0.25em] font-bold py-4 px-10 transition-colors duration-300 whitespace-nowrap"
+          >
+            Start Technical Discovery &rarr;
+          </a>
+        </div>
+      </section>
+
     </div>
-
-    <script>
-      const sections = document.querySelectorAll('.editorial-section');
-      const navLinks = document.querySelectorAll('.nav-link');
-
-      window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-          const sectionTop = section.getBoundingClientRect().top;
-          if (sectionTop <= window.innerHeight / 2) {
-            current = section.getAttribute('id') || '';
-          }
-        });
-
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('data-target') === current) {
-            link.classList.add('active');
-          }
-        });
-      });
-
-      // Connected SheetDB API endpoint for client galleries
-      const SHEET_API_URL = "https://sheetdb.io/api/v1/vcnfx2ryw9sra";
-
-      document.addEventListener('DOMContentLoaded', () => {
-        const galleryForm = document.getElementById('gallery-form');
-        const lockBtn = document.getElementById('gallery-lock-btn');
-
-        if (galleryForm) {
-          galleryForm.addEventListener('submit', handleGalleryAccess);
-        }
-
-        if (lockBtn) {
-          lockBtn.addEventListener('click', lockGallery);
-        }
-      });
-
-      async function handleGalleryAccess(event) {
-        if (event) event.preventDefault();
-
-        const inputCode = document.getElementById('gallery-code').value.trim();
-        const errorMsg = document.getElementById('gallery-error');
-        const formEl = document.getElementById('gallery-form');
-        const contentView = document.getElementById('gallery-content-view');
-        const titleText = document.getElementById('gallery-title-text');
-        const imagesContainer = document.getElementById('client-images-container');
-        const submitBtn = formEl.querySelector('button[type="submit"]');
-
-        const btnSpan = submitBtn.querySelector('span');
-        const originalBtnText = btnSpan.textContent;
-        btnSpan.textContent = 'Searching...';
-
-        try {
-          const response = await fetch(SHEET_API_URL);
-          const rows = await response.json();
-
-          const galleryData = rows.find(row => String(row.pin).trim() === inputCode);
-
-          if (galleryData) {
-            titleText.textContent = galleryData.title || "Private Collection";
-
-            const imageUrls = galleryData.images ? galleryData.images.split(',').map(url => url.trim()) : [];
-
-            imagesContainer.innerHTML = imageUrls.map((url, index) => `
-              <div class="client-image-card">
-                <img src="${url}" alt="${galleryData.title} Proof 0${index + 1}" loading="lazy" />
-                <a href="${url}" download class="image-download-link" target="_blank">Download High-Res &darr;</a>
-              </div>
-            `).join('');
-
-            errorMsg.style.display = 'none';
-            formEl.style.display = 'none';
-            contentView.style.display = 'block';
-          } else {
-            errorMsg.style.display = 'block';
-          }
-        } catch (err) {
-          console.error("Error fetching gallery database:", err);
-          errorMsg.textContent = "Connection error. Please try again.";
-          errorMsg.style.display = 'block';
-        } finally {
-          btnSpan.textContent = originalBtnText;
-        }
-
-        return false;
-      }
-
-      function lockGallery() {
-        document.getElementById('gallery-form').style.display = 'flex';
-        document.getElementById('gallery-content-view').style.display = 'none';
-        document.getElementById('gallery-code').value = '';
-        document.getElementById('gallery-error').style.display = 'none';
-      }
-    </script>
-
-    <style>
-      :root {
-        --color-cotton-bg: #F7F5F0;     
-        --color-obsidian: #141312;      
-        --color-charcoal: #3A3835;      
-        --color-muted: #7E7870;         
-        --color-border: rgba(20, 19, 18, 0.12); 
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        max-width: 100vw;
-        overflow-x: hidden;
-        background-color: var(--color-cotton-bg);
-        color: var(--color-obsidian);
-        font-family: 'Jost', sans-serif;
-        -webkit-font-smoothing: antialiased;
-      }
-
-      .editorial-site {
-        position: relative;
-        width: 100vw;
-        min-height: 100vh;
-        background-color: var(--color-cotton-bg);
-        display: flex;
-        flex-direction: column;
-      }
-
-      .ambient-backdrop {
-        position: fixed;
-        inset: 0;
-        background: radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.8) 0%, rgba(247, 245, 240, 1) 75%);
-        pointer-events: none;
-        z-index: 0;
-      }
-
-      .site-top-bar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        box-sizing: border-box;
-        display: flex;
-        justify-content: center;
-        padding: 16px 5vw;
-        font-size: 0.55rem;
-        letter-spacing: 0.35em;
-        text-transform: uppercase;
-        color: var(--color-muted);
-        border-bottom: 1px solid var(--color-border);
-        background: rgba(247, 245, 240, 0.95);
-        backdrop-filter: blur(10px);
-        z-index: 10;
-      }
-
-      .scroll-container {
-        position: relative;
-        z-index: 2;
-        padding-top: 70px;
-        padding-bottom: 90px;
-      }
-
-      .editorial-section {
-        min-height: 85vh;
-        display: flex;
-        align-items: center;
-        padding: 6vh 5vw;
-        box-sizing: border-box;
-        border-bottom: 1px solid var(--color-border);
-      }
-
-      /* Split-Screen M|M Hero Section Styles */
-      .home-section-hero {
-        padding: 0 !important;
-        min-height: 82vh;
-        position: relative;
-        overflow: hidden;
-        border-bottom: 1px solid var(--color-border);
-      }
-
-      .split-hero-container {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        min-height: 82vh;
-        display: grid;
-        grid-template-columns: 1fr;
-      }
-
-      .split-side {
-        width: 100%;
-        height: 100%;
-        position: relative;
-      }
-
-      .left-side {
-        position: absolute;
-        inset: 0;
-      }
-
-      .side-bg-image {
-        position: absolute;
-        inset: 0;
-        background-image: url('/bg.jpeg');
-        background-size: cover;
-        background-position: center;
-        filter: grayscale(100%) contrast(120%) brightness(0.65);
-      }
-
-      .right-side {
-        display: none;
-      }
-
-      .hero-monogram-overlay {
-        position: absolute;
-        inset: 0;
-        z-index: 5;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 0 4vw;
-        text-align: center;
-      }
-
-      .monogram-letters {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1.5rem;
-      }
-
-      .m-glyph {
-        font-family: 'Playfair Display', serif;
-        font-size: clamp(5rem, 24vw, 11rem);
-        font-weight: 400;
-        line-height: 1;
-        color: #1a1918;
-        text-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        letter-spacing: -0.05em;
-      }
-
-      .vertical-divider-line {
-        position: absolute;
-        width: 1px;
-        height: 75%;
-        background-color: var(--color-obsidian);
-        opacity: 0.6;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-
-      .vertical-divider-line::before,
-      .vertical-divider-line::after {
-        content: '';
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 5px;
-        height: 5px;
-        background-color: var(--color-obsidian);
-        border-radius: 50%;
-      }
-
-      .vertical-divider-line::before {
-        top: 0;
-      }
-
-      .vertical-divider-line::after {
-        bottom: 0;
-      }
-
-      .brand-pill-badge {
-        background-color: #F4F1EA;
-        border: 1px solid rgba(20, 19, 18, 0.15);
-        padding: 10px 24px;
-        border-radius: 2px;
-        margin-top: -1.5rem;
-        z-index: 6;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      }
-
-      .brand-pill-badge span {
-        font-family: 'Jost', sans-serif;
-        font-size: clamp(0.6rem, 2vw, 0.75rem);
-        letter-spacing: 0.35em;
-        text-transform: uppercase;
-        color: var(--color-obsidian);
-      }
-
-      .hero-subtext {
-        font-family: 'Jost', sans-serif;
-        font-size: 0.55rem;
-        letter-spacing: 0.4em;
-        text-transform: uppercase;
-        color: var(--color-charcoal);
-        margin-top: 1.2rem;
-        opacity: 0.85;
-      }
-
-      .section-inner {
-        max-width: 900px;
-        width: 100%;
-        margin: 0 auto;
-      }
-
-      .chic-badge {
-        font-size: 0.6rem;
-        text-transform: uppercase;
-        letter-spacing: 0.3em;
-        color: var(--color-charcoal);
-        margin-bottom: 14px;
-        display: inline-block;
-        border-bottom: 1px solid var(--color-charcoal);
-        padding-bottom: 4px;
-        opacity: 0.8;
-      }
-
-      .section-heading {
-        font-family: 'Playfair Display', serif;
-        font-weight: 300;
-        font-size: clamp(2rem, 8vw, 3rem);
-        color: var(--color-obsidian);
-        margin: 0 0 2rem 0;
-        text-transform: uppercase;
-      }
-
-      /* About Us Section Typography Styling */
-      .about-section {
-        padding: 10vh 5vw;
-      }
-
-      .about-script-content {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-      }
-
-      .section-body {
-        font-family: 'Playfair Display', serif;
-        font-size: 1.1rem;
-        line-height: 1.5;
-        color: var(--color-charcoal);
-        opacity: 0.9;
-        margin: 0;
-        letter-spacing: 0.02em;
-      }
-
-      .about-script-content em {
-        font-style: italic;
-        color: var(--color-obsidian);
-      }
-
-      .about-closing-triad {
-        display: flex;
-        flex-direction: column;
-        gap: 0.4rem;
-        margin: 1rem 0;
-      }
-
-      .triad-line {
-        margin: 0;
-      }
-
-      .about-welcome {
-        margin-top: 0.5rem;
-      }
-
-      /* Portfolio 3D Flip Cards Styling */
-      .portfolio-section {
-        min-height: auto;
-        padding: 10vh 5vw;
-      }
-
-      .portfolio-intro {
-        margin-bottom: 2.5rem;
-      }
-
-      .flip-cards-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        width: 100%;
-      }
-
-      .flip-card {
-        background-color: transparent;
-        width: 100%;
-        height: 380px;
-        perspective: 1000px;
-        cursor: pointer;
-      }
-
-      .flip-card-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
-        transform-style: preserve-3d;
-      }
-
-      .flip-card.flipped .flip-card-inner {
-        transform: rotateY(180deg);
-      }
-
-      .flip-card-front, .flip-card-back {
-        position: absolute;
-        inset: 0;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        border: 1px solid var(--color-border);
-        box-sizing: border-box;
-      }
-
-      .flip-card-front {
-        background-color: #EFECE6;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 2.5rem 2rem;
-        text-align: left;
-      }
-
-      .card-number {
-        font-size: 0.55rem;
-        letter-spacing: 0.3em;
-        text-transform: uppercase;
-        color: var(--color-muted);
-      }
-
-      .card-title {
-        font-family: 'Playfair Display', serif;
-        font-weight: 400;
-        font-size: 1.8rem;
-        color: var(--color-obsidian);
-        margin: 0;
-        line-height: 1.2;
-      }
-
-      .card-hint {
-        font-size: 0.6rem;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: var(--color-charcoal);
-        opacity: 0.7;
-      }
-
-      .flip-card-back {
-        background-color: var(--color-obsidian);
-        transform: rotateY(180deg);
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .flip-card-back img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      /* Gallery Section Styles */
-      .gallery-section {
-        min-height: auto;
-        padding: 10vh 5vw;
-      }
-
-      .gallery-intro {
-        margin-bottom: 2rem;
-        max-width: 600px;
-      }
-
-      .gallery-auth-card {
-        background-color: #EFECE6;
-        border: 1px solid var(--color-border);
-        padding: 2.5rem 2rem;
-        max-width: 700px;
-        width: 100%;
-        box-sizing: border-box;
-        transition: max-width 0.3s ease;
-      }
-
-      .gallery-auth-card:has(#gallery-content-view[style*="block"]) {
-        max-width: 1100px;
-      }
-
-      .gallery-form {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .gallery-input-row {
-        display: flex;
-        gap: 1rem;
-        margin-top: 0.5rem;
-      }
-
-      .gallery-input-row .form-input {
-        flex: 1;
-        background-color: var(--color-cotton-bg);
-      }
-
-      .gallery-btn {
-        margin-top: 0 !important;
-        max-width: 140px;
-      }
-
-      .gallery-error-msg {
-        display: none;
-        color: #8c2d19;
-        font-size: 0.75rem;
-        letter-spacing: 0.05em;
-        margin: 0.5rem 0 0 0;
-      }
-
-      .gallery-content-hidden {
-        display: none;
-      }
-
-      .gallery-success-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        margin-bottom: 2rem;
-        border-bottom: 1px solid var(--color-border);
-        padding-bottom: 1rem;
-      }
-
-      .gallery-lock-btn {
-        background: transparent;
-        border: 1px solid var(--color-border);
-        padding: 8px 14px;
-        font-family: 'Jost', sans-serif;
-        font-size: 0.55rem;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: var(--color-charcoal);
-        cursor: pointer;
-        transition: all 0.2s ease;
-      }
-
-      .gallery-lock-btn:hover {
-        background-color: var(--color-obsidian);
-        color: #F7F5F0;
-        border-color: var(--color-obsidian);
-      }
-
-      .client-images-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-
-      .client-image-card {
-        background: var(--color-cotton-bg);
-        border: 1px solid var(--color-border);
-        padding: 12px;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .client-image-card img {
-        width: 100%;
-        height: 320px;
-        object-fit: cover;
-      }
-
-      .image-download-link {
-        font-size: 0.6rem;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: var(--color-obsidian);
-        text-decoration: none;
-        text-align: center;
-        padding: 10px;
-        background-color: #EFECE6;
-        border: 1px solid var(--color-border);
-        transition: background-color 0.2s ease;
-      }
-
-      .image-download-link:hover {
-        background-color: var(--color-obsidian);
-        color: #F7F5F0;
-      }
-
-      /* Contact Section Form Styles */
-      .contact-section {
-        min-height: auto;
-        padding: 10vh 5vw;
-      }
-
-      .contact-intro {
-        margin-bottom: 2rem;
-        max-width: 600px;
-      }
-
-      .editorial-contact-form {
-        max-width: 700px;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        margin-top: 1.5rem;
-      }
-
-      .form-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-
-      .form-group {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-      }
-
-      .form-label {
-        font-size: 0.6rem;
-        letter-spacing: 0.25em;
-        text-transform: uppercase;
-        color: var(--color-charcoal);
-        opacity: 0.8;
-      }
-
-      .form-input {
-        background: transparent;
-        border: 1px solid var(--color-border);
-        border-radius: 0;
-        padding: 14px 16px;
-        font-family: 'Jost', sans-serif;
-        font-size: 0.95rem;
-        color: var(--color-obsidian);
-        outline: none;
-        transition: border-color 0.2s ease;
-      }
-
-      .form-input:focus {
-        border-color: var(--color-obsidian);
-      }
-
-      .form-input::placeholder {
-        color: var(--color-muted);
-        opacity: 0.5;
-      }
-
-      textarea.form-input {
-        resize: vertical;
-        min-height: 120px;
-      }
-
-      .editorial-submit-btn {
-        background-color: var(--color-obsidian);
-        color: #F7F5F0;
-        border: 1px solid var(--color-obsidian);
-        padding: 16px 28px;
-        font-family: 'Jost', sans-serif;
-        font-size: 0.65rem;
-        letter-spacing: 0.3em;
-        text-transform: uppercase;
-        display: inline-flex;
-        align-items: center;
-        justify-content: space-between;
-        cursor: pointer;
-        transition: all 0.25s ease;
-        margin-top: 0.5rem;
-        max-width: 220px;
-      }
-
-      .editorial-submit-btn:hover {
-        background-color: transparent;
-        color: var(--color-obsidian);
-      }
-
-      .btn-arrow {
-        font-size: 1rem;
-        line-height: 1;
-      }
-
-      /* Mobile-Optimized Sticky Bottom Navigation */
-      .site-footer-nav {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        box-sizing: border-box;
-        background: rgba(247, 245, 240, 0.96);
-        backdrop-filter: blur(12px);
-        border-top: 1px solid var(--color-border);
-        padding: 14px 4vw;
-        display: flex;
-        justify-content: center;
-        z-index: 10;
-      }
-
-      .home-navigation {
-        width: 100%;
-        overflow-x: auto;
-        white-space: nowrap;
-        scrollbar-width: none;
-        display: flex;
-        justify-content: center;
-      }
-
-      .home-navigation::-webkit-scrollbar {
-        display: none;
-      }
-
-      .home-menu {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: inline-flex;
-        gap: 25px;
-      }
-
-      .nav-link {
-        display: inline-flex;
-        align-items: baseline;
-        gap: 4px;
-        text-decoration: none;
-        padding: 4px 0;
-      }
-
-      .nav-link .num {
-        font-size: 0.55rem;
-        letter-spacing: 0.1em;
-        color: var(--color-muted);
-      }
-
-      .nav-link .text {
-        font-family: 'Playfair Display', serif;
-        font-size: 0.9rem;
-        letter-spacing: 0.05em;
-        color: var(--color-charcoal);
-        opacity: 0.6;
-        transition: all 0.2s ease;
-      }
-
-      .nav-link:hover .text, .nav-link.active .text {
-        opacity: 1;
-        color: var(--color-obsidian);
-      }
-
-      .nav-link:hover .num, .nav-link.active .num {
-        color: var(--color-obsidian);
-      }
-
-      /* Desktop enhancements */
-      @media(min-width: 992px) {
-        .scroll-container {
-          padding-top: 100px;
-          padding-bottom: 0;
-        }
-        .site-footer-nav {
-          padding: 20px 8vw;
-          justify-content: center;
-        }
-        .home-navigation {
-          overflow-x: visible;
-        }
-        .home-menu {
-          gap: 4vw;
-        }
-        .split-hero-container {
-          grid-template-columns: 1fr 1fr;
-        }
-        .left-side {
-          position: relative;
-        }
-        .right-side {
-          display: block;
-          background-color: var(--color-cotton-bg);
-        }
-        .flip-cards-grid {
-          grid-template-columns: repeat(3, 1fr);
-          gap: 2rem;
-        }
-        .flip-card {
-          height: 440px;
-        }
-        .client-images-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        .form-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-      }
-    </style>
-  </body>
-</html>
+  </main>
+</BaseLayouts>
