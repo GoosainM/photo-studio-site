@@ -3,102 +3,85 @@ import BaseLayouts from '../layouts/BaseLayouts.astro';
 ---
 
 <BaseLayouts title="Minnaar - Matthews Creative House">
-  <main class="relative bg-[#FAF7F2] text-neutral-900 py-24 px-6 min-h-screen w-full font-sans antialiased">
-    
-    <div class="max-w-7xl mx-auto space-y-24">
+  <main class="work-container">
+    <div class="content-wrapper">
       
-      {/* Header Block */}
-      <header class="border-b border-neutral-900 pb-12 pt-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
-          <div class="lg:col-span-8 space-y-4">
-            <span class="text-[11px] font-mono tracking-[0.3em] uppercase text-[#8C6D43]">
-              Archive / Selected Works
-            </span>
-            <h1 class="font-serif text-5xl sm:text-7xl lg:text-8xl font-normal text-neutral-950 tracking-tight leading-[0.95]">
-              Digital Systems &amp; Brand Artifacts
-            </h1>
+      <!-- Header Block -->
+      <header class="header-block">
+        <div class="header-grid">
+          <div class="header-main">
+            <span class="subhead-mono">Archive / Selected Works</span>
+            <h1 class="main-title">Digital Systems &amp; Brand Artifacts</h1>
           </div>
-          <div class="lg:col-span-4 lg:pl-6">
-            <p class="text-neutral-700 text-sm sm:text-base font-light leading-relaxed">
+          <div class="header-side">
+            <p class="lead-text">
               Bespoke web architectures engineered to replace template noise with absolute clarity, sub-second performance, and quiet authority.
             </p>
           </div>
         </div>
       </header>
 
-      {/* Major Showcase Project */}
-      <section class="space-y-8">
-        <div class="flex items-center justify-between border-b border-neutral-300 pb-4">
-          <div class="flex items-center gap-3">
-            <span class="w-2 h-2 bg-[#3B151A]"></span>
-            <span class="text-xs font-mono uppercase tracking-[0.2em] text-neutral-900 font-bold">
-              Case No. 01 — Live Flagship Build
-            </span>
+      <!-- Major Showcase Project -->
+      <section class="showcase-section">
+        <div class="case-bar">
+          <div class="case-title">
+            <span class="accent-square"></span>
+            <span class="case-label">Case No. 01 — Live Flagship Build</span>
           </div>
-          <span class="text-xs font-mono text-neutral-500">2026 Deployment</span>
+          <span class="meta-mono">2026 Deployment</span>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="showcase-grid">
           
-          {/* Visual Frame */}
-          <div class="lg:col-span-7 bg-[#EFECE6] p-8 sm:p-16 border border-neutral-300 relative group">
-            <div class="relative aspect-[4/3] w-full flex items-center justify-center p-8 bg-[#FAF7F2] border border-neutral-200 shadow-sm transition-transform duration-500 group-hover:-translate-y-1">
+          <!-- Visual Frame -->
+          <div class="visual-frame">
+            <div class="logo-box">
               <img
                 src="/minnaar-matthews-logo.png"
                 alt="Minnaar - Matthews Creative House Logo"
-                width="500"
-                height="500"
-                class="w-full h-auto max-h-[280px] object-contain filter contrast-125"
+                class="brand-logo"
               />
             </div>
-            <div class="mt-6 flex justify-between items-center text-[10px] font-mono text-neutral-500 uppercase tracking-widest">
+            <div class="asset-meta">
               <span>Asset: Studio Identity &amp; Platform</span>
               <span>Framework: Astro JS</span>
             </div>
           </div>
 
-          {/* Content & Context */}
-          <div class="lg:col-span-5 space-y-8">
-            <div class="space-y-3">
-              <p class="text-xs font-mono uppercase tracking-widest text-[#8C6D43]">
-                Full-Service Creative Agency &amp; Studio
-              </p>
-              <h2 class="font-serif text-3xl sm:text-4xl text-neutral-950 font-normal leading-tight">
-                Minnaar - Matthews Creative House
-              </h2>
+          <!-- Content & Context -->
+          <div class="details-frame">
+            <div class="title-stack">
+              <p class="subhead-mono">Full-Service Creative Agency &amp; Studio</p>
+              <h2 class="project-title">Minnaar - Matthews Creative House</h2>
             </div>
 
-            <div class="space-y-6 text-neutral-800 text-sm leading-relaxed font-light border-l-2 border-[#3B151A] pl-6">
-              <div>
-                <h3 class="font-mono text-xs uppercase tracking-wider text-neutral-900 font-bold mb-1">
-                  The Imperative
-                </h3>
+            <div class="context-quote">
+              <div class="block-item">
+                <h3 class="mono-label">The Imperative</h3>
                 <p>
                   A high-end media production house required an ultra-fast visual platform capable of exhibiting high-resolution commercial assets without compromising speed or operational elegance.
                 </p>
               </div>
-              <div>
-                <h3 class="font-mono text-xs uppercase tracking-wider text-neutral-900 font-bold mb-1">
-                  Architectural Response
-                </h3>
+              <div class="block-item">
+                <h3 class="mono-label">Architectural Response</h3>
                 <p>
                   Engineered on an Astro-first setup with tailored inquiry flows, yielding instantaneous page transitions and a minimal, content-first layout.
                 </p>
               </div>
             </div>
 
-            <div class="pt-2 border-t border-neutral-300 text-[11px] font-mono text-neutral-600 space-y-1">
+            <div class="tech-list">
               <p>— Astro Architecture</p>
               <p>— Custom Lead Capture Integration</p>
               <p>— Zero-JS Client-Side Rendering Focus</p>
             </div>
 
-            <div class="pt-4">
+            <div>
               <a
                 href="https://photo-studio-site-one.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center gap-4 bg-[#3B151A] hover:bg-[#4A121A] text-[#BA996E] text-xs font-mono uppercase tracking-[0.2em] py-4 px-8 transition-colors duration-300"
+                class="primary-btn"
               >
                 <span>Explore Live Deployment</span>
                 <span>&rarr;</span>
@@ -109,45 +92,33 @@ import BaseLayouts from '../layouts/BaseLayouts.astro';
         </div>
       </section>
 
-      {/* Demonstrated Systems */}
-      <section class="space-y-8 pt-12 border-t border-neutral-900">
-        <div class="flex justify-between items-baseline">
-          <h2 class="font-serif text-3xl text-neutral-950">
-            Demonstrated Systems
-          </h2>
-          <span class="text-xs font-mono uppercase text-neutral-500 tracking-widest">
-            Prototypes &amp; Specifications
-          </span>
+      <!-- Demonstrated Systems -->
+      <section class="spec-section">
+        <div class="spec-header">
+          <h2 class="section-title">Demonstrated Systems</h2>
+          <span class="meta-mono">Prototypes &amp; Specifications</span>
         </div>
 
-        <div class="divide-y divide-neutral-300 border-y border-neutral-300">
+        <div class="spec-table">
           
-          <div class="py-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-start hover:bg-[#EFECE6]/50 transition-colors duration-300 px-2">
-            <div class="md:col-span-2 font-mono text-xs uppercase tracking-widest text-[#8C6D43] font-bold">
-              Spec 01 / Retail
+          <div class="spec-row">
+            <div class="spec-col-1">Spec 01 / Retail</div>
+            <div class="spec-col-2">
+              <h3>Boutique E-Commerce Architecture</h3>
+              <p class="meta-mono-sm">Next.js • Tailwind • Local Gateways</p>
             </div>
-            <div class="md:col-span-4 space-y-1">
-              <h3 class="font-serif text-xl text-neutral-950">
-                Boutique E-Commerce Architecture
-              </h3>
-              <p class="text-xs font-mono text-neutral-500">Next.js • Tailwind • Local Gateways</p>
-            </div>
-            <div class="md:col-span-6 text-neutral-700 text-sm font-light leading-relaxed">
+            <div class="spec-col-3">
               A high-speed commerce engine with instant client-side filtering, seamless checkout state management, and direct integration with South African gateways (PayFast &amp; Yoco).
             </div>
           </div>
 
-          <div class="py-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-start hover:bg-[#EFECE6]/50 transition-colors duration-300 px-2">
-            <div class="md:col-span-2 font-mono text-xs uppercase tracking-widest text-[#8C6D43] font-bold">
-              Spec 02 / Agency
+          <div class="spec-row">
+            <div class="spec-col-1">Spec 02 / Agency</div>
+            <div class="spec-col-2">
+              <h3>Executive Service Platform</h3>
+              <p class="meta-mono-sm">Next.js • Web3Forms • Technical SEO</p>
             </div>
-            <div class="md:col-span-4 space-y-1">
-              <h3 class="font-serif text-xl text-neutral-950">
-                Executive Service Platform
-              </h3>
-              <p class="text-xs font-mono text-neutral-500">Next.js • Web3Forms • Technical SEO</p>
-            </div>
-            <div class="md:col-span-6 text-neutral-700 text-sm font-light leading-relaxed">
+            <div class="spec-col-3">
               Corporate web application designed for advisory and executive firms. Features interactive service scoping, schema structured data, and automated routing for high-value leads.
             </div>
           </div>
@@ -155,24 +126,17 @@ import BaseLayouts from '../layouts/BaseLayouts.astro';
         </div>
       </section>
 
-      {/* Monolithic Call to Action */}
-      <section class="bg-[#3B151A] text-white p-12 sm:p-20 text-left border-l-4 border-[#BA996E] flex flex-col md:flex-row md:items-end justify-between gap-8">
-        <div class="space-y-4 max-w-2xl">
-          <span class="text-[10px] font-mono uppercase tracking-[0.3em] text-[#BA996E]">
-            Initiate Project
-          </span>
-          <h2 class="font-serif text-3xl sm:text-5xl font-normal leading-tight text-white">
-            Have a platform to build or modernize?
-          </h2>
-          <p class="text-neutral-300 text-sm font-light leading-relaxed">
+      <!-- Monolithic Call to Action -->
+      <section class="cta-banner">
+        <div class="cta-content">
+          <span class="cta-subhead">Initiate Project</span>
+          <h2>Have a platform to build or modernize?</h2>
+          <p>
             We engineer custom web platforms built around your business goals, technical constraints, and brand positioning.
           </p>
         </div>
         <div>
-          <a
-            href="/contact"
-            class="inline-block bg-[#BA996E] hover:bg-[#a8885e] text-[#3B151A] text-xs font-mono uppercase tracking-[0.25em] font-bold py-4 px-10 transition-colors duration-300 whitespace-nowrap"
-          >
+          <a href="/contact" class="cta-btn">
             Start Technical Discovery &rarr;
           </a>
         </div>
@@ -181,3 +145,363 @@ import BaseLayouts from '../layouts/BaseLayouts.astro';
     </div>
   </main>
 </BaseLayouts>
+
+<style>
+  /* Native Component Scoped Styles */
+  .work-container {
+    background-color: #FAF7F2;
+    color: #171717;
+    padding: 6rem 1.5rem;
+    min-height: 100vh;
+    font-family: inherit;
+  }
+
+  .content-wrapper {
+    max-width: 80rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+  }
+
+  .header-block {
+    border-bottom: 1px solid #171717;
+    padding-bottom: 3rem;
+    padding-top: 2rem;
+  }
+
+  .header-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: flex-end;
+  }
+
+  @media (min-width: 1024px) {
+    .header-grid {
+      grid-template-columns: 8fr 4fr;
+    }
+  }
+
+  .subhead-mono {
+    font-family: monospace;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #8C6D43;
+    font-weight: 700;
+  }
+
+  .main-title {
+    font-family: serif;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 400;
+    color: #0a0a0a;
+    line-height: 0.95;
+    margin-top: 1rem;
+  }
+
+  .lead-text {
+    color: #404040;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .showcase-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .case-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #d4d4d4;
+    padding-bottom: 1rem;
+  }
+
+  .case-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .accent-square {
+    width: 8px;
+    height: 8px;
+    background-color: #3B151A;
+  }
+
+  .case-label {
+    font-family: monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 700;
+    color: #171717;
+  }
+
+  .meta-mono {
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: #737373;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .showcase-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  @media (min-width: 1024px) {
+    .showcase-grid {
+      grid-template-columns: 7fr 5fr;
+    }
+  }
+
+  .visual-frame {
+    background-color: #EFECE6;
+    padding: 2.5rem;
+    border: 1px solid #d4d4d4;
+  }
+
+  .logo-box {
+    aspect-ratio: 4/3;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #FAF7F2;
+    border: 1px solid #e5e5e5;
+  }
+
+  .brand-logo {
+    width: 100%;
+    height: auto;
+    max-height: 280px;
+    object-fit: contain;
+  }
+
+  .asset-meta {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    font-family: monospace;
+    font-size: 10px;
+    color: #737373;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .details-frame {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .project-title {
+    font-family: serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #0a0a0a;
+    margin-top: 0.5rem;
+  }
+
+  .context-quote {
+    border-left: 2px solid #3B151A;
+    padding-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    font-size: 0.875rem;
+    color: #262626;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .mono-label {
+    font-family: monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    color: #171717;
+    margin-bottom: 0.25rem;
+  }
+
+  .tech-list {
+    border-top: 1px solid #d4d4d4;
+    padding-top: 1rem;
+    font-family: monospace;
+    font-size: 11px;
+    color: #525252;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .primary-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: #3B151A;
+    color: #BA996E;
+    font-family: monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .primary-btn:hover {
+    background-color: #4A121A;
+  }
+
+  .spec-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 3rem;
+    border-top: 1px solid #171717;
+  }
+
+  .spec-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .section-title {
+    font-family: serif;
+    font-size: 1.75rem;
+    color: #0a0a0a;
+  }
+
+  .spec-table {
+    border-top: 1px solid #d4d4d4;
+    border-bottom: 1px solid #d4d4d4;
+  }
+
+  .spec-row {
+    padding: 2rem 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    align-items: start;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .spec-row:last-child {
+    border-bottom: none;
+  }
+
+  @media (min-width: 768px) {
+    .spec-row {
+      grid-template-columns: 2fr 4fr 6fr;
+    }
+  }
+
+  .spec-col-1 {
+    font-family: monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #8C6D43;
+    font-weight: 700;
+  }
+
+  .spec-col-2 h3 {
+    font-family: serif;
+    font-size: 1.25rem;
+    color: #0a0a0a;
+  }
+
+  .meta-mono-sm {
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: #737373;
+    margin-top: 0.25rem;
+  }
+
+  .spec-col-3 {
+    font-size: 0.875rem;
+    color: #404040;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .cta-banner {
+    background-color: #3B151A;
+    color: #ffffff;
+    padding: 3rem 2.5rem;
+    border-left: 4px solid #BA996E;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .cta-banner {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding: 5rem 4rem;
+    }
+  }
+
+  .cta-content {
+    max-width: 36rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .cta-subhead {
+    font-family: monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: #BA996E;
+  }
+
+  .cta-content h2 {
+    font-family: serif;
+    font-size: clamp(1.75rem, 4vw, 3rem);
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .cta-content p {
+    color: #d4d4d4;
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background-color: #BA996E;
+    color: #3B151A;
+    font-family: monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-weight: 700;
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
+  }
+
+  .cta-btn:hover {
+    background-color: #a8885e;
+  }
+</style>
