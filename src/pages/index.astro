@@ -23,6 +23,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;1,300&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   </head>
   <body>
+    <!-- Subtle Chic Background Overlay Layer -->
+    <div class="chic-bg-texture" aria-hidden="true"></div>
+
     <div class="editorial-wrapper">
       
       <!-- Top Architectural Header Bar -->
@@ -394,9 +397,30 @@
         font-family: var(--font-sans);
         -webkit-font-smoothing: antialiased;
         overflow-x: hidden;
+        background-color: var(--bg-paper);
+        /* Subtle chic ambient vignette + warm luxury gradient base */
+        background-image: 
+          radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.45) 0%, rgba(242, 239, 233, 0) 70%),
+          radial-gradient(circle at 80% 80%, rgba(225, 220, 210, 0.35) 0%, rgba(242, 239, 233, 0) 60%);
+        background-attachment: fixed;
+      }
+
+      /* Ultra-fine tactile paper grain noise overlay */
+      .chic-bg-texture {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0.28;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
       }
 
       .editorial-wrapper {
+        position: relative;
+        z-index: 2;
         width: 100%;
         min-height: 100vh;
         display: flex;
@@ -410,7 +434,9 @@
         left: 0;
         width: 100%;
         height: 50px;
-        background-color: var(--bg-paper);
+        background-color: rgba(242, 239, 233, 0.88);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
         border-bottom: 1px solid var(--border-stark);
         display: grid;
         grid-template-columns: auto 1fr auto;
@@ -473,10 +499,9 @@
         text-align: center;
         padding: 4rem 1.5rem;
         border-bottom: 1px solid var(--border-stark);
-        background-color: var(--bg-paper);
+        background: transparent;
       }
 
-      /* REPLACED IMAGE WITH TYPOGRAPHIC BRAND MARK */
       .hero-brand-block {
         margin-bottom: 3.5rem;
         display: flex;
@@ -517,7 +542,6 @@
         margin: 0 0 1.5rem 0;
         text-transform: uppercase;
         color: var(--color-black);
-        text-shadow: none;
       }
 
       .hero-manifesto-text {
@@ -525,7 +549,6 @@
         line-height: 1.7;
         margin: 0 auto;
         color: var(--color-black);
-        text-shadow: none;
       }
 
       /* EDITORIAL SECTION BASE */
@@ -535,6 +558,7 @@
         display: grid;
         grid-template-columns: 1fr;
         gap: 1.5rem;
+        background: transparent;
       }
 
       .section-index {
@@ -660,7 +684,6 @@
         transition: transform 0.3s ease;
       }
 
-      /* Accordion Drawer for Mobile / Small Screens */
       .row-preview-drawer {
         display: none;
         width: 100%;
@@ -693,6 +716,7 @@
         display: flex;
         flex-direction: column;
         border: 1px solid var(--border-stark);
+        background: rgba(242, 239, 233, 0.5);
       }
 
       .vault-input {
@@ -782,7 +806,7 @@
       .vault-image-card {
         border: 1px solid var(--border-stark);
         padding: 0.75rem;
-        background: #EAE6DF;
+        background: rgba(234, 230, 223, 0.7);
       }
 
       .vault-image-card img {
@@ -873,7 +897,9 @@
         left: 0;
         width: 100%;
         height: 60px;
-        background-color: var(--bg-paper);
+        background-color: rgba(242, 239, 233, 0.88);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
         border-top: 1px solid var(--border-stark);
         display: flex;
         align-items: center;
@@ -964,7 +990,6 @@
           padding: 2.5rem 3rem;
         }
 
-        /* Hover Flyout Preview for Desktop */
         .collection-row {
           position: relative;
         }
