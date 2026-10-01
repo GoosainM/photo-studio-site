@@ -43,26 +43,15 @@
 
         <!-- SECTION 01: HERO / BRAND MARK -->
         <section id="home" class="hero-section">
-          <div class="hero-grid">
-            <div class="hero-image-pane">
-              <img src="/minnaar-matthews-logo.png" alt="Minnaar-Matthews Logo" class="hero-brand-img" />
-            </div>
+          <div class="hero-image-wrapper">
+            <img src="/minnaar-matthews-logo.png" alt="Minnaar-Matthews Logo" class="hero-brand-img-full" />
+          </div>
 
-            <div class="hero-typography-pane">
-              <div class="monogram-container">
-                <div class="monogram-m">M</div>
-                <div class="monogram-divider"></div>
-                <div class="monogram-m">M</div>
-              </div>
-
-              <div class="hero-copy-block">
-                <span class="eyebrow-label">Volume I / Edition 2026</span>
-                <h1 class="hero-statement">Visual Identity &amp; Digital Architecture</h1>
-                <p class="hero-manifesto-text">
-                  A bespoke creative suite dedicated to refining brand presence through tailored digital experiences, editorial photography, and purposeful design.
-                </p>
-              </div>
-            </div>
+          <div class="hero-copy-block">
+            <h1 class="hero-statement">Visual Identity &amp; Digital Architecture</h1>
+            <p class="hero-manifesto-text">
+              A bespoke creative suite dedicated to refining brand presence through tailored digital experiences, editorial photography, and purposeful design.
+            </p>
           </div>
         </section>
 
@@ -95,7 +84,7 @@
           </div>
         </section>
 
-        <!-- SECTION 03: WORKS / COLLECTIONS LIST (Interactive Mobile + Desktop Index) -->
+        <!-- SECTION 03: WORKS / COLLECTIONS LIST -->
         <section id="portfolio" class="editorial-section portfolio-section">
           <div class="portfolio-header">
             <div class="portfolio-title-group">
@@ -473,89 +462,53 @@
         margin-bottom: 60px;
       }
 
-      /* SECTION 01: HERO GRID */
+      /* SECTION 01: HERO FULL SCREEN */
       .hero-section {
         min-height: calc(100vh - 110px);
-        border-bottom: 1px solid var(--border-stark);
-      }
-
-      .hero-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-      }
-
-      .hero-image-pane {
-        position: relative;
-        width: 100%;
-        min-height: 35vh;
-        background-color: var(--color-black);
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 2.5rem 1.5rem;
+        text-align: center;
+        padding: 4rem 1.5rem;
+        border-bottom: 1px solid var(--border-stark);
+        background-color: var(--color-black); /* Set black background if your logo is light/inverted, or change to var(--bg-paper) if the logo has dark text */
       }
 
-      .hero-brand-img {
-        max-width: 80%;
-        max-height: 250px;
-        width: auto;
+      .hero-image-wrapper {
+        width: 100%;
+        max-width: 1200px;
+        margin-bottom: 3rem;
+        display: flex;
+        justify-content: center;
+      }
+
+      .hero-brand-img-full {
+        width: 100%;
         height: auto;
+        max-height: 50vh;
         object-fit: contain;
       }
 
-      .hero-typography-pane {
-        padding: 2.5rem 1.25rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        background-color: var(--bg-paper);
-        border-top: 1px solid var(--border-stark);
-      }
-
-      .monogram-container {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        margin-bottom: 1.5rem;
-      }
-
-      .monogram-m {
-        font-family: var(--font-serif);
-        font-size: clamp(3rem, 10vw, 8rem);
-        line-height: 0.9;
-        font-weight: 400;
-      }
-
-      .monogram-divider {
-        width: 1px;
-        height: 45px;
-        background-color: var(--border-stark);
-      }
-
-      .eyebrow-label {
-        font-size: 0.6rem;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: var(--color-muted);
-        display: block;
-        margin-bottom: 0.75rem;
+      .hero-copy-block {
+        max-width: 800px;
+        color: var(--bg-paper); /* Adjust this to var(--color-black) if you change the background to light */
       }
 
       .hero-statement {
         font-family: var(--font-serif);
-        font-size: clamp(1.6rem, 5vw, 3.2rem);
+        font-size: clamp(1.8rem, 5vw, 3.5rem);
         font-weight: 400;
         line-height: 1.15;
-        margin: 0 0 1.25rem 0;
+        margin: 0 0 1.5rem 0;
         text-transform: uppercase;
       }
 
       .hero-manifesto-text {
-        font-size: 0.9rem;
-        line-height: 1.6;
-        color: var(--color-charcoal);
-        max-width: 500px;
-        margin: 0;
+        font-size: 1rem;
+        line-height: 1.7;
+        margin: 0 auto;
+        color: rgba(242, 239, 233, 0.8); /* Muted paper color. Adjust if you change background */
       }
 
       /* EDITORIAL SECTION BASE */
@@ -954,25 +907,8 @@
           font-size: 0.85rem;
         }
 
-        .hero-grid {
-          grid-template-columns: 1.2fr 1fr;
-          min-height: calc(100vh - 110px);
-        }
-
-        .hero-image-pane {
-          min-height: auto;
-          padding: 4rem;
-        }
-
-        .hero-brand-img {
-          max-width: 70%;
-          max-height: 380px;
-        }
-
-        .hero-typography-pane {
-          border-top: none;
-          border-left: 1px solid var(--border-stark);
-          padding: 4rem 3rem;
+        .hero-section {
+          padding: 6rem 3rem;
         }
 
         .editorial-section {
