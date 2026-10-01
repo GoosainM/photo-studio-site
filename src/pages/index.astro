@@ -7,6 +7,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Minnaar-Matthews | Creative House</title>
+    
+    <!-- Google Analytics (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8LSLBVDXXL"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-8LSLBVDXXL');
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;1,300&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -95,48 +106,62 @@
             <span class="chic-badge">03 &bull; Portfolio</span>
             <h2 class="section-heading">Selected Works</h2>
             <p class="section-body portfolio-intro">
-              A curated exhibition of digital platforms, custom e-commerce web architecture, and brand identities. Tap or click any card to reveal the exhibition piece.
+              A curated exhibition of digital platforms, custom brand identities, and visual storytelling collections. Tap or click any card to reveal the exhibition piece.
             </p>
 
             <div class="flip-cards-grid">
-              <!-- Card 1 -->
+              <!-- Card 1: Photography Collection -->
               <div class="flip-card" onclick="this.classList.toggle('flipped')">
                 <div class="flip-card-inner">
                   <div class="flip-card-front">
                     <div class="card-number">01 / Collection</div>
-                    <h3 class="card-title">Architectural Form</h3>
+                    <h3 class="card-title">Photography Collection</h3>
                     <p class="card-hint">Tap to Flip &rarr;</p>
                   </div>
                   <div class="flip-card-back">
-                    <img src="/IMG_0661.jpg" alt="Exhibition Piece 01" loading="lazy" />
+                    <img src="/IMG_0661.jpg" alt="Photography Collection" loading="lazy" />
                   </div>
                 </div>
               </div>
 
-              <!-- Card 2 -->
+              <!-- Card 2: Brand Collection -->
               <div class="flip-card" onclick="this.classList.toggle('flipped')">
                 <div class="flip-card-inner">
                   <div class="flip-card-front">
                     <div class="card-number">02 / Collection</div>
-                    <h3 class="card-title">Spatial Harmony</h3>
+                    <h3 class="card-title">Brand Collection</h3>
                     <p class="card-hint">Tap to Flip &rarr;</p>
                   </div>
                   <div class="flip-card-back">
-                    <img src="/IMG_0713.jpg" alt="Exhibition Piece 02" loading="lazy" />
+                    <img src="/IMG_0713.jpg" alt="Brand Collection" loading="lazy" />
                   </div>
                 </div>
               </div>
 
-              <!-- Card 3 -->
+              <!-- Card 3: Content Collection -->
               <div class="flip-card" onclick="this.classList.toggle('flipped')">
                 <div class="flip-card-inner">
                   <div class="flip-card-front">
                     <div class="card-number">03 / Collection</div>
-                    <h3 class="card-title">Textural Precision</h3>
+                    <h3 class="card-title">Content Collection</h3>
                     <p class="card-hint">Tap to Flip &rarr;</p>
                   </div>
                   <div class="flip-card-back">
-                    <img src="/IMG_0784.jpg" alt="Exhibition Piece 03" loading="lazy" />
+                    <img src="/IMG_0784.jpg" alt="Content Collection" loading="lazy" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 4: Social Media Design Collection -->
+              <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <div class="card-number">04 / Collection</div>
+                    <h3 class="card-title">Social Media Design Collection</h3>
+                    <p class="card-hint">Tap to Flip &rarr;</p>
+                  </div>
+                  <div class="flip-card-back">
+                    <img src="/bg.jpeg" alt="Social Media Design Collection" loading="lazy" />
                   </div>
                 </div>
               </div>
@@ -678,10 +703,10 @@
       .card-title {
         font-family: 'Playfair Display', serif;
         font-weight: 400;
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         color: var(--color-obsidian);
         margin: 0;
-        line-height: 1.2;
+        line-height: 1.25;
       }
 
       .card-hint {
@@ -1023,11 +1048,11 @@
           background-color: var(--color-cotton-bg);
         }
         .flip-cards-grid {
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(2, 1fr);
           gap: 2rem;
         }
         .flip-card {
-          height: 440px;
+          height: 420px;
         }
         .client-images-grid {
           grid-template-columns: repeat(2, 1fr);
