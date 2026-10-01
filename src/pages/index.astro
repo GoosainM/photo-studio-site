@@ -43,8 +43,9 @@
 
         <!-- SECTION 01: HERO / BRAND MARK -->
         <section id="home" class="hero-section">
-          <div class="hero-image-wrapper">
-            <img src="/minnaar-matthews-logo.png" alt="Minnaar-Matthews Logo" class="hero-brand-img-full" />
+          <div class="hero-brand-block">
+            <h2 class="hero-brand-name">Minnaar-Matthews</h2>
+            <span class="hero-brand-tagline">Creative House</span>
           </div>
 
           <div class="hero-copy-block">
@@ -472,27 +473,40 @@
         text-align: center;
         padding: 4rem 1.5rem;
         border-bottom: 1px solid var(--border-stark);
-        background-color: #F2EFE9; /* Cream background */
+        background-color: var(--bg-paper);
       }
 
-      .hero-image-wrapper {
-        width: 100%;
-        max-width: 1200px;
-        margin-bottom: 3rem;
+      /* REPLACED IMAGE WITH TYPOGRAPHIC BRAND MARK */
+      .hero-brand-block {
+        margin-bottom: 3.5rem;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
       }
 
-      .hero-brand-img-full {
-        width: 100%;
-        height: auto;
-        max-height: 50vh;
-        object-fit: contain;
+      .hero-brand-name {
+        font-family: var(--font-serif);
+        font-size: clamp(2rem, 6vw, 4.5rem);
+        font-weight: 400;
+        letter-spacing: 0.08em;
+        color: var(--color-black);
+        margin: 0;
+        text-transform: uppercase;
+      }
+
+      .hero-brand-tagline {
+        font-family: var(--font-sans);
+        font-size: clamp(0.7rem, 1.5vw, 1rem);
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        color: var(--color-black);
+        font-weight: 400;
       }
 
       .hero-copy-block {
         max-width: 800px;
-        color: #FFFFFF; /* White text */
+        color: var(--color-black);
       }
 
       .hero-statement {
@@ -502,16 +516,16 @@
         line-height: 1.15;
         margin: 0 0 1.5rem 0;
         text-transform: uppercase;
-        color: #FFFFFF; /* White typography */
-        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); /* Contrast drop-shadow against cream */
+        color: var(--color-black);
+        text-shadow: none;
       }
 
       .hero-manifesto-text {
         font-size: 1rem;
         line-height: 1.7;
         margin: 0 auto;
-        color: #FFFFFF; /* White typography */
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Contrast drop-shadow against cream */
+        color: var(--color-black);
+        text-shadow: none;
       }
 
       /* EDITORIAL SECTION BASE */
