@@ -20,231 +20,223 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;1,300&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;1,300&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div class="editorial-site">
-      <div class="ambient-backdrop"></div>
-
-      <!-- Persistent Top Header -->
-      <header class="site-top-bar">
-        <span class="meta-tag">Creative House Collections</span>
+    <div class="editorial-wrapper">
+      
+      <!-- Top Architectural Header Bar -->
+      <header class="top-bar">
+        <div class="top-bar-left">
+          <span class="mono-tag">[ M&mdash;M ]</span>
+          <span class="location-tag">Cape Town, ZA</span>
+        </div>
+        <div class="top-bar-center">
+          <span class="house-title">Minnaar-Matthews Creative House</span>
+        </div>
+        <div class="top-bar-right">
+          <a href="#contact" class="top-cta-link">Inquire &rarr;</a>
+        </div>
       </header>
 
-      <!-- Main Scrolling Sections -->
-      <main class="scroll-container">
-        
-        <!-- SECTION 01: HOME (Split-Screen M|M Hero Layout) -->
-        <section id="home" class="editorial-section home-section-hero">
-          <div class="split-hero-container">
-            <!-- Left Side: Photo Background -->
-            <div class="split-side left-side">
-              <div class="side-bg-image"></div>
-            </div>
-            <!-- Right Side: Clean Cotton Background -->
-            <div class="split-side right-side"></div>
+      <main class="main-content">
 
-            <!-- Intersecting Center Monogram & Brand Elements -->
-            <div class="hero-monogram-overlay">
-              <div class="monogram-letters">
-                <span class="m-glyph left-m">M</span>
-                <div class="vertical-divider-line"></div>
-                <span class="m-glyph right-m">M</span>
+        <!-- SECTION 01: HERO / MONOGRAM -->
+        <section id="home" class="hero-section">
+          <div class="hero-grid">
+            <div class="hero-image-pane">
+              <img src="/bg.jpeg" alt="Editorial Visual" class="hero-bg-img" />
+              <div class="image-overlay-vignette"></div>
+            </div>
+
+            <div class="hero-typography-pane">
+              <div class="monogram-container">
+                <div class="monogram-m">M</div>
+                <div class="monogram-divider"></div>
+                <div class="monogram-m">M</div>
               </div>
-              
-              <div class="brand-pill-badge">
-                <span>Minnaar &mdash; Matthews</span>
+
+              <div class="hero-copy-block">
+                <span class="eyebrow-label">Volume I / Edition 2026</span>
+                <h1 class="hero-statement">Visual Identity &amp; Digital Architecture</h1>
+                <p class="hero-manifesto-text">
+                  A bespoke creative suite dedicated to refining brand presence through tailored digital experiences, editorial photography, and purposeful design.
+                </p>
               </div>
-              <p class="hero-subtext">Creative House</p>
             </div>
           </div>
         </section>
 
-        <!-- SECTION 02: ABOUT US -->
+        <!-- SECTION 02: ABOUT / STATEMENT -->
         <section id="about" class="editorial-section about-section">
-          <div class="section-inner">
-            <span class="chic-badge">02 &bull; About Us</span>
-            <h2 class="section-heading">The Architecture of Elegance</h2>
+          <div class="section-column-left">
+            <span class="section-index">01.0</span>
+            <h2 class="section-label">Manifesto</h2>
+          </div>
+
+          <div class="section-column-right">
+            <p class="about-headline">
+              We design for those who value quiet authority over loud convention.
+            </p>
             
-            <div class="about-script-content">
-              <p class="section-body">
-                A creative space created for small businesses, entrepreneurs and individuals who want to show up professionally, creatively and authentically.
+            <div class="about-body-text">
+              <p>
+                Created for small businesses, entrepreneurs, and visionaries who demand authenticity and precision. Your brand is not merely a logo or a product—it is an enduring narrative.
               </p>
-              
-              <p class="section-body">
-                I believe your brand should tell your story.
+              <p>
+                From structural branding and content curation to high-resolution portraiture and digital platforms, we engineer visuals that speak with absolute clarity.
               </p>
-              
-              <p class="section-body">
-                So we're here to help you do exactly that.
-              </p>
-              
-              <p class="section-body">
-                From <em>branding and content creation</em> to <em>professional portraits and personal branding photography</em>, we create visuals that help you communicate who you are and what you do.
-              </p>
-              
-              <p class="section-body">
-                Whether you're starting something new, refreshing your existing brand or simply ready to take your content to the next level &mdash; let's create something that feels like you.
-              </p>
-              
-              <div class="about-closing-triad">
-                <span class="section-body triad-line">Your brand.</span>
-                <span class="section-body triad-line">Your story.</span>
-                <span class="section-body triad-line">Your vision.</span>
-              </div>
+            </div>
 
-              <p class="section-body about-welcome">
-                Welcome to the House.
-              </p>
+            <div class="triad-statement">
+              <div class="triad-col"><span>01</span> Structure</div>
+              <div class="triad-col"><span>02</span> Story</div>
+              <div class="triad-col"><span>03</span> Elevation</div>
             </div>
           </div>
         </section>
 
-        <!-- SECTION 03: PORTFOLIO -->
+        <!-- SECTION 03: WORKS / COLLECTIONS LIST (Interactive Index) -->
         <section id="portfolio" class="editorial-section portfolio-section">
-          <div class="section-inner">
-            <span class="chic-badge">03 &bull; Portfolio</span>
-            <h2 class="section-heading">Selected Works</h2>
-            <p class="section-body portfolio-intro">
-              A curated exhibition of digital platforms, custom brand identities, and visual storytelling collections. Tap or click any card to reveal the exhibition piece.
-            </p>
-
-            <div class="flip-cards-grid">
-              <!-- Card 1: Photography Collection -->
-              <div class="flip-card" onclick="this.classList.toggle('flipped')">
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <div class="card-number">01 / Collection</div>
-                    <h3 class="card-title">Photography Collection</h3>
-                    <p class="card-hint">Tap to Flip &rarr;</p>
-                  </div>
-                  <div class="flip-card-back">
-                    <img src="/IMG_0661.jpg" alt="Photography Collection" loading="lazy" />
-                  </div>
-                </div>
-              </div>
-
-              <!-- Card 2: Brand Collection -->
-              <div class="flip-card" onclick="this.classList.toggle('flipped')">
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <div class="card-number">02 / Collection</div>
-                    <h3 class="card-title">Brand Collection</h3>
-                    <p class="card-hint">Tap to Flip &rarr;</p>
-                  </div>
-                  <div class="flip-card-back">
-                    <img src="/IMG_0713.jpg" alt="Brand Collection" loading="lazy" />
-                  </div>
-                </div>
-              </div>
-
-              <!-- Card 3: Content Collection -->
-              <div class="flip-card" onclick="this.classList.toggle('flipped')">
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <div class="card-number">03 / Collection</div>
-                    <h3 class="card-title">Content Collection</h3>
-                    <p class="card-hint">Tap to Flip &rarr;</p>
-                  </div>
-                  <div class="flip-card-back">
-                    <img src="/IMG_0784.jpg" alt="Content Collection" loading="lazy" />
-                  </div>
-                </div>
-              </div>
-
-              <!-- Card 4: Social Media Design Collection -->
-              <div class="flip-card" onclick="this.classList.toggle('flipped')">
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <div class="card-number">04 / Collection</div>
-                    <h3 class="card-title">Social Media Design Collection</h3>
-                    <p class="card-hint">Tap to Flip &rarr;</p>
-                  </div>
-                  <div class="flip-card-back">
-                    <img src="/bg.jpeg" alt="Social Media Design Collection" loading="lazy" />
-                  </div>
-                </div>
-              </div>
+          <div class="portfolio-header">
+            <div class="portfolio-title-group">
+              <span class="section-index">02.0</span>
+              <h2 class="section-label">Selected Collections</h2>
             </div>
+            <p class="portfolio-subtext">Hover or tap to reveal collection preview</p>
+          </div>
+
+          <div class="collections-list">
+            <!-- Collection Item 1 -->
+            <article class="collection-row" data-bg="/IMG_0661.jpg">
+              <div class="row-num">01</div>
+              <div class="row-title-block">
+                <h3 class="collection-title">Photography Collection</h3>
+                <span class="collection-type">Editorial &amp; Portraiture</span>
+              </div>
+              <div class="row-arrow">&nearr;</div>
+              <div class="row-hover-preview">
+                <img src="/IMG_0661.jpg" alt="Photography Collection Preview" loading="lazy" />
+              </div>
+            </article>
+
+            <!-- Collection Item 2 -->
+            <article class="collection-row" data-bg="/IMG_0713.jpg">
+              <div class="row-num">02</div>
+              <div class="row-title-block">
+                <h3 class="collection-title">Brand Collection</h3>
+                <span class="collection-type">Identity &amp; Strategy</span>
+              </div>
+              <div class="row-arrow">&nearr;</div>
+              <div class="row-hover-preview">
+                <img src="/IMG_0713.jpg" alt="Brand Collection Preview" loading="lazy" />
+              </div>
+            </article>
+
+            <!-- Collection Item 3 -->
+            <article class="collection-row" data-bg="/IMG_0784.jpg">
+              <div class="row-num">03</div>
+              <div class="row-title-block">
+                <h3 class="collection-title">Content Collection</h3>
+                <span class="collection-type">Visual Storytelling &amp; Media</span>
+              </div>
+              <div class="row-arrow">&nearr;</div>
+              <div class="row-hover-preview">
+                <img src="/IMG_0784.jpg" alt="Content Collection Preview" loading="lazy" />
+              </div>
+            </article>
+
+            <!-- Collection Item 4 -->
+            <article class="collection-row" data-bg="/bg.jpeg">
+              <div class="row-num">04</div>
+              <div class="row-title-block">
+                <h3 class="collection-title">Social Media Design</h3>
+                <span class="collection-type">Digital Curation &amp; Layout</span>
+              </div>
+              <div class="row-arrow">&nearr;</div>
+              <div class="row-hover-preview">
+                <img src="/bg.jpeg" alt="Social Media Design Preview" loading="lazy" />
+              </div>
+            </article>
           </div>
         </section>
 
-        <!-- SECTION 04: CLIENT GALLERY ACCESS -->
-        <section id="gallery" class="editorial-section gallery-section">
-          <div class="section-inner">
-            <span class="chic-badge">04 &bull; Client Access</span>
-            <h2 class="section-heading">Private Galleries</h2>
-            <p class="section-body gallery-intro">
-              Enter your designated access code below to enter your private collection, view your high-resolution proofs, and download your deliverables.
+        <!-- SECTION 04: PRIVATE VAULT / GALLERIES -->
+        <section id="gallery" class="editorial-section vault-section">
+          <div class="section-column-left">
+            <span class="section-index">03.0</span>
+            <h2 class="section-label">Private Vault</h2>
+          </div>
+
+          <div class="section-column-right">
+            <p class="vault-intro">
+              Enter your access key to unlock high-resolution deliverables and raw client proofs.
             </p>
 
-            <div class="gallery-auth-card">
-              <form id="gallery-form" class="gallery-form">
-                <div class="form-group">
-                  <label for="gallery-code" class="form-label">Client Passcode</label>
-                  <div class="gallery-input-row">
-                    <input type="password" id="gallery-code" required autocomplete="new-password" class="form-input" placeholder="Enter collection password..." />
-                    <button type="submit" class="editorial-submit-btn gallery-btn">
-                      <span>Unlock</span>
-                      <span class="btn-arrow">&rarr;</span>
-                    </button>
-                  </div>
+            <div class="vault-access-container">
+              <form id="gallery-form" class="vault-form">
+                <div class="vault-input-wrap">
+                  <input type="password" id="gallery-code" required autocomplete="new-password" placeholder="ENTER ACCESS CODE..." class="vault-input" />
+                  <button type="submit" class="vault-submit-btn">
+                    <span>Unlock</span>
+                    <span class="btn-arrow">&rarr;</span>
+                  </button>
                 </div>
-                <p id="gallery-error" class="gallery-error-msg">Incorrect passcode or collection not found.</p>
+                <p id="gallery-error" class="vault-error-msg">Invalid Passcode or Vault Expired.</p>
               </form>
 
-              <!-- Dynamic Gallery Display View (Hidden by default until unlocked) -->
-              <div id="gallery-content-view" class="gallery-content-hidden">
-                <div class="gallery-success-header">
+              <!-- Dynamic Gallery Display View -->
+              <div id="gallery-content-view" class="vault-content-hidden">
+                <div class="vault-success-header">
                   <div>
-                    <span class="card-number">Authenticated Vault</span>
-                    <h3 class="card-title" id="gallery-title-text">Collection Access Granted</h3>
+                    <span class="vault-status-tag">[ Vault Status: Authenticated ]</span>
+                    <h3 class="vault-client-title" id="gallery-title-text">Client Access Granted</h3>
                   </div>
-                  <button type="button" id="gallery-lock-btn" class="gallery-lock-btn">Lock Vault</button>
+                  <button type="button" id="gallery-lock-btn" class="vault-lock-btn">Lock Session</button>
                 </div>
-                <div class="client-images-grid" id="client-images-container">
-                  <!-- Dynamic Google Sheet images injected here upon correct password -->
+                <div class="vault-images-grid" id="client-images-container">
+                  <!-- Dynamic Google Sheet images injected here -->
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- SECTION 05: CONTACT -->
+        <!-- SECTION 05: CONTACT / INQUIRY -->
         <section id="contact" class="editorial-section contact-section">
-          <div class="section-inner">
-            <span class="chic-badge">05 &bull; Contact</span>
-            <h2 class="section-heading">Initiate a Dialogue</h2>
-            <p class="section-body contact-intro">
-              For bespoke inquiries, architectural web builds, and creative direction, connect with our studio directly in Cape Town.
+          <div class="section-column-left">
+            <span class="section-index">04.0</span>
+            <h2 class="section-label">Inquiry</h2>
+          </div>
+
+          <div class="section-column-right">
+            <p class="contact-headline">
+              Initiate a dialogue regarding project availability, creative direction, or visual identity builds.
             </p>
 
-            <form action="https://api.web3forms.com/submit" method="POST" class="editorial-contact-form">
-              <!-- Web3Forms Access Key -->
+            <form action="https://api.web3forms.com/submit" method="POST" class="raw-contact-form">
               <input type="hidden" name="access_key" value="7ccd0b54-a506-45ef-85ab-4a13b570d3a3">
-              
-              <!-- Honeypot Spam Protection -->
               <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
-              <div class="form-grid">
-                <div class="form-group">
-                  <label for="name" class="form-label">Name</label>
-                  <input type="text" id="name" name="name" required class="form-input" placeholder="Your Name" />
+              <div class="form-row-two">
+                <div class="field-block">
+                  <label for="name" class="field-label">01 // Full Name</label>
+                  <input type="text" id="name" name="name" required placeholder="John Doe" class="raw-input" />
                 </div>
-                <div class="form-group">
-                  <label for="email" class="form-label">Email</label>
-                  <input type="email" id="email" name="email" required class="form-input" placeholder="Your Email" />
+                <div class="field-block">
+                  <label for="email" class="field-label">02 // Email Address</label>
+                  <input type="email" id="email" name="email" required placeholder="john@domain.com" class="raw-input" />
                 </div>
               </div>
 
-              <div class="form-group">
-                <label for="message" class="form-label">Message</label>
-                <textarea id="message" name="message" rows="4" required class="form-input" placeholder="Describe your project or inquiry..."></textarea>
+              <div class="field-block">
+                <label for="message" class="field-label">03 // Scope of Work / Details</label>
+                <textarea id="message" name="message" rows="4" required placeholder="Provide brief summary of project requirements..." class="raw-input"></textarea>
               </div>
 
-              <button type="submit" class="editorial-submit-btn">
-                <span>Submit Inquiry</span>
-                <span class="btn-arrow">&rarr;</span>
+              <button type="submit" class="raw-submit-btn">
+                <span>Send Dispatch</span>
+                <span>&rarr;</span>
               </button>
             </form>
           </div>
@@ -252,23 +244,27 @@
 
       </main>
 
-      <!-- Persistent Footer Navigation -->
-      <footer class="site-footer-nav">
-        <nav class="home-navigation">
-          <ul class="home-menu">
-            <li><a href="#home" class="nav-link active" data-target="home"><span class="num">01</span><span class="text">Home</span></a></li>
-            <li><a href="#about" class="nav-link" data-target="about"><span class="num">02</span><span class="text">About</span></a></li>
-            <li><a href="#portfolio" class="nav-link" data-target="portfolio"><span class="num">03</span><span class="text">Work</span></a></li>
-            <li><a href="#gallery" class="nav-link" data-target="gallery"><span class="num">04</span><span class="text">Gallery</span></a></li>
-            <li><a href="#contact" class="nav-link" data-target="contact"><span class="num">05</span><span class="text">Contact</span></a></li>
-          </ul>
+      <!-- Persistent Bottom Navigation Dock -->
+      <footer class="bottom-dock">
+        <nav class="dock-nav">
+          <a href="#home" class="dock-link active" data-target="home">Index</a>
+          <span class="dock-sep">/</span>
+          <a href="#about" class="dock-link" data-target="about">Manifesto</a>
+          <span class="dock-sep">/</span>
+          <a href="#portfolio" class="dock-link" data-target="portfolio">Collections</a>
+          <span class="dock-sep">/</span>
+          <a href="#gallery" class="dock-link" data-target="gallery">Vault</a>
+          <span class="dock-sep">/</span>
+          <a href="#contact" class="dock-link" data-target="contact">Inquire</a>
         </nav>
       </footer>
+
     </div>
 
     <script>
-      const sections = document.querySelectorAll('.editorial-section');
-      const navLinks = document.querySelectorAll('.nav-link');
+      // Active Nav Link Observer
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('.dock-link');
 
       window.addEventListener('scroll', () => {
         let current = '';
@@ -287,7 +283,7 @@
         });
       });
 
-      // Connected SheetDB API endpoint for client galleries
+      // SheetDB API integration for client vault access
       const SHEET_API_URL = "https://sheetdb.io/api/v1/vcnfx2ryw9sra";
 
       document.addEventListener('DOMContentLoaded', () => {
@@ -316,7 +312,7 @@
 
         const btnSpan = submitBtn.querySelector('span');
         const originalBtnText = btnSpan.textContent;
-        btnSpan.textContent = 'Searching...';
+        btnSpan.textContent = 'Verifying...';
 
         try {
           const response = await fetch(SHEET_API_URL);
@@ -330,9 +326,9 @@
             const imageUrls = galleryData.images ? galleryData.images.split(',').map(url => url.trim()) : [];
 
             imagesContainer.innerHTML = imageUrls.map((url, index) => `
-              <div class="client-image-card">
+              <div class="vault-image-card">
                 <img src="${url}" alt="${galleryData.title} Proof 0${index + 1}" loading="lazy" />
-                <a href="${url}" download class="image-download-link" target="_blank">Download High-Res &darr;</a>
+                <a href="${url}" download class="vault-download-btn" target="_blank">Download High-Res <span>&darr;</span></a>
               </div>
             `).join('');
 
@@ -343,8 +339,8 @@
             errorMsg.style.display = 'block';
           }
         } catch (err) {
-          console.error("Error fetching gallery database:", err);
-          errorMsg.textContent = "Connection error. Please try again.";
+          console.error("Error fetching vault data:", err);
+          errorMsg.textContent = "Vault connection failure. Please retry.";
           errorMsg.style.display = 'block';
         } finally {
           btnSpan.textContent = originalBtnText;
@@ -354,7 +350,7 @@
       }
 
       function lockGallery() {
-        document.getElementById('gallery-form').style.display = 'flex';
+        document.getElementById('gallery-form').style.display = 'block';
         document.getElementById('gallery-content-view').style.display = 'none';
         document.getElementById('gallery-code').value = '';
         document.getElementById('gallery-error').style.display = 'none';
@@ -363,701 +359,621 @@
 
     <style>
       :root {
-        --color-cotton-bg: #F7F5F0;     
-        --color-obsidian: #141312;      
-        --color-charcoal: #3A3835;      
-        --color-muted: #7E7870;         
-        --color-border: rgba(20, 19, 18, 0.12); 
+        --bg-paper: #F2EFE9;
+        --color-black: #0E0D0D;
+        --color-charcoal: #2A2826;
+        --color-muted: #807B73;
+        --border-stark: #0E0D0D;
+        --border-subtle: rgba(14, 13, 13, 0.15);
+        --font-serif: 'Playfair Display', Georgia, serif;
+        --font-sans: 'Jost', -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
       }
 
       html {
         scroll-behavior: smooth;
+        background-color: var(--bg-paper);
+        color: var(--color-black);
       }
 
       body {
         margin: 0;
         padding: 0;
-        width: 100%;
-        max-width: 100vw;
-        overflow-x: hidden;
-        background-color: var(--color-cotton-bg);
-        color: var(--color-obsidian);
-        font-family: 'Jost', sans-serif;
+        font-family: var(--font-sans);
         -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
       }
 
-      .editorial-site {
-        position: relative;
-        width: 100vw;
+      .editorial-wrapper {
+        width: 100%;
         min-height: 100vh;
-        background-color: var(--color-cotton-bg);
         display: flex;
         flex-direction: column;
       }
 
-      .ambient-backdrop {
-        position: fixed;
-        inset: 0;
-        background: radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.8) 0%, rgba(247, 245, 240, 1) 75%);
-        pointer-events: none;
-        z-index: 0;
-      }
-
-      .site-top-bar {
+      /* TOP ARCHITECTURAL BAR */
+      .top-bar {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        box-sizing: border-box;
-        display: flex;
-        justify-content: center;
-        padding: 16px 5vw;
-        font-size: 0.55rem;
-        letter-spacing: 0.35em;
-        text-transform: uppercase;
-        color: var(--color-muted);
-        border-bottom: 1px solid var(--color-border);
-        background: rgba(247, 245, 240, 0.95);
-        backdrop-filter: blur(10px);
-        z-index: 10;
-      }
-
-      .scroll-container {
-        position: relative;
-        z-index: 2;
-        padding-top: 70px;
-        padding-bottom: 90px;
-      }
-
-      .editorial-section {
-        min-height: 85vh;
-        display: flex;
+        height: 50px;
+        background-color: var(--bg-paper);
+        border-bottom: 1px solid var(--border-stark);
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
         align-items: center;
-        padding: 6vh 5vw;
-        box-sizing: border-box;
-        border-bottom: 1px solid var(--color-border);
+        padding: 0 2rem;
+        z-index: 100;
+        font-size: 0.7rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
       }
 
-      /* Split-Screen M|M Hero Section Styles */
-      .home-section-hero {
-        padding: 0 !important;
-        min-height: 82vh;
-        position: relative;
-        overflow: hidden;
-        border-bottom: 1px solid var(--color-border);
+      .top-bar-left {
+        display: flex;
+        gap: 1.5rem;
       }
 
-      .split-hero-container {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        min-height: 82vh;
+      .mono-tag {
+        font-weight: 500;
+      }
+
+      .location-tag {
+        color: var(--color-muted);
+      }
+
+      .top-bar-center {
+        text-align: center;
+        font-family: var(--font-serif);
+        font-size: 0.85rem;
+        letter-spacing: 0.05em;
+        text-transform: none;
+      }
+
+      .top-bar-right {
+        text-align: right;
+      }
+
+      .top-cta-link {
+        color: var(--color-black);
+        text-decoration: none;
+        font-weight: 500;
+        transition: opacity 0.2s;
+      }
+
+      .top-cta-link:hover {
+        opacity: 0.6;
+      }
+
+      .main-content {
+        margin-top: 50px;
+        margin-bottom: 60px;
+      }
+
+      /* SECTION 01: HERO GRID */
+      .hero-section {
+        min-height: calc(100vh - 110px);
+        border-bottom: 1px solid var(--border-stark);
+      }
+
+      .hero-grid {
         display: grid;
         grid-template-columns: 1fr;
+        min-height: calc(100vh - 110px);
       }
 
-      .split-side {
+      .hero-image-pane {
+        position: relative;
+        width: 100%;
+        min-height: 50vh;
+        background-color: var(--color-black);
+        overflow: hidden;
+      }
+
+      .hero-bg-img {
         width: 100%;
         height: 100%;
-        position: relative;
+        object-fit: cover;
+        filter: grayscale(100%) contrast(120%) brightness(0.8);
       }
 
-      .left-side {
-        position: absolute;
-        inset: 0;
-      }
-
-      .side-bg-image {
-        position: absolute;
-        inset: 0;
-        background-image: url('/bg.jpeg');
-        background-size: cover;
-        background-position: center;
-        filter: grayscale(100%) contrast(120%) brightness(0.65);
-      }
-
-      .right-side {
-        display: none;
-      }
-
-      .hero-monogram-overlay {
-        position: absolute;
-        inset: 0;
-        z-index: 5;
+      .hero-typography-pane {
+        padding: 3rem 2rem;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 0 4vw;
-        text-align: center;
+        justify-content: space-between;
+        background-color: var(--bg-paper);
+        border-top: 1px solid var(--border-stark);
       }
 
-      .monogram-letters {
-        position: relative;
+      .monogram-container {
         display: flex;
         align-items: center;
-        justify-content: center;
-        gap: 1.5rem;
+        gap: 1rem;
+        margin-bottom: 2rem;
       }
 
-      .m-glyph {
-        font-family: 'Playfair Display', serif;
-        font-size: clamp(5rem, 24vw, 11rem);
+      .monogram-m {
+        font-family: var(--font-serif);
+        font-size: clamp(4rem, 12vw, 8rem);
+        line-height: 0.9;
         font-weight: 400;
-        line-height: 1;
-        color: #1a1918;
-        text-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        letter-spacing: -0.05em;
       }
 
-      .vertical-divider-line {
-        position: absolute;
+      .monogram-divider {
         width: 1px;
-        height: 75%;
-        background-color: var(--color-obsidian);
-        opacity: 0.6;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        height: 60px;
+        background-color: var(--border-stark);
       }
 
-      .vertical-divider-line::before,
-      .vertical-divider-line::after {
-        content: '';
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 5px;
-        height: 5px;
-        background-color: var(--color-obsidian);
-        border-radius: 50%;
-      }
-
-      .vertical-divider-line::before {
-        top: 0;
-      }
-
-      .vertical-divider-line::after {
-        bottom: 0;
-      }
-
-      .brand-pill-badge {
-        background-color: #F4F1EA;
-        border: 1px solid rgba(20, 19, 18, 0.15);
-        padding: 10px 24px;
-        border-radius: 2px;
-        margin-top: -1.5rem;
-        z-index: 6;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      }
-
-      .brand-pill-badge span {
-        font-family: 'Jost', sans-serif;
-        font-size: clamp(0.6rem, 2vw, 0.75rem);
-        letter-spacing: 0.35em;
+      .eyebrow-label {
+        font-size: 0.65rem;
+        letter-spacing: 0.25em;
         text-transform: uppercase;
-        color: var(--color-obsidian);
+        color: var(--color-muted);
+        display: block;
+        margin-bottom: 0.75rem;
       }
 
-      .hero-subtext {
-        font-family: 'Jost', sans-serif;
-        font-size: 0.55rem;
-        letter-spacing: 0.4em;
+      .hero-statement {
+        font-family: var(--font-serif);
+        font-size: clamp(1.8rem, 4vw, 3.2rem);
+        font-weight: 400;
+        line-height: 1.1;
+        margin: 0 0 1.5rem 0;
         text-transform: uppercase;
+      }
+
+      .hero-manifesto-text {
+        font-size: 0.95rem;
+        line-height: 1.6;
         color: var(--color-charcoal);
-        margin-top: 1.2rem;
-        opacity: 0.85;
-      }
-
-      .section-inner {
-        max-width: 900px;
-        width: 100%;
-        margin: 0 auto;
-      }
-
-      .chic-badge {
-        font-size: 0.6rem;
-        text-transform: uppercase;
-        letter-spacing: 0.3em;
-        color: var(--color-charcoal);
-        margin-bottom: 14px;
-        display: inline-block;
-        border-bottom: 1px solid var(--color-charcoal);
-        padding-bottom: 4px;
-        opacity: 0.8;
-      }
-
-      .section-heading {
-        font-family: 'Playfair Display', serif;
-        font-weight: 300;
-        font-size: clamp(2rem, 8vw, 3rem);
-        color: var(--color-obsidian);
-        margin: 0 0 2rem 0;
-        text-transform: uppercase;
-      }
-
-      /* About Us Section Typography Styling */
-      .about-section {
-        padding: 10vh 5vw;
-      }
-
-      .about-script-content {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-      }
-
-      .section-body {
-        font-family: 'Playfair Display', serif;
-        font-size: 1.1rem;
-        line-height: 1.5;
-        color: var(--color-charcoal);
-        opacity: 0.9;
-        margin: 0;
-        letter-spacing: 0.02em;
-      }
-
-      .about-script-content em {
-        font-style: italic;
-        color: var(--color-obsidian);
-      }
-
-      .about-closing-triad {
-        display: flex;
-        flex-direction: column;
-        gap: 0.4rem;
-        margin: 1rem 0;
-      }
-
-      .triad-line {
+        max-width: 500px;
         margin: 0;
       }
 
-      .about-welcome {
-        margin-top: 0.5rem;
-      }
-
-      /* Portfolio 3D Flip Cards Styling */
-      .portfolio-section {
-        min-height: auto;
-        padding: 10vh 5vw;
-      }
-
-      .portfolio-intro {
-        margin-bottom: 2.5rem;
-      }
-
-      .flip-cards-grid {
+      /* EDITORIAL SECTION BASE */
+      .editorial-section {
+        border-bottom: 1px solid var(--border-stark);
+        padding: 5rem 2rem;
         display: grid;
         grid-template-columns: 1fr;
         gap: 2rem;
-        width: 100%;
       }
 
-      .flip-card {
-        background-color: transparent;
-        width: 100%;
-        height: 380px;
-        perspective: 1000px;
-        cursor: pointer;
+      .section-index {
+        font-size: 0.7rem;
+        letter-spacing: 0.2em;
+        color: var(--color-muted);
+        display: block;
+        margin-bottom: 0.5rem;
       }
 
-      .flip-card-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
-        transform-style: preserve-3d;
+      .section-label {
+        font-family: var(--font-serif);
+        font-size: 1.8rem;
+        font-weight: 400;
+        margin: 0;
+        text-transform: uppercase;
       }
 
-      .flip-card.flipped .flip-card-inner {
-        transform: rotateY(180deg);
+      /* ABOUT SECTION */
+      .about-headline {
+        font-family: var(--font-serif);
+        font-size: clamp(1.4rem, 3vw, 2.2rem);
+        line-height: 1.3;
+        margin: 0 0 2rem 0;
       }
 
-      .flip-card-front, .flip-card-back {
-        position: absolute;
-        inset: 0;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        border: 1px solid var(--color-border);
-        box-sizing: border-box;
+      .about-body-text {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        font-size: 1rem;
+        line-height: 1.7;
+        color: var(--color-charcoal);
       }
 
-      .flip-card-front {
-        background-color: #EFECE6;
+      .triad-statement {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border-top: 1px solid var(--border-stark);
+        margin-top: 3rem;
+        padding-top: 1.5rem;
+        gap: 1rem;
+      }
+
+      .triad-col {
+        font-size: 0.75rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+
+      .triad-col span {
+        color: var(--color-muted);
+        display: block;
+        margin-bottom: 0.25rem;
+      }
+
+      /* PORTFOLIO / COLLECTIONS LIST */
+      .portfolio-section {
+        display: block;
+        padding: 5rem 0;
+      }
+
+      .portfolio-header {
+        padding: 0 2rem 3rem 2rem;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        padding: 2.5rem 2rem;
-        text-align: left;
+        gap: 1rem;
+        border-bottom: 1px solid var(--border-stark);
       }
 
-      .card-number {
-        font-size: 0.55rem;
-        letter-spacing: 0.3em;
+      .portfolio-subtext {
+        font-size: 0.75rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--color-muted);
+        margin: 0;
+      }
+
+      .collections-list {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .collection-row {
+        position: relative;
+        display: grid;
+        grid-template-columns: 60px 1fr 40px;
+        align-items: center;
+        padding: 2.5rem 2rem;
+        border-bottom: 1px solid var(--border-subtle);
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .collection-row:hover {
+        background-color: rgba(14, 13, 13, 0.03);
+      }
+
+      .row-num {
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+        color: var(--color-muted);
+      }
+
+      .collection-title {
+        font-family: var(--font-serif);
+        font-size: clamp(1.4rem, 3.5vw, 2.5rem);
+        font-weight: 400;
+        margin: 0 0 0.3rem 0;
+        transition: transform 0.3s ease;
+      }
+
+      .collection-type {
+        font-size: 0.7rem;
+        letter-spacing: 0.2em;
         text-transform: uppercase;
         color: var(--color-muted);
       }
 
-      .card-title {
-        font-family: 'Playfair Display', serif;
-        font-weight: 400;
-        font-size: 1.6rem;
-        color: var(--color-obsidian);
-        margin: 0;
-        line-height: 1.25;
+      .row-arrow {
+        font-size: 1.5rem;
+        line-height: 1;
+        text-align: right;
+        transition: transform 0.3s ease;
       }
 
-      .card-hint {
-        font-size: 0.6rem;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: var(--color-charcoal);
-        opacity: 0.7;
+      .collection-row:hover .row-arrow {
+        transform: translate(5px, -5px);
       }
 
-      .flip-card-back {
-        background-color: var(--color-obsidian);
-        transform: rotateY(180deg);
+      /* Hover Image Drawer */
+      .row-hover-preview {
+        position: absolute;
+        right: 10%;
+        top: 50%;
+        transform: translateY(-50%) scale(0.9);
+        width: 220px;
+        height: 150px;
+        opacity: 0;
+        pointer-events: none;
         overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        border: 1px solid var(--border-stark);
+        z-index: 10;
+        transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       }
 
-      .flip-card-back img {
+      .row-hover-preview img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        filter: grayscale(100%);
       }
 
-      /* Gallery Section Styles */
-      .gallery-section {
-        min-height: auto;
-        padding: 10vh 5vw;
+      .collection-row:hover .row-hover-preview {
+        opacity: 1;
+        transform: translateY(-50%) scale(1);
       }
 
-      .gallery-intro {
-        margin-bottom: 2rem;
-        max-width: 600px;
+      /* VAULT SECTION */
+      .vault-intro {
+        font-size: 1rem;
+        color: var(--color-charcoal);
+        margin: 0 0 2rem 0;
       }
 
-      .gallery-auth-card {
-        background-color: #EFECE6;
-        border: 1px solid var(--color-border);
-        padding: 2.5rem 2rem;
-        max-width: 700px;
-        width: 100%;
-        box-sizing: border-box;
-        transition: max-width 0.3s ease;
-      }
-
-      .gallery-auth-card:has(#gallery-content-view[style*="block"]) {
-        max-width: 1100px;
-      }
-
-      .gallery-form {
+      .vault-input-wrap {
         display: flex;
-        flex-direction: column;
-        gap: 1rem;
+        border: 1px solid var(--border-stark);
       }
 
-      .gallery-input-row {
-        display: flex;
-        gap: 1rem;
-        margin-top: 0.5rem;
-      }
-
-      .gallery-input-row .form-input {
+      .vault-input {
         flex: 1;
-        background-color: var(--color-cotton-bg);
+        background: transparent;
+        border: none;
+        padding: 1.2rem;
+        font-family: var(--font-sans);
+        font-size: 0.85rem;
+        letter-spacing: 0.15em;
+        color: var(--color-black);
+        outline: none;
       }
 
-      .gallery-btn {
-        margin-top: 0 !important;
-        max-width: 140px;
-      }
-
-      .gallery-error-msg {
-        display: none;
-        color: #8c2d19;
+      .vault-submit-btn {
+        background-color: var(--color-black);
+        color: var(--bg-paper);
+        border: none;
+        padding: 0 2rem;
+        font-family: var(--font-sans);
         font-size: 0.75rem;
-        letter-spacing: 0.05em;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: opacity 0.2s;
+      }
+
+      .vault-submit-btn:hover {
+        opacity: 0.85;
+      }
+
+      .vault-error-msg {
+        display: none;
+        color: #922216;
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        margin-top: 0.75rem;
+        text-transform: uppercase;
+      }
+
+      .vault-content-hidden {
+        display: none;
+      }
+
+      .vault-success-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        border-bottom: 1px solid var(--border-stark);
+        padding-bottom: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .vault-status-tag {
+        font-size: 0.65rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--color-muted);
+      }
+
+      .vault-client-title {
+        font-family: var(--font-serif);
+        font-size: 1.8rem;
+        font-weight: 400;
         margin: 0.5rem 0 0 0;
       }
 
-      .gallery-content-hidden {
-        display: none;
+      .vault-lock-btn {
+        background: transparent;
+        border: 1px solid var(--border-stark);
+        padding: 0.6rem 1.2rem;
+        font-family: var(--font-sans);
+        font-size: 0.65rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        cursor: pointer;
       }
 
-      .gallery-success-header {
+      .vault-images-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .vault-image-card {
+        border: 1px solid var(--border-stark);
+        padding: 1rem;
+        background: #EAE6DF;
+      }
+
+      .vault-image-card img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        display: block;
+        margin-bottom: 1rem;
+      }
+
+      .vault-download-btn {
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
-        margin-bottom: 2rem;
-        border-bottom: 1px solid var(--color-border);
-        padding-bottom: 1rem;
-      }
-
-      .gallery-lock-btn {
-        background: transparent;
-        border: 1px solid var(--color-border);
-        padding: 8px 14px;
-        font-family: 'Jost', sans-serif;
-        font-size: 0.55rem;
-        letter-spacing: 0.2em;
+        font-size: 0.7rem;
+        letter-spacing: 0.15em;
         text-transform: uppercase;
-        color: var(--color-charcoal);
-        cursor: pointer;
-        transition: all 0.2s ease;
-      }
-
-      .gallery-lock-btn:hover {
-        background-color: var(--color-obsidian);
-        color: #F7F5F0;
-        border-color: var(--color-obsidian);
-      }
-
-      .client-images-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-
-      .client-image-card {
-        background: var(--color-cotton-bg);
-        border: 1px solid var(--color-border);
-        padding: 12px;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .client-image-card img {
-        width: 100%;
-        height: 320px;
-        object-fit: cover;
-      }
-
-      .image-download-link {
-        font-size: 0.6rem;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: var(--color-obsidian);
+        color: var(--color-black);
         text-decoration: none;
-        text-align: center;
-        padding: 10px;
-        background-color: #EFECE6;
-        border: 1px solid var(--color-border);
-        transition: background-color 0.2s ease;
+        padding-top: 0.5rem;
+        border-top: 1px solid var(--border-subtle);
       }
 
-      .image-download-link:hover {
-        background-color: var(--color-obsidian);
-        color: #F7F5F0;
+      /* CONTACT FORM */
+      .contact-headline {
+        font-family: var(--font-serif);
+        font-size: clamp(1.3rem, 3vw, 2rem);
+        margin: 0 0 2.5rem 0;
+        line-height: 1.3;
       }
 
-      /* Contact Section Form Styles */
-      .contact-section {
-        min-height: auto;
-        padding: 10vh 5vw;
-      }
-
-      .contact-intro {
-        margin-bottom: 2rem;
-        max-width: 600px;
-      }
-
-      .editorial-contact-form {
-        max-width: 700px;
-        width: 100%;
+      .raw-contact-form {
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;
-        margin-top: 1.5rem;
+        gap: 2rem;
       }
 
-      .form-grid {
+      .form-row-two {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 2rem;
       }
 
-      .form-group {
+      .field-block {
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
       }
 
-      .form-label {
-        font-size: 0.6rem;
+      .field-label {
+        font-size: 0.65rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--color-muted);
+      }
+
+      .raw-input {
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid var(--border-stark);
+        padding: 0.8rem 0;
+        font-family: var(--font-sans);
+        font-size: 1rem;
+        color: var(--color-black);
+        outline: none;
+        border-radius: 0;
+      }
+
+      .raw-input:focus {
+        border-bottom-width: 2px;
+      }
+
+      .raw-submit-btn {
+        align-self: flex-start;
+        background-color: var(--color-black);
+        color: var(--bg-paper);
+        border: none;
+        padding: 1.2rem 2.5rem;
+        font-family: var(--font-sans);
+        font-size: 0.75rem;
         letter-spacing: 0.25em;
         text-transform: uppercase;
-        color: var(--color-charcoal);
-        opacity: 0.8;
-      }
-
-      .form-input {
-        background: transparent;
-        border: 1px solid var(--color-border);
-        border-radius: 0;
-        padding: 14px 16px;
-        font-family: 'Jost', sans-serif;
-        font-size: 0.95rem;
-        color: var(--color-obsidian);
-        outline: none;
-        transition: border-color 0.2s ease;
-      }
-
-      .form-input:focus {
-        border-color: var(--color-obsidian);
-      }
-
-      .form-input::placeholder {
-        color: var(--color-muted);
-        opacity: 0.5;
-      }
-
-      textarea.form-input {
-        resize: vertical;
-        min-height: 120px;
-      }
-
-      .editorial-submit-btn {
-        background-color: var(--color-obsidian);
-        color: #F7F5F0;
-        border: 1px solid var(--color-obsidian);
-        padding: 16px 28px;
-        font-family: 'Jost', sans-serif;
-        font-size: 0.65rem;
-        letter-spacing: 0.3em;
-        text-transform: uppercase;
-        display: inline-flex;
-        align-items: center;
-        justify-content: space-between;
         cursor: pointer;
-        transition: all 0.25s ease;
-        margin-top: 0.5rem;
-        max-width: 220px;
+        display: flex;
+        gap: 1.5rem;
+        transition: opacity 0.2s;
+        margin-top: 1rem;
       }
 
-      .editorial-submit-btn:hover {
-        background-color: transparent;
-        color: var(--color-obsidian);
+      .raw-submit-btn:hover {
+        opacity: 0.85;
       }
 
-      .btn-arrow {
-        font-size: 1rem;
-        line-height: 1;
-      }
-
-      /* Mobile-Optimized Sticky Bottom Navigation */
-      .site-footer-nav {
+      /* BOTTOM DOCK */
+      .bottom-dock {
         position: fixed;
         bottom: 0;
         left: 0;
         width: 100%;
-        box-sizing: border-box;
-        background: rgba(247, 245, 240, 0.96);
-        backdrop-filter: blur(12px);
-        border-top: 1px solid var(--color-border);
-        padding: 14px 4vw;
+        height: 60px;
+        background-color: var(--bg-paper);
+        border-top: 1px solid var(--border-stark);
         display: flex;
+        align-items: center;
         justify-content: center;
-        z-index: 10;
+        z-index: 100;
       }
 
-      .home-navigation {
-        width: 100%;
-        overflow-x: auto;
-        white-space: nowrap;
-        scrollbar-width: none;
+      .dock-nav {
         display: flex;
-        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
       }
 
-      .home-navigation::-webkit-scrollbar {
-        display: none;
-      }
-
-      .home-menu {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: inline-flex;
-        gap: 25px;
-      }
-
-      .nav-link {
-        display: inline-flex;
-        align-items: baseline;
-        gap: 4px;
-        text-decoration: none;
-        padding: 4px 0;
-      }
-
-      .nav-link .num {
-        font-size: 0.55rem;
-        letter-spacing: 0.1em;
+      .dock-link {
         color: var(--color-muted);
+        text-decoration: none;
+        transition: color 0.2s;
       }
 
-      .nav-link .text {
-        font-family: 'Playfair Display', serif;
-        font-size: 0.9rem;
-        letter-spacing: 0.05em;
-        color: var(--color-charcoal);
-        opacity: 0.6;
-        transition: all 0.2s ease;
+      .dock-link.active, .dock-link:hover {
+        color: var(--color-black);
+        font-weight: 500;
       }
 
-      .nav-link:hover .text, .nav-link.active .text {
-        opacity: 1;
-        color: var(--color-obsidian);
+      .dock-sep {
+        color: var(--border-subtle);
       }
 
-      .nav-link:hover .num, .nav-link.active .num {
-        color: var(--color-obsidian);
-      }
+      /* MEDIA QUERIES (DESKTOP GRID ENHANCEMENTS) */
+      @media (min-width: 900px) {
+        .hero-grid {
+          grid-template-columns: 1.2fr 1fr;
+        }
 
-      /* Desktop enhancements */
-      @media(min-width: 992px) {
-        .scroll-container {
-          padding-top: 100px;
-          padding-bottom: 0;
+        .hero-image-pane {
+          min-height: auto;
         }
-        .site-footer-nav {
-          padding: 20px 8vw;
-          justify-content: center;
+
+        .hero-typography-pane {
+          border-top: none;
+          border-left: 1px solid var(--border-stark);
+          padding: 4rem 3rem;
         }
-        .home-navigation {
-          overflow-x: visible;
+
+        .editorial-section {
+          grid-template-columns: 240px 1fr;
+          padding: 6rem 3rem;
         }
-        .home-menu {
-          gap: 4vw;
-        }
-        .split-hero-container {
+
+        .about-body-text {
           grid-template-columns: 1fr 1fr;
         }
-        .left-side {
-          position: relative;
+
+        .portfolio-header {
+          padding: 0 3rem 4rem 3rem;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: flex-end;
         }
-        .right-side {
-          display: block;
-          background-color: var(--color-cotton-bg);
+
+        .collection-row {
+          padding: 3rem 3rem;
         }
-        .flip-cards-grid {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 2rem;
+
+        .vault-images-grid {
+          grid-template-columns: 1fr 1fr;
         }
-        .flip-card {
-          height: 420px;
-        }
-        .client-images-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        .form-grid {
+
+        .form-row-two {
           grid-template-columns: 1fr 1fr;
         }
       }
