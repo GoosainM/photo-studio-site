@@ -1,103 +1,312 @@
 ---
-// Immersive Scrolling Visual Portfolio - Minnaar-Matthews Creative House
+// Immersive Visual Portfolio & Collections - Minnaar-Matthews Creative House
+import BaseLayouts from '../layouts/BaseLayouts.astro';
 ---
-<html lang="en" style="scroll-behavior: smooth;">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Visual Archive & Portfolio | Minnaar-Matthews</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
-    <style>
-      *, *::before, *::after { box-sizing: border-box; }
-      body { margin: 0; padding: 0; background-color: #F5F2EB; color: #2C2A29; font-family: 'Jost', sans-serif; }
-      
-      /* Scroll visual container layout */
-      .scroll-section {
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        position: relative;
-        padding: 6rem 4rem;
-        border-bottom: 1px solid #E3DED4;
-      }
-      @media (max-width: 900px) {
-        .scroll-section {
-          flex-direction: column-reverse;
-          padding: 4rem 1.5rem;
-          gap: 3rem;
-        }
-      }
-    </style>
-  </head>
-  <body style="overflow-x: hidden;">
+
+<BaseLayouts title="Visual Portfolio & Collections | Minnaar-Matthews">
+  <div class="portfolio-page">
     
-    <!-- Fixed Atmospheric Background Visual -->
-    <div style="position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: 0.12; background-image: url('/hero-bg.png'); background-size: cover; background-position: center; filter: grayscale(100%) contrast(125%);"></div>
-
-    <!-- Header Navigation -->
-    <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.5rem 3rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(227, 222, 212, 0.8); background-color: rgba(245, 242, 235, 0.92); backdrop-filter: blur(10px);">
-      <a href="/" style="font-family: 'Playfair Display', serif; letter-spacing: 0.2em; font-size: 1.125rem; text-transform: uppercase; color: #2C2A29; text-decoration: none; font-weight: bold;">Minnaar-Matthews</a>
-      <div style="display: flex; gap: 2rem; align-items: center;">
-        <a href="/contact" style="font-size: 0.75rem; letter-spacing: 0.35em; text-transform: uppercase; color: #2C2A29; text-decoration: none;">Inquiries</a>
-        <a href="/" style="font-size: 0.75rem; letter-spacing: 0.35em; text-transform: uppercase; color: #2C2A29; text-decoration: none;">&larr; Home</a>
-      </div>
-    </header>
-
     <!-- Hero Intro Banner -->
-    <section style="height: 85vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; z-index: 10; padding: 0 2rem; margin-top: 5rem;">
-      <span style="font-size: 0.65rem; letter-spacing: 0.4em; text-transform: uppercase; color: #7A756D; display: block; margin-bottom: 1rem;">Immersive Visual Narrative</span>
-      <h1 style="font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; color: #2C2A29; margin: 0 0 1.5rem 0;">A Deeper Perspective.</h1>
-      <div style="width: 3rem; height: 1px; background-color: #C5BEB0; margin: 0 auto 1.5rem auto;"></div>
-      <p style="font-size: 0.95rem; font-weight: 300; color: #5C5750; letter-spacing: 0.06em; max-width: 32rem; line-height: 1.7;">Scroll down to explore curated architectural studies, cinematic framing, and spatial compositions.</p>
-      <div style="position: absolute; bottom: 2rem; animation: bounce 2s infinite; color: #7A756D; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;">
-        Scroll &darr;
+    <section class="portfolio-hero">
+      <span class="subhead-mono">Curated Visual Archive</span>
+      <h1 class="hero-title">Visual Portfolio &amp; Collections</h1>
+      <div class="divider-line"></div>
+      <p class="hero-description">
+        Explore our curated collections across photography, brand strategy, commercial content creation, and high-impact social design.
+      </p>
+      <div class="scroll-indicator">
+        Scroll To Explore &darr;
       </div>
     </section>
 
-    <!-- Interactive Scrolling Visual Sections -->
-    <main style="position: relative; z-index: 10;">
-      
-      <!-- Section 1: Architectural Study -->
-      <section class="scroll-section" style="background-color: rgba(245, 242, 235, 0.7);">
-        <div style="flex: 1; padding-right: 4pr; max-width: 32rem;">
-          <span style="font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase; color: #7A756D; display: block; margin-bottom: 0.75rem;">01 / Study</span>
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 2.25rem; font-weight: 400; color: #2C2A29; margin: 0 0 1.25rem 0; letter-spacing: 0.05em;">Architectural Precision</h2>
-          <p style="font-size: 0.9rem; color: #5C5750; line-height: 1.8; margin-bottom: 1.5rem;">Precision lighting and modern structural composition capturing high-end design lines, clean geometry, and atmospheric balance.</p>
-          <div style="display: inline-block; border-bottom: 1px solid #2C2A29; padding-bottom: 2px; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: #2C2A29;">Spatial Series</div>
-        </div>
-        <div style="flex: 1.2; width: 100%; height: 420px; background-image: url('/hero-bg.png'); background-size: cover; background-position: center; border: 1px solid #DDD6C8; box-shadow: 0 20px 40px rgba(0,0,0,0.04);"></div>
-      </section>
+    <!-- Visual Portfolio Collections Grid -->
+    <main class="collections-container">
+      <div class="collections-grid">
 
-      <!-- Section 2: Editorial Portraiture -->
-      <section class="scroll-section" style="background-color: rgba(238, 233, 224, 0.8);">
-        <div style="flex: 1.2; width: 100%; height: 420px; background-image: url('/hero-bg.png'); background-size: cover; background-position: bottom; border: 1px solid #DDD6C8; box-shadow: 0 20px 40px rgba(0,0,0,0.04); order: 1;"></div>
-        <div style="flex: 1; padding-left: 4rem; max-width: 32rem; order: 2;" class="content-side">
-          <span style="font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase; color: #7A756D; display: block; margin-bottom: 0.75rem;">02 / Narrative</span>
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 2.25rem; font-weight: 400; color: #2C2A29; margin: 0 0 1.25rem 0; letter-spacing: 0.05em;">Editorial Portraiture</h2>
-          <p style="font-size: 0.9rem; color: #5C5750; line-height: 1.8; margin-bottom: 1.5rem;">Intimate storytelling through refined framing, natural tonality, and timeless contrast that evokes enduring emotional resonance.</p>
-          <div style="display: inline-block; border-bottom: 1px solid #2C2A29; padding-bottom: 2px; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: #2C2A29;">Character Study</div>
-        </div>
-      </section>
+        <!-- 01. Photography Collection -->
+        <article class="collection-card">
+          <div class="card-visual">
+            <img 
+              src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=1200&q=80" 
+              alt="Photography Collection" 
+              class="card-img"
+            />
+            <div class="card-overlay"></div>
+            <span class="card-num">01</span>
+          </div>
+          <div class="card-content">
+            <span class="card-meta">Editorial &amp; Architectural Photography</span>
+            <h2 class="card-title">Photography Collection</h2>
+            <p class="card-desc">
+              High-end editorial framing, architectural compositions, and character portraiture capturing lighting precision and atmospheric depth.
+            </p>
+            <a href="/contact" class="card-link">View Gallery &rarr;</a>
+          </div>
+        </article>
 
-      <!-- Section 3: Light & Texture -->
-      <section class="scroll-section" style="background-color: rgba(245, 242, 235, 0.7);">
-        <div style="flex: 1; padding-right: 4rem; max-width: 32rem;">
-          <span style="font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase; color: #7A756D; display: block; margin-bottom: 0.75rem;">03 / Atmosphere</span>
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 2.25rem; font-weight: 400; color: #2C2A29; margin: 0 0 1.25rem 0; letter-spacing: 0.05em;">Light &amp; Texture</h2>
-          <p style="font-size: 0.9rem; color: #5C5750; line-height: 1.8; margin-bottom: 1.5rem;">Deep exploration of shadow, tactile grain, surface materials, and atmospheric interplay designed for luxury brand campaigns.</p>
-          <div style="display: inline-block; border-bottom: 1px solid #2C2A29; padding-bottom: 2px; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: #2C2A29;">Material Study</div>
-        </div>
-        <div style="flex: 1.2; width: 100%; height: 420px; background-image: url('/hero-bg.png'); background-size: cover; background-position: top; border: 1px solid #DDD6C8; box-shadow: 0 20px 40px rgba(0,0,0,0.04);"></div>
-      </section>
+        <!-- 02. Brand Collection -->
+        <article class="collection-card">
+          <div class="card-visual">
+            <img 
+              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" 
+              alt="Brand Collection" 
+              class="card-img"
+            />
+            <div class="card-overlay"></div>
+            <span class="card-num">02</span>
+          </div>
+          <div class="card-content">
+            <span class="card-meta">Identity Systems &amp; Guidelines</span>
+            <h2 class="card-title">Brand Collection</h2>
+            <p class="card-desc">
+              Bespoke visual identity systems, typographic hierarchies, and cohesive brand guidelines designed to establish market authority.
+            </p>
+            <a href="/contact" class="card-link">Explore Identity &rarr;</a>
+          </div>
+        </article>
 
+        <!-- 03. Content Collection -->
+        <article class="collection-card">
+          <div class="card-visual">
+            <img 
+              src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&q=80" 
+              alt="Content Collection" 
+              class="card-img"
+            />
+            <div class="card-overlay"></div>
+            <span class="card-num">03</span>
+          </div>
+          <div class="card-content">
+            <span class="card-meta">Cinematic Production &amp; Commercial Assets</span>
+            <h2 class="card-title">Content Collection</h2>
+            <p class="card-desc">
+              Short-form video assets, commercial lifestyle imagery, and narrative visual campaigns tailored for modern digital platforms.
+            </p>
+            <a href="/contact" class="card-link">View Media &rarr;</a>
+          </div>
+        </article>
+
+        <!-- 04. Social Media Design Collection -->
+        <article class="collection-card">
+          <div class="card-visual">
+            <img 
+              src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80" 
+              alt="Social Media Design Collection" 
+              class="card-img"
+            />
+            <div class="card-overlay"></div>
+            <span class="card-num">04</span>
+          </div>
+          <div class="card-content">
+            <span class="card-meta">Digital Campaigns &amp; Editorial Feeds</span>
+            <h2 class="card-title">Social Media Design Collection</h2>
+            <p class="card-desc">
+              Custom social layouts, promotional graphics, and curated editorial grid systems engineered to elevate online brand engagement.
+            </p>
+            <a href="/contact" class="card-link">Explore Designs &rarr;</a>
+          </div>
+        </article>
+
+      </div>
     </main>
 
-    <!-- Footer -->
-    <footer style="position: relative; z-index: 10; padding: 2.5rem 3rem; text-align: center; font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; border-top: 1px solid #E3DED4; color: #7A756D; background-color: rgba(245, 242, 235, 0.9);">
-      &copy; 2026 Minnaar-Matthews Creative House. All Rights Reserved.
-    </footer>
+  </div>
+</BaseLayouts>
 
-  </body>
-</html>
+<style>
+  .portfolio-page {
+    background-color: #F5F2EB;
+    color: #2C2A29;
+    font-family: 'Jost', sans-serif;
+    min-height: 100vh;
+    padding-bottom: 6rem;
+  }
+
+  /* Hero Banner */
+  .portfolio-hero {
+    height: 60vh;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 2rem 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .subhead-mono {
+    font-size: 0.65rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: #7A756D;
+    display: block;
+    margin-bottom: 1rem;
+    font-family: monospace;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.25rem, 5vw, 4rem);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #2C2A29;
+    margin: 0 0 1.5rem 0;
+  }
+
+  .divider-line {
+    width: 3rem;
+    height: 1px;
+    background-color: #C5BEB0;
+    margin: 0 auto 1.5rem auto;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: #5C5750;
+    letter-spacing: 0.04em;
+    max-width: 34rem;
+    line-height: 1.7;
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 1.5rem;
+    color: #7A756D;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-family: monospace;
+  }
+
+  /* Collections Layout */
+  .collections-container {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .collections-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  @media (min-width: 768px) {
+    .collections-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3.5rem 2.5rem;
+    }
+  }
+
+  /* Collection Cards */
+  .collection-card {
+    background-color: #FAF7F2;
+    border: 1px solid #E3DED4;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  .collection-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px rgba(44, 42, 41, 0.06);
+  }
+
+  .card-visual {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    background-color: #E5E2DC;
+  }
+
+  .card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+  }
+
+  .collection-card:hover .card-img {
+    transform: scale(1.05);
+  }
+
+  .card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(44, 42, 41, 0.4) 0%, transparent 60%);
+  }
+
+  .card-num {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: #FAF7F2;
+    background: rgba(44, 42, 41, 0.6);
+    backdrop-filter: blur(4px);
+    padding: 0.25rem 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .card-content {
+    padding: 2rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+  }
+
+  .card-meta {
+    font-family: monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #8C6D43;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.65rem;
+    font-weight: 500;
+    color: #2C2A29;
+    margin: 0 0 0.85rem 0;
+    line-height: 1.25;
+  }
+
+  .card-desc {
+    font-size: 0.875rem;
+    color: #5C5750;
+    line-height: 1.65;
+    font-weight: 300;
+    margin-bottom: 1.75rem;
+  }
+
+  .card-link {
+    display: inline-block;
+    font-family: monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #3B151A;
+    text-decoration: none;
+    font-weight: 700;
+    border-bottom: 1px solid #3B151A;
+    padding-bottom: 2px;
+    align-self: flex-start;
+    transition: color 0.3s ease, border-color 0.3s ease;
+  }
+
+  .card-link:hover {
+    color: #8C6D43;
+    border-color: #8C6D43;
+  }
+</style>
